@@ -23,7 +23,8 @@
     "app/bower_components",
     "example/bower_components",
     "test",
-    "tests"
+    "tests",
+    "src"
   ],
   "dependencies": {
     "chartist": "~0.1.11",
