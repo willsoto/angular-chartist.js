@@ -1,6 +1,4 @@
+.DS_Store
 node_modules/
-bower_components/
+example/bower_components/
 *.log
-
-build/
-dist/
