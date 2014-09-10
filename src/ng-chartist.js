@@ -17,7 +17,7 @@
                 link: function(scope, element, attrs) {
                     var data = scope.data;
                     var type = scope.chartType;
-                    var options = scope.options || null;
+                    var options = scope.chartOptions || null;
                     var responsiveOptions = scope.responsiveOptions || null;
 
                     Chartist[type](element[0], data, options, responsiveOptions);
