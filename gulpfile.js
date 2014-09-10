@@ -1,9 +1,9 @@
 'use strict';
 
-// Include Gulp & Tools We'll Use
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
+var tagVersion = require('gulp-tag-version');
 
 var config = {
     source: 'src',
@@ -16,21 +16,23 @@ var config = {
 };
 
 gulp.task('jshint', function() {
-    return gulp.src(config.source + '/*.js')
+    gulp.src(config.source + '/*.js')
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('clean', del.bind(null, [config.dist]));
+gulp.task('clean', del.bind(null, [config.dist, config.example + '/lib']));
 
 gulp.task('uglify', function() {
     gulp.src(config.source + '/*.js')
         .pipe(gulp.dest(config.dist))
+        .pipe(gulp.dest(config.example + '/lib'))
         .pipe($.uglify())
         .pipe($.rename({
             extname: '.min.js'
         }))
-        .pipe(gulp.dest(config.dist));
+        .pipe(gulp.dest(config.dist))
+        .pipe(gulp.dest(config.example + '/lib'));
 });
 
 gulp.task('bump', function() {
@@ -41,12 +43,22 @@ gulp.task('bump', function() {
         .pipe(gulp.dest('./'));
 });
 
+var release = function(importance) {
+    gulp.src(['./bower.json', './package.json'])
+        .pipe($.bump({
+            type: importance
+        }))
+        .pipe(gulp.dest('./'))
+        .pipe($.git.commit('bumps package version'))
+        .pipe($.filter('bower.json'))
+        .pipe(tagVersion());
+};
+
 gulp.task('connect', function() {
     var connect = require('connect');
     var serveStatic = require('serve-static');
     var app = connect()
         .use(serveStatic(config.example));
-    // .use(connect.directory(config.appDir));
 
     require('http').createServer(app)
         .listen(config.server.port)
@@ -61,20 +73,25 @@ gulp.task('open', function() {
     require('opn')(url);
 });
 
-gulp.task('copyDist', function() {
-    gulp.src(config.dist + '/*.js')
-        .pipe(gulp.dest(config.example + '/src/'));
-});
-
-gulp.task('example', [
-    'copyDist',
+gulp.task('default', [
     'connect',
     'open'
 ]);
 
-gulp.task('release', [
+gulp.task('dist', [
     'jshint',
     'clean',
     'uglify'
-    // 'bump'
 ]);
+
+gulp.task('patch', function() {
+    return release('patch');
+});
+
+gulp.task('feature', function() {
+    return release('minor');
+});
+
+gulp.task('release', function() {
+    return release('major');
+});
