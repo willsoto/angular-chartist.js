@@ -11,17 +11,62 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootswatch/paper/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/chartist/libdist/chartist.min.css">
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body ng-app="app">
     <section class="container-fluid" ng-controller="ChartistExampleCtrl as chartist">
         <h1>Chart Examples</h1>
-        <chartist class="ct-chart ct-perfect-fourth" chartist-data="chartist.barData" chartist-chart-type="Bar"></chartist>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Bar Chart</h3>
+                    </div>
+                    <div class="panel-body">
+                        <chartist class="ct-chart" chartist-data="chartist.barData" chartist-chart-type="Bar" chartist-chart-options="chartist.barOptions" chartist-responsive-options="barResponsiveOptions"></chartist>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Line Chart</h3>
+                    </div>
+                    <div class="panel-body">
+                        <chartist class="ct-chart" chartist-data="chartist.lineData" chartist-chart-type="Line" chartist-chart-options="chartist.lineOptions"></chartist>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Pie Chart</h3>
+                    </div>
+                    <div class="panel-body">
+                        <chartist class="ct-chart" chartist-data="chartist.pieData" chartist-chart-type="Pie"></chartist>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Donut Chart</h3>
+                    </div>
+                    <div class="panel-body">
+                        <chartist class="ct-chart" chartist-data="chartist.pieData" chartist-chart-type="Pie" chartist-chart-options="chartist.donutOptions"></chartist>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="src/ng-chartist.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/chartist/libdist/chartist.min.js"></script>
+
+    <script type="text/javascript" src="lib/ng-chartist.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>
 
