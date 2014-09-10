@@ -1,35 +1,28 @@
 /* global angular, Chartist */
-'use strict';
+(function(angular, Chartist) {
+    'use strict';
 
-angular.module('ngChartist', [])
+    angular.module('ngChartist', [])
 
-.directive('chartist', [
+    .directive('chartist', [
+        function() {
+            return {
+                restrict: 'EA',
+                scope: {
+                    data: '=chartistData',
+                    chartType: '@chartistChartType',
+                    chartOptions: '=chartistChartOptions',
+                    responsiveOptions: '=chartistResponsiveOptions'
+                },
+                link: function(scope, element, attrs) {
+                    var data = scope.data;
+                    var type = scope.chartType;
+                    var options = scope.options || null;
+                    var responsiveOptions = scope.responsiveOptions || null;
 
-    function() {
-        return {
-            restrict: 'EA',
-            scope: {
-                data: '=chartistData',
-                chartType: '@chartistChartType',
-                chartOptions: '=chartistChartOptions',
-                responsiveOptions: '=chartistResponsiveOptions'
-            },
-            link: function(scope, element, attrs) {
-                var data = scope.data || null;
-                var type = scope.chartType || null;
-                var options = scope.options || null;
-                var responsiveOptions = scope.responsiveOptions || null;
-
-                if (data === null) {
-                    throw new Error('Data is required');
+                    Chartist[type](element[0], data, options, responsiveOptions);
                 }
-
-                if (type === null || type === '') {
-                    throw new Error('Chart type is required');
-                }
-
-                Chartist[type](element[0], data, options, responsiveOptions);
-            }
-        };
-    }
-]);
+            };
+        }
+    ]);
+})(angular, Chartist);
