@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var del = require('del');
 var tagVersion = require('gulp-tag-version');
 
 var config = {
@@ -17,11 +16,14 @@ var config = {
 
 gulp.task('jshint', function() {
     gulp.src(config.source + '/*.js')
+        .pipe($.plumber())
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('clean', del.bind(null, [config.dist, config.example + '/lib']));
+gulp.task('clean', function() {
+    require('del')([config.dist, config.example + '/lib'], true);
+});
 
 gulp.task('uglify', function() {
     gulp.src(config.source + '/*.js')
@@ -73,9 +75,17 @@ gulp.task('open', function() {
     require('opn')(url);
 });
 
+gulp.task('watch', function() {
+    $.watch(config.source + '/*.js', function(files, cb) {
+        gulp.start('dist', cb);
+    });
+});
+
 gulp.task('default', [
+    'dist',
     'connect',
-    'open'
+    'open',
+    'watch'
 ]);
 
 gulp.task('dist', [
@@ -84,14 +94,14 @@ gulp.task('dist', [
     'uglify'
 ]);
 
-gulp.task('patch', function() {
+gulp.task('patch', ['dist'], function() {
     return release('patch');
 });
 
-gulp.task('feature', function() {
+gulp.task('feature', ['dist'], function() {
     return release('minor');
 });
 
-gulp.task('release', function() {
+gulp.task('release', ['dist'], function() {
     return release('major');
 });
