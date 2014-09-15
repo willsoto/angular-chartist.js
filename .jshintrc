@@ -20,6 +20,8 @@
         "document": true,
         "define": true,
         "console": true,
-        "require": true
+        "require": true,
+        "angular": true,
+        "Chartist": true
     }
 }
