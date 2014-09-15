@@ -22,8 +22,10 @@ gulp.task('jshint', function() {
         .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('clean', function() {
-    require('del')([config.dist, config.example + '/lib'], true);
+gulp.task('clean', function(cb) {
+    require('del')([config.dist, config.example + '/lib'], {
+      force: true
+    }, cb);
 });
 
 gulp.task('uglify', ['jshint', 'clean'], function() {
