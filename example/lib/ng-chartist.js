@@ -10,9 +10,9 @@
 
     'use strict';
 
-    var module = angular.module('ngChartist', []);
+    var ngChartist = angular.module('ngChartist', []);
 
-    module.directive('chartist', [
+    ngChartist.directive('chartist', [
 
     function () {
         return {
@@ -34,6 +34,6 @@
         };
     }]);
 
-    return module;
+    return ngChartist;
 
 }));
