@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var tagVersion = require('gulp-tag-version');
+var wrap = require('gulp-wrap-umd');
 
 var config = {
     source: 'src',
@@ -25,8 +26,21 @@ gulp.task('clean', function() {
     require('del')([config.dist, config.example + '/lib'], true);
 });
 
-gulp.task('uglify', function() {
+gulp.task('uglify', ['jshint', 'clean'], function() {
     gulp.src(config.source + '/*.js')
+        .pipe(wrap({
+            exports: 'module',
+            deps: [{
+                name: 'angular',
+                paramName: 'angular',
+                globalName: 'angular'
+            }, {
+                name: 'chartist',
+                paramName: 'Chartist',
+                globalName: 'Chartist'
+            }]
+        }))
+        .pipe($.beautify())
         .pipe(gulp.dest(config.dist))
         .pipe(gulp.dest(config.example + '/lib'))
         .pipe($.uglify())
@@ -89,8 +103,6 @@ gulp.task('default', [
 ]);
 
 gulp.task('dist', [
-    'jshint',
-    'clean',
     'uglify'
 ]);
 
