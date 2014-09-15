@@ -1,9 +1,8 @@
-/* global angular, Chartist */
 'use strict';
 
-angular.module('ngChartist', [])
+var module = angular.module('ngChartist', []);
 
-.directive('chartist', [
+module.directive('chartist', [
     function() {
         return {
             restrict: 'EA',

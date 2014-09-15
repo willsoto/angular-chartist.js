@@ -1,10 +1,20 @@
-/* global angular, Chartist */
-'use strict';
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(["angular", "chartist"], factory);
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('angular'), require('chartist'));
+    } else {
+        root.gulpWrapUmd = factory(root.angular, root.Chartist);
+    }
+}(this, function (angular, Chartist) {
 
-angular.module('ngChartist', [])
+    'use strict';
 
-.directive('chartist', [
-    function() {
+    var module = angular.module('ngChartist', []);
+
+    module.directive('chartist', [
+
+    function () {
         return {
             restrict: 'EA',
             scope: {
@@ -13,7 +23,7 @@ angular.module('ngChartist', [])
                 chartOptions: '=chartistChartOptions',
                 responsiveOptions: '=chartistResponsiveOptions'
             },
-            link: function(scope, element, attrs) {
+            link: function (scope, element, attrs) {
                 var data = scope.data;
                 var type = scope.chartType;
                 var options = scope.chartOptions || null;
@@ -22,5 +32,8 @@ angular.module('ngChartist', [])
                 Chartist[type](element[0], data, options, responsiveOptions);
             }
         };
-    }
-]);
+    }]);
+
+    return module;
+
+}));
