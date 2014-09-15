@@ -7,16 +7,16 @@ ngChartist.directive('chartist', [
         return {
             restrict: 'EA',
             scope: {
-                data: '=chartistData',
+                data: '&chartistData',
                 chartType: '@chartistChartType',
-                chartOptions: '=chartistChartOptions',
-                responsiveOptions: '=chartistResponsiveOptions'
+                chartOptions: '&chartistChartOptions',
+                responsiveOptions: '&chartistResponsiveOptions'
             },
             link: function(scope, element, attrs) {
-                var data = scope.data;
+                var data = scope.data();
                 var type = scope.chartType;
-                var options = scope.chartOptions || null;
-                var responsiveOptions = scope.responsiveOptions || null;
+                var options = scope.chartOptions() || null;
+                var responsiveOptions = scope.responsiveOptions() || null;
 
                 Chartist[type](element[0], data, options, responsiveOptions);
             }
