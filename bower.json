@@ -27,7 +27,7 @@
     "src"
   ],
   "dependencies": {
-    "chartist": "~0.1.11",
+    "chartist": "~0.1.14",
     "angular": "~1.2.23"
   },
   "devDependencies": {
