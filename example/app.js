@@ -4,8 +4,8 @@
 
     var module = angular.module('app', ['ngChartist']);
 
-    module.controller('ChartistExampleCtrl', ['$interval', '$scope',
-        function($interval, $scope) {
+    module.controller('ChartistExampleCtrl', ['$scope', '$interval',
+        function($scope, $interval) {
             // bar chart
             this.barData = {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -39,30 +39,8 @@
             ];
 
             function getRandomInt(min, max) {
-              return Math.floor(Math.random() * (max - min)) + min;
+                return Math.floor(Math.random() * (max - min)) + min;
             }
-
-            var generateData = function(amount, length) {
-                var array = [];
-                length = length || null;
-
-                for (var i = 0; i < amount; i++) {
-                    if (length !== null) {
-
-                    } else {
-                        array.push(getRandomInt(i, i * 2));
-                    }
-                }
-
-                return array;
-            };
-
-            // uncomment these for larger data sets
-            // var data = [];
-
-            // for (var i = 0; i < 5; i++) {
-            //     data.push(generateData(30));
-            // }
 
             // line chart
             this.lineData = {
@@ -95,10 +73,10 @@
             };
 
             function pushLimit(arr, elem, limit) {
-              arr.push(elem);
-              if(arr.length > limit) {
-                arr.splice(0, 1);
-              }
+                arr.push(elem);
+                if (arr.length > limit) {
+                    arr.splice(0, 1);
+                }
             }
 
             // Use $interval to update bar chart data
@@ -112,12 +90,13 @@
                 ].join(':'), 12);
 
                 this.barData.series.forEach(function(series) {
-                  pushLimit(series, getRandomInt(0, 10), 12);
+                    pushLimit(series, getRandomInt(0, 10), 12);
                 });
             }.bind(this), 1000);
+
             // Cancel interval once scope is destroyed
             $scope.$on('$destroy', function() {
-              $interval.cancel(barUpdatePromise);
+                $interval.cancel(barUpdatePromise);
             });
         }
     ]);

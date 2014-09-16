@@ -22,8 +22,9 @@ ngChartist.directive('chartist', [
 
                 // Deeply watch the data and create a new chart if data is updated
                 scope.$watch(scope.data, function(newData) {
-                  chartist.detach();
-                  chartist = Chartist[type](element[0], newData, options, responsiveOptions);
+                    // chartist.detach();
+                    // chartist = Chartist[type](element[0], newData, options, responsiveOptions);
+                    chartist.update();
                 }, true);
             }
         };
