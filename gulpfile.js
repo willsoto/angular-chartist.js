@@ -53,14 +53,6 @@ gulp.task('uglify', ['jshint', 'clean'], function() {
         .pipe(gulp.dest(config.example + '/lib'));
 });
 
-gulp.task('bump', function() {
-    gulp.src(['./bower.json', './package.json'])
-        .pipe($.bump({
-            type: 'patch'
-        }))
-        .pipe(gulp.dest('./'));
-});
-
 var release = function(importance) {
     gulp.src(['./bower.json', './package.json'])
         .pipe($.bump({
