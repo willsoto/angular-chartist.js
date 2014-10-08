@@ -4,7 +4,7 @@
     } else if (typeof exports === 'object') {
         module.exports = factory(require('angular'), require('chartist'));
     } else {
-        root.gulpWrapUmd = factory(root.angular, root.Chartist);
+        root.ngChartist = factory(root.angular, root.Chartist);
     }
 }(this, function (angular, Chartist) {
 

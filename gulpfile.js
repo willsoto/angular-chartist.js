@@ -32,6 +32,7 @@ gulp.task('uglify', ['jshint', 'clean'], function() {
     gulp.src(config.source + '/*.js')
         .pipe(wrap({
             exports: 'ngChartist',
+            namespace: 'ngChartist',
             deps: [{
                 name: 'angular',
                 paramName: 'angular',
