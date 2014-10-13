@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "chartist": "~0.1.14",
-    "angular": "~1.2.23"
+    "angular": "^1.2.23"
   },
   "devDependencies": {
     "bootstrap": "~3.2.0",
