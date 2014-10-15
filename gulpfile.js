@@ -5,21 +5,36 @@ var $ = require('gulp-load-plugins')();
 var tagVersion = require('gulp-tag-version');
 var wrap = require('gulp-wrap-umd');
 
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
+
 var config = {
     source: 'src',
     dist: 'dist',
     example: 'example',
     server: {
-        port: 8000,
+        port: 3000,
         url: 'http://localhost:'
     }
 };
 
-gulp.task('jshint', function() {
-    gulp.src(config.source + '/*.js')
-        .pipe($.plumber())
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish'));
+var release = function(importance) {
+    gulp.src(['./bower.json', './package.json'])
+        .pipe($.bump({
+            type: importance
+        }))
+        .pipe(gulp.dest('./'))
+        .pipe($.git.commit('bumps package version'))
+        .pipe($.filter('bower.json'))
+        .pipe(tagVersion());
+};
+
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: './example'
+        }
+    });
 });
 
 gulp.task('clean', function(cb) {
@@ -28,8 +43,22 @@ gulp.task('clean', function(cb) {
     }, cb);
 });
 
-gulp.task('uglify', ['jshint', 'clean'], function() {
-    gulp.src(config.source + '/*.js')
+gulp.task('jshint', function() {
+    return gulp.src(config.source + '/*.js')
+        .pipe($.plumber())
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('serve', ['browser-sync'], function() {
+    gulp.watch(config.source + '/*.js', [
+        'js',
+        browserSync.reload
+    ]);
+});
+
+gulp.task('js', ['jshint', 'clean'], function() {
+    return gulp.src(config.source + '/*.js')
         .pipe(wrap({
             exports: 'ngChartist',
             namespace: 'ngChartist',
@@ -54,51 +83,13 @@ gulp.task('uglify', ['jshint', 'clean'], function() {
         .pipe(gulp.dest(config.example + '/lib'));
 });
 
-var release = function(importance) {
-    gulp.src(['./bower.json', './package.json'])
-        .pipe($.bump({
-            type: importance
-        }))
-        .pipe(gulp.dest('./'))
-        .pipe($.git.commit('bumps package version'))
-        .pipe($.filter('bower.json'))
-        .pipe(tagVersion());
-};
-
-gulp.task('connect', function() {
-    var connect = require('connect');
-    var serveStatic = require('serve-static');
-    var app = connect()
-        .use(serveStatic(config.example));
-
-    require('http').createServer(app)
-        .listen(config.server.port)
-        .on('listening', function() {
-            console.log('Started connect web server on ' + config.server.url + config.server.port);
-        });
-});
-
-gulp.task('open', function() {
-    var url = config.server.url + config.server.port;
-
-    require('opn')(url);
-});
-
-gulp.task('watch', function() {
-    $.watch(config.source + '/*.js', function(files, cb) {
-        gulp.start('dist', cb);
-    });
-});
-
 gulp.task('default', [
     'dist',
-    'connect',
-    'open',
-    'watch'
+    'serve'
 ]);
 
 gulp.task('dist', [
-    'uglify'
+    'js'
 ]);
 
 gulp.task('patch', ['dist'], function() {

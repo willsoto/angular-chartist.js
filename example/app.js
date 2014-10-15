@@ -6,6 +6,13 @@
 
     module.controller('ChartistExampleCtrl', ['$scope', '$interval',
         function($scope, $interval) {
+
+            this.events = {
+                draw: function() {
+                    console.log('called');
+                }
+            };
+
             // bar chart
             this.barData = {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
