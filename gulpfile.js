@@ -11,11 +11,7 @@ var reload = browserSync.reload;
 var config = {
     source: 'src',
     dist: 'dist',
-    example: 'example',
-    server: {
-        port: 3000,
-        url: 'http://localhost:'
-    }
+    example: 'example'
 };
 
 var release = function(importance) {
