@@ -12,6 +12,12 @@
 
     var ngChartist = angular.module('ngChartist', []);
 
+    var bindEvents = function (chart, events) {
+        Object.keys(events).forEach(function (eventName) {
+            chart.on(eventName, events[eventName]);
+        });
+    };
+
     ngChartist.directive('chartist', [
 
     function () {
@@ -36,17 +42,13 @@
 
                 var chart = Chartist[type](element[0], data, options, responsiveOptions);
 
-                Object.keys(events).forEach(function (eventName) {
-                    chart.on(eventName, events[eventName]);
-                });
+                bindEvents(chart, events);
 
                 // Deeply watch the data and create a new chart if data is updated
                 scope.$watch(scope.data, function (newData) {
-                    if (chart.detach) {
-                        chart.detach();
-                    }
-
+                    chart.detach();
                     chart = Chartist[type](element[0], newData, options, responsiveOptions);
+                    bindEvents(chart, events);
                 }, true);
             }
         };
