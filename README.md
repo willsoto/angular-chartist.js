@@ -32,10 +32,19 @@ All attributes are namespaced under `chartist`
 
 Possible attributes:
 
-1. `chartist-data` (required)
-2. `chartist-chart-type` (required): The chart type should start with a capital letter
-3. `chartist-chart-options` (optional)
-4. `chartist-responsive-options` (optional)
+- `chartist-data` (required)
+- `chartist-chart-type` (required): The chart type should start with a capital letter
+- `chartist-events` (optional): An object containing `key:value` pairs in the following format:
+```js
+{
+  event: function eventHandler() {
+    // do stuff on event
+  }
+}
+```
+- `chartist-chart-options` (optional)
+- `chartist-responsive-options` (optional)
+
 
 For the sorts of values these options accept, check out the [Chartist.js docs](http://gionkunz.github.io/chartist-js/api-documentation.html)
 
