@@ -1,6 +1,6 @@
 # ng-chartist.js
 
-Angular directive for Chartist.js
+Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
 ## Installation
 
