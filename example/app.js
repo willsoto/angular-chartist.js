@@ -8,8 +8,8 @@
         function($scope, $interval) {
 
             this.events = {
-                draw: function() {
-                    console.log('called');
+                draw: function(obj) {
+                    // do stuff
                 }
             };
 
