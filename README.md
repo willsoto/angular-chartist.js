@@ -37,7 +37,7 @@ Possible attributes:
 - `chartist-events` (optional): An object containing `key:value` pairs in the following format:
 ```js
 {
-  event: function eventHandler() {
+  event: function eventHandler(obj) {
     // do stuff on event
   }
 }
