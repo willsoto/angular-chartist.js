@@ -16,7 +16,7 @@ Make sure you have loaded the necessary scripts in the correct order.
 Add `ngChartist` as a module dependency, like so:
 
 ```js
-var module = angular.module('app', ['ngChartist']);
+var app = angular.module('app', ['ngChartist']);
 ```
 
 In your HTML, add the `chartist` directive to any `div` or make it a custom element:
