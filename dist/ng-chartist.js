@@ -45,10 +45,14 @@
                 bindEvents(chart, events);
 
                 // Deeply watch the data and create a new chart if data is updated
-                scope.$watch(scope.data, function (newData) {
-                    chart.detach();
-                    chart = Chartist[type](element[0], newData, options, responsiveOptions);
-                    bindEvents(chart, events);
+                scope.$watch(scope.data, function (newData, oldData) {
+                    // Avoid initializing the chart twice,
+                    // fix 'TypeError: Cannot read property 'removeMediaQueryListeners' of undefined' as well
+                    if (newData !== oldData) {
+                        chart.detach();
+                        chart = Chartist[type](element[0], newData, options, responsiveOptions);
+                        bindEvents(chart, events);
+                    }
                 }, true);
             }
         };
