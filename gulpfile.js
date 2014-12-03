@@ -8,6 +8,9 @@ var wrap = require('gulp-wrap-umd');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
+var fs = require('fs');
+var changelog = require('conventional-changelog');
+
 var config = {
     source: 'src',
     dist: 'dist',
@@ -30,6 +33,25 @@ gulp.task('browser-sync', function() {
         server: {
             baseDir: './example'
         }
+    });
+});
+
+gulp.task('changelog', function(done) {
+    function changeParsed(err, log) {
+        if (err) {
+            return done(err);
+        }
+        fs.writeFile('CHANGELOG.md', log, done);
+    }
+    fs.readFile('./package.json', 'utf8', function(err, data) {
+        var ref$ = JSON.parse(data);
+        var repository = ref$.repository;
+        var version = ref$.version;
+
+        changelog({
+            repository: repository.url,
+            version: version
+        }, changeParsed);
     });
 });
 
