@@ -1,6 +1,6 @@
 'use strict';
 
-var ngChartist = angular.module('ngChartist', []);
+var angularChartist = angular.module('angular-chartist', []);
 
 var bindEvents = function(chart, events) {
     Object.keys(events).forEach(function(eventName) {
@@ -8,7 +8,7 @@ var bindEvents = function(chart, events) {
     });
 };
 
-ngChartist.directive('chartist', [
+angularChartist.directive('chartist', [
     function() {
         return {
             restrict: 'EA',
@@ -35,8 +35,7 @@ ngChartist.directive('chartist', [
 
                 // Deeply watch the data and create a new chart if data is updated
                 scope.$watch(scope.data, function(newData, oldData) {
-                    // Avoid initializing the chart twice,
-                    // fix 'TypeError: Cannot read property 'removeMediaQueryListeners' of undefined' as well
+                    // Avoid initializing the chart twice
                     if (newData !== oldData) {
                         chart.detach();
                         chart = Chartist[type](element[0], newData, options, responsiveOptions);

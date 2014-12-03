@@ -4,13 +4,13 @@
     } else if (typeof exports === 'object') {
         module.exports = factory(require('angular'), require('chartist'));
     } else {
-        root.ngChartist = factory(root.angular, root.Chartist);
+        root.angularChartist = factory(root.angular, root.Chartist);
     }
 }(this, function (angular, Chartist) {
 
     'use strict';
 
-    var ngChartist = angular.module('ngChartist', []);
+    var angularChartist = angular.module('angular-chartist', []);
 
     var bindEvents = function (chart, events) {
         Object.keys(events).forEach(function (eventName) {
@@ -18,7 +18,7 @@
         });
     };
 
-    ngChartist.directive('chartist', [
+    angularChartist.directive('chartist', [
 
     function () {
         return {
@@ -46,8 +46,7 @@
 
                 // Deeply watch the data and create a new chart if data is updated
                 scope.$watch(scope.data, function (newData, oldData) {
-                    // Avoid initializing the chart twice,
-                    // fix 'TypeError: Cannot read property 'removeMediaQueryListeners' of undefined' as well
+                    // Avoid initializing the chart twice
                     if (newData !== oldData) {
                         chart.detach();
                         chart = Chartist[type](element[0], newData, options, responsiveOptions);
@@ -58,6 +57,6 @@
         };
     }]);
 
-    return ngChartist;
+    return angularChartist;
 
 }));

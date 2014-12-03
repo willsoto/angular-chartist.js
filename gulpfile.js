@@ -78,8 +78,8 @@ gulp.task('serve', ['browser-sync'], function() {
 gulp.task('js', ['jshint', 'clean'], function() {
     return gulp.src(config.source + '/*.js')
         .pipe(wrap({
-            exports: 'ngChartist',
-            namespace: 'ngChartist',
+            exports: 'angularChartist',
+            namespace: 'angularChartist',
             deps: [{
                 name: 'angular',
                 paramName: 'angular',

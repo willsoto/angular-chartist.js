@@ -13,11 +13,13 @@ bower install ng-chartistjs --save
 ## Usage
 
 Make sure you have loaded the necessary scripts in the correct order.
-Add `ngChartist` as a module dependency, like so:
+Add `angular-chartist` as a module dependency, like so:
 
 ```js
-var app = angular.module('app', ['ngChartist']);
+var app = angular.module('app', ['angular-chartist']);
 ```
+
+> Please note: if you were using this prior to 2.0, the module name was `ngChartist`.
 
 In your HTML, add the `chartist` directive to any `div` or make it a custom element:
 

@@ -2,7 +2,7 @@
 (function(angular) {
     'use strict';
 
-    var module = angular.module('app', ['ngChartist']);
+    var module = angular.module('app', ['angular-chartist']);
 
     module.controller('ChartistExampleCtrl', ['$scope', '$interval',
         function($scope, $interval) {
