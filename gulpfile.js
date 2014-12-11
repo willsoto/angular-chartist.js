@@ -102,7 +102,7 @@ gulp.task('js', ['jshint', 'clean'], function() {
 });
 
 gulp.task('default', [
-    'dist',
+    'js',
     'serve'
 ]);
 
