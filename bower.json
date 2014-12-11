@@ -7,7 +7,7 @@
   "description": "Angular directive that wraps chartist.js",
   "main": "dist/ng-chartist.js",
   "moduleType": [
-    "amd",
+    "umd",
     "globals"
   ],
   "keywords": [
