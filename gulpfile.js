@@ -107,8 +107,8 @@ gulp.task('default', [
 ]);
 
 gulp.task('dist', [
-    'js',
-    'changelog'
+    'js'
+    // 'changelog'
 ]);
 
 gulp.task('patch', ['dist'], function() {
