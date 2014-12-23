@@ -22,6 +22,11 @@
         "console": true,
         "require": true,
         "angular": true,
-        "Chartist": true
+        "Chartist": true,
+        "describe": true,
+        "beforeEach": true,
+        "it": true,
+        "expect": true,
+        "inject": true
     }
 }

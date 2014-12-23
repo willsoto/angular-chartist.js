@@ -4,9 +4,9 @@ module.exports = function(config) {
     config.set({
         basePath: '',
         files: [
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            'bower_components/chartist/dist/chartist.js',
+            'example/bower_components/angular/angular.js',
+            'example/bower_components/angular-mocks/angular-mocks.js',
+            'example/bower_components/chartist/dist/chartist.js',
             'src/ng-chartist.js',
             'test/angular-chartist.spec.js'
         ],

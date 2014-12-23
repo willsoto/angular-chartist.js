@@ -11,6 +11,9 @@ var reload = browserSync.reload;
 var fs = require('fs');
 var changelog = require('conventional-changelog');
 
+// testing
+var karma = require('karma').server;
+
 var config = {
     source: 'src',
     dist: 'dist',
@@ -99,6 +102,13 @@ gulp.task('js', ['jshint', 'clean'], function() {
         }))
         .pipe(gulp.dest(config.dist))
         .pipe(gulp.dest(config.example + '/lib'));
+});
+
+gulp.task('test', function(done) {
+    karma.start({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done);
 });
 
 gulp.task('default', [
