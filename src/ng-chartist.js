@@ -8,6 +8,10 @@ var bindEvents = function(chart, events) {
     });
 };
 
+var renderChart = function(type, element, data, options, responsiveOptions) {
+    return Chartist[type](element, data, options, responsiveOptions);
+};
+
 angularChartist.directive('chartist', [
     function() {
         return {
@@ -29,7 +33,9 @@ angularChartist.directive('chartist', [
                 var options = scope.chartOptions() || null;
                 var responsiveOptions = scope.responsiveOptions() || null;
 
-                var chart = Chartist[type](element[0], data, options, responsiveOptions);
+                var elm = element[0];
+
+                var chart = renderChart(type, elm, data, options, responsiveOptions);
 
                 bindEvents(chart, events);
 
@@ -38,7 +44,7 @@ angularChartist.directive('chartist', [
                     // Avoid initializing the chart twice
                     if (newData !== oldData) {
                         chart.detach();
-                        chart = Chartist[type](element[0], newData, options, responsiveOptions);
+                        chart = renderChart(type, elm, data, options, responsiveOptions);
                         bindEvents(chart, events);
                     }
                 }, true);
