@@ -60,7 +60,7 @@ gulp.task('changelog', function(done) {
 
 gulp.task('clean', function(cb) {
     require('del')([config.dist, config.example + '/lib'], {
-      force: true
+        force: true
     }, cb);
 });
 
