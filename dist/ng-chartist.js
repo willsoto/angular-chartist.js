@@ -12,14 +12,23 @@
 
     var angularChartist = angular.module('angular-chartist', []);
 
-    var bindEvents = function (chart, events) {
-        Object.keys(events).forEach(function (eventName) {
-            chart.on(eventName, events[eventName]);
-        });
+    function AngularChartistCtrl($scope) {
+        this.data = $scope.data();
+        this.chartType = $scope.chartType;
+
+        this.events = $scope.events() || {};
+        this.options = $scope.chartOptions() || null;
+        this.responsiveOptions = $scope.responsiveOptions() || null;
+    }
+
+    AngularChartistCtrl.prototype.bindEvents = function (chart) {
+        Object.keys(this.events).forEach(function (eventName) {
+            chart.on(eventName, this.events[eventName]);
+        }, this);
     };
 
-    var renderChart = function (type, element, data, options, responsiveOptions) {
-        return Chartist[type](element, data, options, responsiveOptions);
+    AngularChartistCtrl.prototype.renderChart = function (element) {
+        return Chartist[this.chartType](element, this.data, this.options, this.responsiveOptions);
     };
 
     angularChartist.directive('chartist', [
@@ -36,27 +45,20 @@
                 chartOptions: '&chartistChartOptions',
                 responsiveOptions: '&chartistResponsiveOptions'
             },
-            link: function (scope, element, attrs) {
-                var data = scope.data();
-                var type = scope.chartType;
-
-                var events = scope.events() || {};
-                var options = scope.chartOptions() || null;
-                var responsiveOptions = scope.responsiveOptions() || null;
-
+            controller: ['$scope', AngularChartistCtrl],
+            link: function (scope, element, attrs, Ctrl) {
                 var elm = element[0];
+                var chart = Ctrl.renderChart(elm);
 
-                var chart = renderChart(type, elm, data, options, responsiveOptions);
-
-                bindEvents(chart, events);
+                Ctrl.bindEvents(chart);
 
                 // Deeply watch the data and create a new chart if data is updated
                 scope.$watch(scope.data, function (newData, oldData) {
                     // Avoid initializing the chart twice
                     if (newData !== oldData) {
                         chart.detach();
-                        chart = renderChart(type, elm, data, options, responsiveOptions);
-                        bindEvents(chart, events);
+                        chart = Ctrl.renderChart(elm);
+                        Ctrl.bindEvents(chart);
                     }
                 }, true);
             }
