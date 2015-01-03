@@ -1,7 +1,7 @@
 # angular-chartist.js
 
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://npmjs.org/package/gulp-angular-templatecache)
-[![Bower Version](https://img.shields.io/bower/v/bootstrap.svg?style=flat)](https://github.com/paradox41/ng-chartist.js)
+[![Bower Version](https://img.shields.io/bower/v/ng-chartistjs.svg?style=flat)](https://github.com/paradox41/ng-chartist.js)
 
 Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
