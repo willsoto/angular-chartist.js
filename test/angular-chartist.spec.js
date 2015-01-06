@@ -1,7 +1,7 @@
 'use strict';
 
 describe('angular-chartist', function() {
-    var scope, $rootScope, $compile;
+    var $rootScope, $compile;
 
     beforeEach(module('angular-chartist'));
 
