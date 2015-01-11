@@ -1,14 +1,14 @@
 {
-  "name": "ng-chartistjs",
+  "name": "angular-chartist.js",
   "version": "2.0.3",
-  "description": "Angular directive that wraps chartist.js",
+  "description": "Angular directive for Chartist.js",
   "main": "dist/ng-chartist.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/paradox41/ng-chartistjs"
+    "url": "https://github.com/paradox41/angular-chartist.js"
   },
   "keywords": [
     "angular",
@@ -18,9 +18,9 @@
   "author": "Will",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/paradox41/ng-chartistjs/issues"
+    "url": "https://github.com/paradox41/angular-chartist.js/issues"
   },
-  "homepage": "https://github.com/paradox41/ng-chartistjs",
+  "homepage": "https://github.com/paradox41/angular-chartist.js",
   "devDependencies": {
     "browser-sync": "^1.5.7",
     "chai": "^1.10.0",
