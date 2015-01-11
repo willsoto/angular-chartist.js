@@ -5,6 +5,8 @@
 
 Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
+*Formerly known as ng-chartist.js*
+
 ## Installation
 
 Install via `bower`
