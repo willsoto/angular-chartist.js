@@ -12,7 +12,7 @@ Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 Install via `bower`
 
 ```
-bower install ng-chartistjs --save
+bower install angular-chartist.js --save
 ```
 
 ## Usage
