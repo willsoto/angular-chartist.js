@@ -15,6 +15,12 @@ Install via `bower`
 bower install angular-chartist.js --save
 ```
 
+Install via `npm`
+
+```
+npm install angular-chartist.js --save
+```
+
 ## Usage
 
 Make sure you have loaded the necessary scripts in the correct order.
