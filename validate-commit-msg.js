@@ -4,9 +4,6 @@
  * Git COMMIT-MSG hook for validating commit message
  * See https://docs.google.com/document/d/1rk04jEuGfk9kYzfqCuOlPTSJw3hEDZJTBN5E5f1SALo/edit
  *
- * Installation:
- * >> cd <angular-repo>
- * >> ln -s ../../validate-commit-msg.js .git/hooks/commit-msg
  */
 
  // borrowed from angular.js

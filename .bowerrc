@@ -1,3 +1,6 @@
 {
-    "directory": "example/bower_components"
+    "directory": "example/bower_components",
+    "scripts": {
+        "postinstall": "gulp enforce"
+    }
 }
