@@ -27,7 +27,11 @@
         }, this);
     };
 
-    AngularChartistCtrl.prototype.renderChart = function (element) {
+    AngularChartistCtrl.prototype.renderChart = function (element, chartType) {
+        if (chartType) {
+            this.chartType = chartType;
+        }
+
         return Chartist[this.chartType](element, this.data, this.options, this.responsiveOptions);
     };
 
@@ -53,11 +57,22 @@
                 Ctrl.bindEvents(chart);
 
                 // Deeply watch the data and create a new chart if data is updated
-                scope.$watch(scope.data, function (newData, oldData) {
+                scope.$watchGroup(['data', 'chartType'], function (newDataArray, oldDataArray) {
+                    // new data object
+                    var newData = newDataArray[0];
+                    var oldData = oldDataArray[0];
+
+                    // new chart type
+                    var newChartType = newDataArray[1];
+                    var oldChartType = oldDataArray[1];
+
                     // Avoid initializing the chart twice
                     if (newData !== oldData) {
                         chart.update(newData);
+                    } else if (newChartType !== oldChartType) {
+                        chart = Ctrl.renderChart(elm, newChartType);
                     }
+
                 }, true);
             }
         };
