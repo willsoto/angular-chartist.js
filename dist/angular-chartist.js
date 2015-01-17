@@ -56,9 +56,7 @@
                 scope.$watch(scope.data, function (newData, oldData) {
                     // Avoid initializing the chart twice
                     if (newData !== oldData) {
-                        chart.detach();
-                        chart = Ctrl.renderChart(elm);
-                        Ctrl.bindEvents(chart);
+                        chart.update(newData);
                     }
                 }, true);
             }
