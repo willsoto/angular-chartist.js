@@ -23,7 +23,7 @@ module.exports = function(config) {
 
         captureTimeout: 60000,
 
-        autoWatch: true,
-        singleRun: false
+        autoWatch: false,
+        singleRun: true
     });
 };

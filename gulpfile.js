@@ -119,8 +119,7 @@ gulp.task('js', ['jshint', 'clean'], function() {
 
 gulp.task('test', function(done) {
     karma.start({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true
+        configFile: __dirname + '/karma.conf.js'
     }, done);
 });
 
@@ -131,17 +130,16 @@ gulp.task('default', [
 
 gulp.task('dist', [
     'js'
-    // 'changelog'
 ]);
 
-gulp.task('patch', ['dist'], function() {
+gulp.task('patch', ['dist', 'changelog'], function() {
     return release('patch');
 });
 
-gulp.task('feature', ['dist'], function() {
+gulp.task('feature', ['dist', 'changelog'], function() {
     return release('minor');
 });
 
-gulp.task('release', ['dist'], function() {
+gulp.task('release', ['dist', 'changelog'], function() {
     return release('major');
 });
