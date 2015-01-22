@@ -26,7 +26,7 @@ var release = function(importance) {
             type: importance
         }))
         .pipe(gulp.dest('./'))
-        .pipe($.git.commit('bumps package version'))
+        .pipe($.git.commit('chore: bumps package version'))
         .pipe($.filter('bower.json'))
         .pipe(tagVersion());
 };
