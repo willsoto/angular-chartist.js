@@ -50,13 +50,16 @@ angularChartist.directive('chartist', [
                 Ctrl.bindEvents(chart);
 
                 scope.$watch(function() {
-                    return [scope.data(), scope.chartType];
+                    return {
+                        data: scope.data(),
+                        chartType: scope.chartType
+                    };
                 }, function(newConfig, oldConfig) {
-                    var newData = newConfig[0];
-                    var oldData = oldConfig[0];
+                    var newData = newConfig.data;
+                    var oldData = oldConfig.data;
 
-                    var newChartType = newConfig[1];
-                    var oldChartType = oldConfig[1];
+                    var newChartType = newConfig.chartType;
+                    var oldChartType = oldConfig.chartType;
 
                     if (newData !== oldData) {
                         chart.update(newData);
