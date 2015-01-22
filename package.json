@@ -1,6 +1,6 @@
 {
   "name": "angular-chartist.js",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "Angular directive for Chartist.js",
   "main": "dist/ng-chartist.js",
   "scripts": {
