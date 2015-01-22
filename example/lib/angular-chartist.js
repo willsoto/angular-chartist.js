@@ -56,18 +56,23 @@
 
                 Ctrl.bindEvents(chart);
 
-                scope.$watch(scope.data, function (newData, oldData) {
-                    // Avoid initializing the chart twice
+                scope.$watch(function () {
+                    return [scope.data(), scope.chartType];
+                }, function (newConfig, oldConfig) {
+                    var newData = newConfig[0];
+                    var oldData = oldConfig[0];
+
+                    var newChartType = newConfig[1];
+                    var oldChartType = oldConfig[1];
+
                     if (newData !== oldData) {
                         chart.update(newData);
                     }
-                }, true);
 
-                scope.$watch('chartType', function (newChartType, oldChartType) {
                     if (newChartType !== oldChartType) {
                         chart = Ctrl.renderChart(elm, newChartType);
                     }
-                });
+                }, true);
             }
         };
     }]);
