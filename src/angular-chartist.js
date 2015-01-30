@@ -52,17 +52,25 @@ angularChartist.directive('chartist', [
                 scope.$watch(function() {
                     return {
                         data: scope.data(),
+                        chartOptions: scope.chartOptions() || null,
                         chartType: scope.chartType
                     };
                 }, function(newConfig, oldConfig) {
                     var newData = newConfig.data;
                     var oldData = oldConfig.data;
 
+                    var newOptions = newConfig.chartOptions;
+                    var oldOptions = oldConfig.chartOptions;
+
                     var newChartType = newConfig.chartType;
                     var oldChartType = oldConfig.chartType;
 
                     if (newData !== oldData) {
                         chart.update(newData);
+                    }
+
+                    if (newOptions !== oldOptions) {
+                        chart.update(undefined, newOptions, true);
                     }
 
                     if (newChartType !== oldChartType) {
