@@ -5,7 +5,7 @@
     "will@intandem.io"
   ],
   "description": "Angular directive for Chartist.js",
-  "main": "dist/ng-chartist.js",
+  "main": "dist/angular-chartist.js",
   "moduleType": [
     "umd",
     "globals"
