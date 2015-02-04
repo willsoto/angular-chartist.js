@@ -1,3 +1,11 @@
+## 3.0.0 (2015-02-04)
+
+
+#### Bug Fixes
+
+* **package.json:** Fix location of main ([469a7ed7](https://github.com/paradox41/angular-chartist.js/commit/469a7ed7d80d166dbd9f288ee16fd1c73e9df0ff))
+
+
 ## 3.0.0 (2015-01-22)
 
 #### Bug Fixes
