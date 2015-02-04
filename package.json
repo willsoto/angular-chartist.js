@@ -2,7 +2,7 @@
   "name": "angular-chartist.js",
   "version": "3.0.0",
   "description": "Angular directive for Chartist.js",
-  "main": "dist/ng-chartist.js",
+  "main": "dist/angular-chartist.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
