@@ -17,12 +17,9 @@ AngularChartistCtrl.prototype.bindEvents = function(chart) {
     }, this);
 };
 
-AngularChartistCtrl.prototype.renderChart = function(element, chartType, chartOptions) {
+AngularChartistCtrl.prototype.renderChart = function(element, chartType) {
     if (chartType) {
         this.chartType = chartType;
-    }
-    if (chartOptions) {
-        this.chartOptions = chartOptions;
     }
 
     return Chartist[this.chartType](element, this.data, this.options, this.responsiveOptions);
@@ -68,11 +65,11 @@ angularChartist.directive('chartist', [
                     var newChartOptions = newConfig.chartOptions;
                     var oldChartOptions = oldConfig.chartOptions;
 
-                    if (newData !== oldData) {
-                        chart.update(newData);
+                    if (newData !== oldData || newChartOptions !== oldChartOptions) {
+                        chart.update(newData, newChartOptions, true);
                     }
 
-                    if (newChartType !== oldChartType || newChartOptions !== oldChartOptions) {
+                    if (newChartType !== oldChartType) {
                         chart = Ctrl.renderChart(elm, newChartType, newChartOptions);
                     }
                 }, true);
