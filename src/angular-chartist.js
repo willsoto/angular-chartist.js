@@ -70,7 +70,7 @@ angularChartist.directive('chartist', [
                     }
 
                     if (newChartType !== oldChartType) {
-                        chart = Ctrl.renderChart(elm, newChartType, newChartOptions);
+                        chart = Ctrl.renderChart(elm, newChartType);
                     }
                 }, true);
             }
