@@ -2,13 +2,13 @@ module.exports = function(config) {
     'use strict';
 
     config.set({
-        basePath: '',
         files: [
+            'example/bower_components/jquery/dist/jquery.js',
+            'example/bower_components/chartist/dist/chartist.js',
             'example/bower_components/angular/angular.js',
             'example/bower_components/angular-mocks/angular-mocks.js',
-            'example/bower_components/chartist/dist/chartist.js',
-            'src/ng-chartist.js',
-            'test/angular-chartist.spec.js'
+            'src/*.js',
+            'spec/*.js'
         ],
 
         reporters: ['progress'],
