@@ -1,3 +1,4 @@
+/* global angular, Chartist */
 'use strict';
 
 var angularChartist = angular.module('angular-chartist', []);
@@ -26,7 +27,6 @@ AngularChartistCtrl.prototype.renderChart = function(element, chartType) {
 };
 
 angularChartist.directive('chartist', [
-
     function() {
         return {
             restrict: 'EA',

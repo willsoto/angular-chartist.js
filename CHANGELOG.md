@@ -1,3 +1,17 @@
+### 3.0.3 (2015-02-17)
+
+#### Bug Fixes
+
+* **bower:** Fix location of main ([ec5210b3](https://github.com/paradox41/angular-chartist.js/commit/ec5210b379efecc0ed276727068599c14f866358))
+
+
+#### Features
+
+* **angular-chartist:**
+  * Rerender chart on options change ([af7b6fdf](https://github.com/paradox41/angular-chartist.js/commit/af7b6fdf9f6cf2eaf00f46ac7bc999f2a5fcdf72))
+  * Rerender chart on options change ([1815bf76](https://github.com/paradox41/angular-chartist.js/commit/1815bf76b222499c9f8da14e70138e8970f6628a))
+
+
 ### 3.0.1 (2015-02-08)
 
 

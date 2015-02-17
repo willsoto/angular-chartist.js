@@ -8,6 +8,7 @@
     }
 }(this, function (angular, Chartist) {
 
+    /* global angular, Chartist */
     'use strict';
 
     var angularChartist = angular.module('angular-chartist', []);
@@ -59,7 +60,8 @@
                 scope.$watch(function () {
                     return {
                         data: scope.data(),
-                        chartType: scope.chartType
+                        chartType: scope.chartType,
+                        chartOptions: scope.chartOptions()
                     };
                 }, function (newConfig, oldConfig) {
                     var newData = newConfig.data;
@@ -68,8 +70,11 @@
                     var newChartType = newConfig.chartType;
                     var oldChartType = oldConfig.chartType;
 
-                    if (newData !== oldData) {
-                        chart.update(newData);
+                    var newChartOptions = newConfig.chartOptions;
+                    var oldChartOptions = oldConfig.chartOptions;
+
+                    if (newData !== oldData || newChartOptions !== oldChartOptions) {
+                        chart.update(newData, newChartOptions, true);
                     }
 
                     if (newChartType !== oldChartType) {
