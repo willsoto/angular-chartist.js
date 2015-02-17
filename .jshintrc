@@ -21,8 +21,6 @@
         "define": true,
         "console": true,
         "require": true,
-        "angular": true,
-        "Chartist": true,
         "describe": true,
         "beforeEach": true,
         "it": true,
