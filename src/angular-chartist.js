@@ -73,6 +73,10 @@ angularChartist.directive('chartist', [
                         chart = Ctrl.renderChart(elm, newChartType);
                     }
                 }, true);
+
+                scope.$on('$destory', function() {
+                    chart.detach();
+                });
             }
         };
     }
