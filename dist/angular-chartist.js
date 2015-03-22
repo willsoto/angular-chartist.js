@@ -82,7 +82,8 @@
                     }
                 }, true);
 
-                scope.$on('$destory', function () {
+                scope.$on('$destroy', function () {
+                    debugger;
                     chart.detach();
                 });
             }

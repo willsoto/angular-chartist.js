@@ -74,7 +74,7 @@ angularChartist.directive('chartist', [
                     }
                 }, true);
 
-                scope.$on('$destory', function() {
+                scope.$on('$destroy', function() {
                     chart.detach();
                 });
             }
