@@ -20,11 +20,7 @@ AngularChartistCtrl.prototype.bindEvents = function(chart) {
     }, this);
 };
 
-AngularChartistCtrl.prototype.renderChart = function(element, chartType) {
-    if (chartType) {
-        this.chartType = chartType;
-    }
-
+AngularChartistCtrl.prototype.renderChart = function(element) {
     return Chartist[this.chartType](element, this.data, this.options, this.responsiveOptions);
 };
 
@@ -55,21 +51,16 @@ angularChartist.directive('chartist', [
                         chartOptions: scope.chartOptions()
                     };
                 }, function(newConfig, oldConfig) {
-                    var newData = newConfig.data;
-                    var oldData = oldConfig.data;
+                    // Update controller with new configuration
+                    Ctrl.chartType = newConfig.chartType;
+                    Ctrl.data = newConfig.data;
+                    Ctrl.options = newConfig.chartOptions;
 
-                    var newChartType = newConfig.chartType;
-                    var oldChartType = oldConfig.chartType;
-
-                    var newChartOptions = newConfig.chartOptions;
-                    var oldChartOptions = oldConfig.chartOptions;
-
-                    if (newData !== oldData || newChartOptions !== oldChartOptions) {
-                        chart.update(newData, newChartOptions, true);
-                    }
-
-                    if (newChartType !== oldChartType) {
-                        chart = Ctrl.renderChart(elm, newChartType);
+                    // If chart type changed we need to recreate whole chart, otherwise we can update
+                    if (newConfig.chartType !== oldConfig.chartType) {
+                        chart = Ctrl.renderChart(elm);
+                    } else {
+                        chart.update(Ctrl.data, Ctrl.options);
                     }
                 }, true);
 
