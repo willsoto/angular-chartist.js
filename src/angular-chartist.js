@@ -12,6 +12,8 @@ function AngularChartistCtrl($scope) {
     this.responsiveOptions = $scope.responsiveOptions() || null;
 }
 
+AngularChartistCtrl.$inject = ['$scope'];
+
 AngularChartistCtrl.prototype.bindEvents = function(chart) {
     Object.keys(this.events).forEach(function(eventName) {
         chart.on(eventName, this.events[eventName]);
@@ -39,10 +41,7 @@ angularChartist.directive('chartist', [
                 chartOptions: '&chartistChartOptions',
                 responsiveOptions: '&chartistResponsiveOptions'
             },
-            controller: [
-                '$scope',
-                AngularChartistCtrl
-            ],
+            controller: AngularChartistCtrl,
             link: function(scope, element, attrs, Ctrl) {
                 var elm = element[0];
                 var chart = Ctrl.renderChart(elm);
