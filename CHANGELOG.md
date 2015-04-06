@@ -1,3 +1,14 @@
+### 3.1.0 (2015-04-06)
+
+
+#### Bug Fixes
+
+* **angular-chartist:**
+  * Fixed issue with update and recreation performed in sequence ([b30f505a](https://github.com/paradox41/angular-chartist.js/commit/b30f505a6dda3e568b1eff46b1a83e6350756e6e))
+  * Fix typo ([7f17e7ec](https://github.com/paradox41/angular-chartist.js/commit/7f17e7ec31813eb71d5e52d2872a0b2b8f97e7e1))
+  * Call detach on ([9529e630](https://github.com/paradox41/angular-chartist.js/commit/9529e6308be42487378880329eef669fc61894cd), closes [#40](https://github.com/paradox41/angular-chartist.js/issues/40))
+
+
 ### 3.0.3 (2015-02-17)
 
 #### Bug Fixes
