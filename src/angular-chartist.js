@@ -12,17 +12,15 @@ function AngularChartistCtrl($scope) {
     this.responsiveOptions = $scope.responsiveOptions() || null;
 }
 
+AngularChartistCtrl.$inject = ['$scope'];
+
 AngularChartistCtrl.prototype.bindEvents = function(chart) {
     Object.keys(this.events).forEach(function(eventName) {
         chart.on(eventName, this.events[eventName]);
     }, this);
 };
 
-AngularChartistCtrl.prototype.renderChart = function(element, chartType) {
-    if (chartType) {
-        this.chartType = chartType;
-    }
-
+AngularChartistCtrl.prototype.renderChart = function(element) {
     return Chartist[this.chartType](element, this.data, this.options, this.responsiveOptions);
 };
 
@@ -39,10 +37,7 @@ angularChartist.directive('chartist', [
                 chartOptions: '&chartistChartOptions',
                 responsiveOptions: '&chartistResponsiveOptions'
             },
-            controller: [
-                '$scope',
-                AngularChartistCtrl
-            ],
+            controller: AngularChartistCtrl,
             link: function(scope, element, attrs, Ctrl) {
                 var elm = element[0];
                 var chart = Ctrl.renderChart(elm);
@@ -56,21 +51,16 @@ angularChartist.directive('chartist', [
                         chartOptions: scope.chartOptions()
                     };
                 }, function(newConfig, oldConfig) {
-                    var newData = newConfig.data;
-                    var oldData = oldConfig.data;
+                    // Update controller with new configuration
+                    Ctrl.chartType = newConfig.chartType;
+                    Ctrl.data = newConfig.data;
+                    Ctrl.options = newConfig.chartOptions;
 
-                    var newChartType = newConfig.chartType;
-                    var oldChartType = oldConfig.chartType;
-
-                    var newChartOptions = newConfig.chartOptions;
-                    var oldChartOptions = oldConfig.chartOptions;
-
-                    if (newData !== oldData || newChartOptions !== oldChartOptions) {
-                        chart.update(newData, newChartOptions, true);
-                    }
-
-                    if (newChartType !== oldChartType) {
-                        chart = Ctrl.renderChart(elm, newChartType);
+                    // If chart type changed we need to recreate whole chart, otherwise we can update
+                    if (newConfig.chartType !== oldConfig.chartType) {
+                        chart = Ctrl.renderChart(elm);
+                    } else {
+                        chart.update(Ctrl.data, Ctrl.options);
                     }
                 }, true);
 
