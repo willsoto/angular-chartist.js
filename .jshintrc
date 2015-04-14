@@ -23,6 +23,7 @@
         "require": true,
         "describe": true,
         "beforeEach": true,
+        "afterEach": true,
         "it": true,
         "expect": true,
         "inject": true
