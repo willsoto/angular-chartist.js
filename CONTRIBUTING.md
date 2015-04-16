@@ -12,4 +12,4 @@
 
 # Commit Conventions
 
-Use [Conventional Changelog](https://github.com/ajoslin/conventional-changelog).
+Use [Conventional Changelog](https://github.com/ajoslin/conventional-changelog/blob/master/CONVENTIONS.md).
