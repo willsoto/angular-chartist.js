@@ -129,6 +129,8 @@ gulp.task('default', [
 ]);
 
 gulp.task('dist', [
+    'test',
+    'jshint',
     'js'
 ]);
 

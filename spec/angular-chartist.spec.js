@@ -55,9 +55,9 @@ describe('angular-chartist', function() {
         return $element;
     }
 
-    it('should contain a single svg element at the root level', function() {
-        var elm = compileDirective();
-        console.log(elm);
-        // expect(elm.children()).to.have.length(1);
-    });
+    // it('should contain a single svg element at the root level', function() {
+    //     var elm = compileDirective();
+    //     console.log(elm);
+    //     // expect(elm.children()).to.have.length(1);
+    // });
 });
