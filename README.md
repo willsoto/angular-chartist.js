@@ -4,6 +4,7 @@
 [![Bower Version](https://img.shields.io/bower/v/ng-chartistjs.svg?style=flat)](https://github.com/paradox41/angular-chartist.js)
 [![npm Version](https://img.shields.io/npm/v/angular-chartist.js.svg?style=flat)](https://github.com/paradox41/angular-chartist.js)
 [![npm installs](https://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat)](https://github.com/paradox41/angular-chartist.js)
+[![Travis CI](https://api.travis-ci.org/paradox41/angular-chartist.js.svg)](https://travis-ci.org/paradox41/angular-chartist.js)
 
 Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
