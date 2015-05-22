@@ -5,7 +5,6 @@ var $ = require('gulp-load-plugins')();
 var tagVersion = require('gulp-tag-version');
 var wrap = require('gulp-wrap-umd');
 var babel = require('gulp-babel');
-var runSequence = require('run-sequence');
 
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
