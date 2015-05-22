@@ -1,3 +1,18 @@
+### 3.2.0 (2015-05-22)
+
+
+#### Bug Fixes
+
+* **build:**
+  * Add bower as a dev-dep ([0ad74072](https://github.com/paradox41/angular-chartist.js/commit/0ad740722af185c6de817d55dab9be8173c04c79))
+  * Add bower as a dev dep ([602a2456](https://github.com/paradox41/angular-chartist.js/commit/602a245654dc6ed8167a6c24aaa7dd0acb250445))
+
+
+#### Features
+
+* **travis:** Get CI working ([0552e210](https://github.com/paradox41/angular-chartist.js/commit/0552e2104e86674176dc1be0ee732aaa19e94216))
+
+
 ## 3.1.1 (2015-04-16)
 
 
