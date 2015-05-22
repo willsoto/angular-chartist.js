@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var tagVersion = require('gulp-tag-version');
 var wrap = require('gulp-wrap-umd');
+var babel = require('gulp-babel');
 
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -86,13 +87,14 @@ gulp.task('jshint', function() {
 
 gulp.task('serve', ['browser-sync'], function() {
     gulp.watch(config.source + '/*.js', [
-        'js',
+        'js:build',
         browserSync.reload
     ]);
 });
 
-gulp.task('js', ['jshint', 'clean'], function() {
+gulp.task('js:build', ['jshint', 'clean', 'test'], function() {
     return gulp.src(config.source + '/*.js')
+        .pipe(babel())
         .pipe(wrap({
             exports: 'angularChartist',
             namespace: 'angularChartist',
@@ -124,24 +126,22 @@ gulp.task('test', function(done) {
 });
 
 gulp.task('default', [
-    'js',
+    'js:build',
     'serve'
 ]);
 
 gulp.task('dist', [
-    'test',
-    'jshint',
-    'js'
+    'js:build'
 ]);
 
-gulp.task('patch', ['dist', 'changelog'], function() {
+gulp.task('patch', ['dist'], function() {
     return release('patch');
 });
 
-gulp.task('feature', ['dist', 'changelog'], function() {
+gulp.task('feature', ['dist'], function() {
     return release('minor');
 });
 
-gulp.task('release', ['dist', 'changelog'], function() {
+gulp.task('release', ['dist'], function() {
     return release('major');
 });

@@ -24,6 +24,10 @@ module.exports = function(config) {
         captureTimeout: 60000,
 
         autoWatch: false,
-        singleRun: true
+        singleRun: true,
+
+        preprocessors: {
+            'src/*.js': ['babel']
+        }
     });
 };
