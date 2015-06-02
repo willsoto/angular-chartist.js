@@ -1,3 +1,8 @@
+## 3.3.0 (2015-06-02)
+
+* **chartist:**
+    * Bump Chartist to 0.8.0 ([89bdcde](https://github.com/paradox41/angular-chartist.js/commit/89bdcde9b3056affe90cdd2ec061a86a7bde80a3))
+
 ### 3.2.0 (2015-05-22)
 
 
