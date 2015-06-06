@@ -27,7 +27,7 @@ var release = function(importance) {
             type: importance
         }))
         .pipe(gulp.dest('./'))
-        .pipe($.git.commit('chore: bumps package version'))
+        .pipe($.git.commit('chore: prepare release'))
         .pipe($.filter('bower.json'))
         .pipe(tagVersion());
 };
@@ -92,7 +92,7 @@ gulp.task('serve', ['browser-sync'], function() {
     ]);
 });
 
-gulp.task('js:build', ['jshint', 'clean', 'test'], function() {
+gulp.task('js:build', ['jshint', 'clean'], function() {
     return gulp.src(config.source + '/*.js')
         .pipe(babel())
         .pipe(wrap({
@@ -108,7 +108,6 @@ gulp.task('js:build', ['jshint', 'clean', 'test'], function() {
                 globalName: 'Chartist'
             }]
         }))
-        .pipe($.beautify())
         .pipe(gulp.dest(config.dist))
         .pipe(gulp.dest(config.example + '/lib'))
         .pipe($.uglify())
@@ -131,17 +130,18 @@ gulp.task('default', [
 ]);
 
 gulp.task('dist', [
+    'test',
     'js:build'
 ]);
 
-gulp.task('patch', ['dist'], function() {
+gulp.task('patch', function() {
     return release('patch');
 });
 
-gulp.task('feature', ['dist'], function() {
+gulp.task('feature', function() {
     return release('minor');
 });
 
-gulp.task('release', ['dist'], function() {
+gulp.task('release', function() {
     return release('major');
 });

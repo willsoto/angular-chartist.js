@@ -3,6 +3,7 @@ module.exports = function(config) {
 
     config.set({
         files: [
+            './node_modules/phantomjs-polyfill/bind-polyfill.js',
             'example/bower_components/jquery/dist/jquery.js',
             'example/bower_components/chartist/dist/chartist.js',
             'example/bower_components/angular/angular.js',
