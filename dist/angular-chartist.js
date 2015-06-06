@@ -17,12 +17,10 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var AngularChartistCtrl = (function () {
-    function AngularChartistCtrl($scope, $q) {
+    function AngularChartistCtrl($scope) {
         var _this = this;
 
         _classCallCheck(this, AngularChartistCtrl);
-
-        this.$q = $q;
 
         this.data = $scope.data;
         this.chartType = $scope.chartType;
@@ -56,14 +54,14 @@ var AngularChartistCtrl = (function () {
     }, {
         key: 'renderChart',
         value: function renderChart() {
-            var deferred = this.$q.defer();
             // ensure that the chart does not get created without data
             if (this.data) {
                 this.chart = Chartist[this.chartType](this.element, this.data, this.options, this.responsiveOptions);
-                deferred.resolve(this.chart);
-            }
 
-            return deferred.promise;
+                this.bindEvents();
+
+                return this.chart;
+            }
         }
     }, {
         key: 'update',
@@ -83,12 +81,8 @@ var AngularChartistCtrl = (function () {
     }, {
         key: 'element',
         set: function (element) {
-            var _this3 = this;
-
             this._element = element;
-            this.renderChart().then(function (chart) {
-                _this3.bindEvents();
-            });
+            this.renderChart();
         },
         get: function () {
             return this._element;
@@ -98,7 +92,7 @@ var AngularChartistCtrl = (function () {
     return AngularChartistCtrl;
 })();
 
-AngularChartistCtrl.$inject = ['$scope', '$q'];
+AngularChartistCtrl.$inject = ['$scope'];
 
 function AngularChartistDirective() {
     return {

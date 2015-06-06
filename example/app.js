@@ -21,7 +21,7 @@
 
             this.events = {
                 draw: function(obj) {
-                    // do stuff
+                    // console.log(obj);
                 }
             };
 

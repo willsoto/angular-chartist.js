@@ -2,8 +2,7 @@
 'use strict';
 
 class AngularChartistCtrl {
-    constructor($scope, $q) {
-        this.$q = $q;
+    constructor($scope) {
 
         this.data = $scope.data;
         this.chartType = $scope.chartType;
@@ -32,14 +31,14 @@ class AngularChartistCtrl {
     }
 
     renderChart() {
-        var deferred = this.$q.defer();
         // ensure that the chart does not get created without data
         if (this.data) {
             this.chart = Chartist[this.chartType](this.element, this.data, this.options, this.responsiveOptions);
-            deferred.resolve(this.chart);
-        }
 
-        return deferred.promise;
+            this.bindEvents();
+
+            return this.chart;
+        }
     }
 
     update(newConfig, oldConfig) {
@@ -58,9 +57,7 @@ class AngularChartistCtrl {
 
     set element(element) {
         this._element = element;
-        this.renderChart().then((chart) => {
-            this.bindEvents();
-        });
+        this.renderChart();
     }
 
     get element() {
@@ -68,7 +65,7 @@ class AngularChartistCtrl {
     }
 }
 
-AngularChartistCtrl.$inject = ['$scope', '$q'];
+AngularChartistCtrl.$inject = ['$scope'];
 
 function AngularChartistDirective() {
     return {

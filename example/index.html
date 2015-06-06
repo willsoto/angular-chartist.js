@@ -15,7 +15,7 @@
 </head>
 
 <body ng-app="app">
-    <section class="container-fluid" ng-controller="ChartistExampleCtrl as chartist">
+    <section class="container-fluid" ng-controller="ChartistExampleCtrl as Chartist">
         <h1>Chart Examples</h1>
         <div class="row">
             <div class="col-md-6">
@@ -24,7 +24,7 @@
                         <h3 class="panel-title">Bar Chart (with live updating)</h3>
                     </div>
                     <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="chartist.barData" chartist-chart-type="Bar" chartist-chart-options="chartist.barOptions" chartist-responsive-options="chartist.barResponsiveOptions" chartist-events="chartist.events"></chartist>
+                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.barData" chartist-chart-type="Bar" chartist-chart-options="Chartist.barOptions" chartist-responsive-options="Chartist.barResponsiveOptions"></chartist>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                         <h3 class="panel-title">Line Chart</h3>
                     </div>
                     <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="chartist.lineData" chartist-chart-type="Line" chartist-chart-options="chartist.lineOptions"></chartist>
+                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.lineData" chartist-chart-type="Line" chartist-chart-options="Chartist.lineOptions"></chartist>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         <h3 class="panel-title">Pie Chart</h3>
                     </div>
                     <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="chartist.pieData" chartist-chart-type="Pie"></chartist>
+                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.pieData" chartist-chart-type="Pie"></chartist>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                         <h3 class="panel-title">Donut Chart</h3>
                     </div>
                     <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="chartist.pieData" chartist-chart-type="Pie" chartist-chart-options="chartist.donutOptions"></chartist>
+                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.pieData" chartist-chart-type="Pie" chartist-chart-options="Chartist.donutOptions"></chartist>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                         <h3 class="panel-title">Async Data</h3>
                     </div>
                     <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="chartist.asyncData" chartist-chart-type="Line" chartist-events="chartist.events"></chartist>
+                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.asyncData" chartist-chart-type="Line" chartist-events="Chartist.events"></chartist>
                     </div>
                 </div>
             </div>
