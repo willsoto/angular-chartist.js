@@ -1,23 +1,11 @@
-### 3.3.3 (2015-06-06)
+### 3.3.4 (2015-06-06)
 
 
 #### Bug Fixes
 
 * **angular-chartist:** Fix events not binding ([0a287f4d](https://github.com/paradox41/angular-chartist.js/commit/0a287f4df8187f223e2d38acd7af78499725de93), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
 
-
-### 3.3.2 (2015-06-06)
-
-
-#### Bug Fixes
-
 * **angular-chartist:** Fix events erroring on async data ([f97bc998](https://github.com/paradox41/angular-chartist.js/commit/f97bc998f4c69633238e6d93c9c138f3c3315904), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
-
-
-### 3.3.1 (2015-06-06)
-
-
-#### Bug Fixes
 
 * **angular-chartist:** Work with async data ([f2a8af20](https://github.com/paradox41/angular-chartist.js/commit/f2a8af2083fdf22f4422e75c24ca9adbbd57e311), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
 
