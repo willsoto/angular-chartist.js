@@ -1,30 +1,28 @@
 /* global $, angular, Chartist */
 'use strict';
 
-describe('libraries', function() {
-    it('should load Chartist into the global namespace', function() {
+describe('Dependencies', function() {
+
+    it('should include Chartist', function() {
         expect(Chartist).to.exist;
+    });
+
+    it('should include angular', function() {
+        expect(angular).to.exist;
     });
 });
 
 describe('angular-chartist', function() {
-    var scope, $sandbox, $compile;
+    var $rootScope;
+    var $compile;
+    var $scope;
 
     beforeEach(module('angular-chartist'));
 
     beforeEach(inject(function($injector) {
-        scope = $injector.get('$rootScope');
+        $rootScope = $injector.get('$rootScope');
         $compile = $injector.get('$compile');
-
-        // scope = $rootScope.$new();
-
-        $sandbox = $('<div id="sandbox"></div>').appendTo($('body'));
     }));
-
-    afterEach(function() {
-        $sandbox.remove();
-        scope.$destroy();
-    });
 
     var templates = {
         'default': {
@@ -43,21 +41,38 @@ describe('angular-chartist', function() {
     };
 
     function compileDirective(template) {
+        $scope = $rootScope.$new();
+
         template = template ? templates[template] : templates['default'];
-        angular.extend(scope, template.scope || templates['default'].scope);
 
-        var $element = $(template.element).appendTo($sandbox);
+        angular.extend($scope, template.scope || templates['default'].scope);
 
-        $element = $compile($element)(scope);
+        var $element = $compile(template.element)($scope);
 
-        scope.$digest();
+        $rootScope.$digest();
 
         return $element;
     }
 
-    // it('should contain a single svg element at the root level', function() {
-    //     var elm = compileDirective();
-    //     console.log(elm);
-    //     // expect(elm.children()).to.have.length(1);
-    // });
+    it('should contain data and chartType', function() {
+        compileDirective();
+        var defaultScope = templates['default'].scope;
+
+        expect($scope.data).to.exist.and.to.equal(defaultScope.data);
+
+        expect($scope.chartType).to.exist.and.to.equal(defaultScope.chartType);
+    });
+
+    it('should correctly handle updates to data', function() {
+        compileDirective();
+
+        $scope.data = {
+            labels: [],
+            series: []
+        };
+
+        expect($scope.data).to.exist.and.to.not.equal(templates['default'].scope.data);
+        expect($scope.data.labels).to.have.length(0);
+        expect($scope.data.series).to.have.length(0);
+    });
 });
