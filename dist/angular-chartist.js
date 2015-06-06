@@ -38,7 +38,9 @@ var AngularChartistCtrl = (function () {
         }, this.update.bind(this), true);
 
         $scope.$on('$destroy', function () {
-            _this.chart.detach();
+            if (_this.chart) {
+                _this.chart.detach();
+            }
         });
     }
 
