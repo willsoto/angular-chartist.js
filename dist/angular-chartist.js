@@ -1,124 +1,118 @@
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(["angular", "chartist"], factory);
-    } else if (typeof exports === 'object') {
-        module.exports = factory(require('angular'), require('chartist'));
-    } else {
-        root.angularChartist = factory(root.angular, root.Chartist);
-    }
-}(this, function (angular, Chartist) {
 
-    /* global angular, Chartist */
-    'use strict';
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(["angular","chartist"], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory(require('angular'), require('chartist'));
+  } else {
+    root.angularChartist = factory(root.angular, root.Chartist);
+  }
+}(this, function(angular, Chartist) {
 
-    var _createClass = (function () {
-        function defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-                var descriptor = props[i];
-                descriptor.enumerable = descriptor.enumerable || false;
-                descriptor.configurable = true;
-                if ('value' in descriptor) descriptor.writable = true;
-                Object.defineProperty(target, descriptor.key, descriptor);
-            }
-        }
-        return function (Constructor, protoProps, staticProps) {
-            if (protoProps) defineProperties(Constructor.prototype, protoProps);
-            if (staticProps) defineProperties(Constructor, staticProps);
-            return Constructor;
-        };
-    })();
+/* global angular, Chartist */
+'use strict';
 
-    function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-            throw new TypeError('Cannot call a class as a function');
-        }
-    }
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-    var AngularChartistCtrl = (function () {
-        function AngularChartistCtrl($scope) {
-            _classCallCheck(this, AngularChartistCtrl);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-            this.data = $scope.data();
-            this.chartType = $scope.chartType;
+var AngularChartistCtrl = (function () {
+    function AngularChartistCtrl($scope) {
+        var _this = this;
 
-            this.events = $scope.events() || {};
-            this.options = $scope.chartOptions() || null;
-            this.responsiveOptions = $scope.responsiveOptions() || null;
-        }
+        _classCallCheck(this, AngularChartistCtrl);
 
-        _createClass(AngularChartistCtrl, [{
-            key: 'bindEvents',
-            value: function bindEvents(chart) {
-                var _this = this;
+        this.data = $scope.data;
+        this.chartType = $scope.chartType;
 
-                Object.keys(this.events).forEach(function (eventName) {
-                    chart.on(eventName, _this.events[eventName]);
-                });
-            }
-        },
-        {
-            key: 'renderChart',
-            value: function renderChart(element) {
-                return Chartist[this.chartType](element, this.data, this.options, this.responsiveOptions);
-            }
-        }]);
+        this.events = $scope.events() || {};
+        this.options = $scope.chartOptions() || null;
+        this.responsiveOptions = $scope.responsiveOptions() || null;
 
-        return AngularChartistCtrl;
-    })();
-
-    AngularChartistCtrl.$inject = ['$scope'];
-
-    function AngularChartistLink(scope, element, attrs, Ctrl) {
-        var elm = element[0];
-        var chart = Ctrl.renderChart(elm);
-
-        Ctrl.bindEvents(chart);
-
-        scope.$watch(function () {
+        $scope.$watch(function () {
             return {
-                data: scope.data(),
-                chartType: scope.chartType,
-                chartOptions: scope.chartOptions()
+                data: $scope.data,
+                chartType: $scope.chartType,
+                chartOptions: $scope.chartOptions()
             };
-        }, function (newConfig, oldConfig) {
-            // Update controller with new configuration
-            Ctrl.chartType = newConfig.chartType;
-            Ctrl.data = newConfig.data;
-            Ctrl.options = newConfig.chartOptions;
+        }, this.update.bind(this), true);
 
-            // If chart type changed we need to recreate whole chart, otherwise we can update
-            if (newConfig.chartType !== oldConfig.chartType) {
-                chart = Ctrl.renderChart(elm);
-            } else {
-                chart.update(Ctrl.data, Ctrl.options);
-            }
-        }, true);
-
-        scope.$on('$destroy', function () {
-            chart.detach();
+        $scope.$on('$destroy', function () {
+            _this.chart.detach();
         });
     }
 
-    function AngularChartistDirective() {
-        return {
-            restrict: 'EA',
-            scope: {
-                // mandatory
-                data: '&chartistData',
-                chartType: '@chartistChartType',
-                // optional
-                events: '&chartistEvents',
-                chartOptions: '&chartistChartOptions',
-                responsiveOptions: '&chartistResponsiveOptions'
-            },
-            controller: AngularChartistCtrl,
-            link: AngularChartistLink
-        };
-    }
+    _createClass(AngularChartistCtrl, [{
+        key: 'bindEvents',
+        value: function bindEvents() {
+            var _this2 = this;
 
-    AngularChartistDirective.$inject = [];
+            Object.keys(this.events).forEach(function (eventName) {
+                _this2.chart.on(eventName, _this2.events[eventName]);
+            });
+        }
+    }, {
+        key: 'renderChart',
+        value: function renderChart() {
+            // ensure that the chart does not get created without data
+            if (this.data) {
+                this.chart = Chartist[this.chartType](this.element, this.data, this.options, this.responsiveOptions);
+            }
+        }
+    }, {
+        key: 'update',
+        value: function update(newConfig, oldConfig) {
+            // Update controller with new configuration
+            this.chartType = newConfig.chartType;
+            this.data = newConfig.data;
+            this.options = newConfig.chartOptions;
 
-    var angularChartist = angular.module('angular-chartist', []).directive('chartist', AngularChartistDirective);
-    return angularChartist;
+            // If chart type changed we need to recreate whole chart, otherwise we can update
+            if (!this.chart || newConfig.chartType !== oldConfig.chartType) {
+                this.renderChart(this.element);
+            } else {
+                this.chart.update(this.data, this.options);
+            }
+        }
+    }, {
+        key: 'element',
+        set: function (element) {
+            this._element = element;
+            this.renderChart();
+            this.bindEvents();
+        },
+        get: function () {
+            return this._element;
+        }
+    }]);
+
+    return AngularChartistCtrl;
+})();
+
+AngularChartistCtrl.$inject = ['$scope'];
+
+function AngularChartistDirective() {
+    return {
+        restrict: 'EA',
+        scope: {
+            // mandatory
+            data: '=chartistData',
+            chartType: '@chartistChartType',
+            // optional
+            events: '&chartistEvents',
+            chartOptions: '&chartistChartOptions',
+            responsiveOptions: '&chartistResponsiveOptions'
+        },
+        controller: 'AngularChartistCtrl',
+        link: function link(scope, element, attrs, Ctrl) {
+            Ctrl.element = element[0];
+        }
+    };
+}
+
+AngularChartistDirective.$inject = [];
+
+var angularChartist = angular.module('angular-chartist', []).controller('AngularChartistCtrl', AngularChartistCtrl).directive('chartist', AngularChartistDirective);
+return angularChartist;
 
 }));
