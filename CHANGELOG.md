@@ -1,3 +1,11 @@
+### 3.3.1 (2015-06-06)
+
+
+#### Bug Fixes
+
+* **angular-chartist:** Work with async data ([f2a8af20](https://github.com/paradox41/angular-chartist.js/commit/f2a8af2083fdf22f4422e75c24ca9adbbd57e311), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
+
+
 ## 3.3.0 (2015-06-02)
 
 * **chartist:**
