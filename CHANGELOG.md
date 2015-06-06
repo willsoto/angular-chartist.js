@@ -1,3 +1,11 @@
+### 3.3.3 (2015-06-06)
+
+
+#### Bug Fixes
+
+* **angular-chartist:** Fix events not binding ([0a287f4d](https://github.com/paradox41/angular-chartist.js/commit/0a287f4df8187f223e2d38acd7af78499725de93), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
+
+
 ### 3.3.2 (2015-06-06)
 
 
