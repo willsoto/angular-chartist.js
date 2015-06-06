@@ -17,10 +17,12 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var AngularChartistCtrl = (function () {
-    function AngularChartistCtrl($scope) {
+    function AngularChartistCtrl($scope, $q) {
         var _this = this;
 
         _classCallCheck(this, AngularChartistCtrl);
+
+        this.$q = $q;
 
         this.data = $scope.data;
         this.chartType = $scope.chartType;
@@ -54,10 +56,14 @@ var AngularChartistCtrl = (function () {
     }, {
         key: 'renderChart',
         value: function renderChart() {
+            var deferred = this.$q.defer();
             // ensure that the chart does not get created without data
             if (this.data) {
                 this.chart = Chartist[this.chartType](this.element, this.data, this.options, this.responsiveOptions);
+                deferred.resolve(this.chart);
             }
+
+            return deferred.promise;
         }
     }, {
         key: 'update',
@@ -69,7 +75,7 @@ var AngularChartistCtrl = (function () {
 
             // If chart type changed we need to recreate whole chart, otherwise we can update
             if (!this.chart || newConfig.chartType !== oldConfig.chartType) {
-                this.renderChart(this.element);
+                this.renderChart();
             } else {
                 this.chart.update(this.data, this.options);
             }
@@ -77,9 +83,12 @@ var AngularChartistCtrl = (function () {
     }, {
         key: 'element',
         set: function (element) {
+            var _this3 = this;
+
             this._element = element;
-            this.renderChart();
-            this.bindEvents();
+            this.renderChart().then(function (chart) {
+                _this3.bindEvents();
+            });
         },
         get: function () {
             return this._element;
@@ -89,7 +98,7 @@ var AngularChartistCtrl = (function () {
     return AngularChartistCtrl;
 })();
 
-AngularChartistCtrl.$inject = ['$scope'];
+AngularChartistCtrl.$inject = ['$scope', '$q'];
 
 function AngularChartistDirective() {
     return {

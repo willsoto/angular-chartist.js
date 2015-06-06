@@ -3,8 +3,21 @@
 
     var module = angular.module('app', ['angular-chartist']);
 
-    module.controller('ChartistExampleCtrl', ['$scope', '$interval',
-        function($scope, $interval) {
+    module.controller('ChartistExampleCtrl', ['$scope', '$interval', '$timeout',
+        function($scope, $interval, $timeout) {
+
+            $timeout(function() {
+                console.log('load data');
+
+                this.asyncData = {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    series: [
+                        [1000, 1200, 1300, 1200, 1440, 1800],
+                        [1600, 1550, 1497, 1440, 1200, 1000],
+                    ]
+                };
+
+            }.bind(this), 5000);
 
             this.events = {
                 draw: function(obj) {
