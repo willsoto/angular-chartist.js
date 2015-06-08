@@ -20,7 +20,9 @@ class AngularChartistCtrl {
         }, this.update.bind(this), true);
 
         $scope.$on('$destroy', () => {
-            this.chart.detach();
+            if (this.chart) {
+                this.chart.detach();
+            }
         });
     }
 
