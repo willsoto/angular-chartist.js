@@ -1,3 +1,11 @@
+### 3.3.5 (2015-06-08)
+
+
+#### Bug Fixes
+
+* **angular-chartist:** Don't detach chart, if it has never been rendered. ([dd252a27](https://github.com/paradox41/angular-chartist.js/commit/dd252a27df2a2c0fd4d5840f2b5d637448dc2347))
+
+
 ### 3.3.4 (2015-06-06)
 
 
