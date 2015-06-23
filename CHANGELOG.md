@@ -1,3 +1,8 @@
+### 3.3.6 (2015-06-23)
+
+* **chartist:** Bump to 0.9
+([32c9742c](https://github.com/tuhoojabotti/angular-chartist.js/commit/32c9742c4c100007ce7e8409dcc60e46d79abd25))
+
 ### 3.3.5 (2015-06-08)
 
 
@@ -102,4 +107,3 @@
 Please update your module name to `angular-chartist`
 
  ([f62d3483](https://github.com/paradox41/ng-chartistjs/commit/f62d3483e5a3d5de8715430c94f3e2389b1e521f))
-
