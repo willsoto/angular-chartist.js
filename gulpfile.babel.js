@@ -1,20 +1,38 @@
-'use strict';
+/**
+ * Import node modules
+ */
+import fs from 'fs';
+import {resolve} from 'path';
+import del from 'del';
 
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var tagVersion = require('gulp-tag-version');
-var wrap = require('gulp-wrap-umd');
-var babel = require('gulp-babel');
+/**
+ * Import all gulp plugins
+ */
+import gulp from 'gulp';
 
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
+import babel from 'gulp-babel';
+import bump from 'gulp-bump';
+import eslint from 'gulp-eslint';
+import filter from 'gulp-filter';
+import git from 'gulp-git';
+import jscs from 'gulp-jscs';
+import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
+import tagVersion from 'gulp-tag-version';
+import uglify from 'gulp-uglify';
+import wrap from 'gulp-wrap-umd';
 
-var fs = require('fs');
-var changelog = require('conventional-changelog');
+/**
+ * Import misc
+ */
+import browserSync from 'browser-sync';
+import changelog from 'conventional-changelog';
 
-// testing
-var karma = require('karma').server;
+import {server} from 'karma';
 
+/**
+ * Common config options
+ */
 var config = {
     source: 'src',
     dist: 'dist',
@@ -22,13 +40,16 @@ var config = {
 };
 
 var release = function(importance) {
-    gulp.src(['./bower.json', './package.json'])
-        .pipe($.bump({
+    return gulp.src([
+            './bower.json',
+            './package.json'
+        ])
+        .pipe(bump({
             type: importance
         }))
         .pipe(gulp.dest('./'))
-        .pipe($.git.commit('chore: prepare release'))
-        .pipe($.filter('bower.json'))
+        .pipe(git.commit('chore: prepare release'))
+        .pipe(filter('bower.json'))
         .pipe(tagVersion());
 };
 
@@ -48,9 +69,12 @@ gulp.task('changelog', function(done) {
         fs.writeFile('CHANGELOG.md', log, done);
     }
     fs.readFile('./package.json', 'utf8', function(err, data) {
-        var ref$ = JSON.parse(data);
-        var repository = ref$.repository;
-        var version = ref$.version;
+        if (err) {
+            return done(err);
+        }
+
+        let ref = JSON.parse(data);
+        let {repository, version} = ref;
 
         changelog({
             repository: repository.url,
@@ -60,14 +84,13 @@ gulp.task('changelog', function(done) {
 });
 
 gulp.task('clean', function(cb) {
-    require('del')([config.dist, config.example + '/lib'], {
+    del([config.dist, config.example + '/lib'], {
         force: true
     }, cb);
 });
 
 gulp.task('enforce', function() {
-    var fs = require('fs');
-    var validateCommit = '.git/hooks/commit-msg';
+    let validateCommit = '.git/hooks/commit-msg';
 
     if (!fs.existsSync(validateCommit)) {
         // copy the file over
@@ -78,21 +101,22 @@ gulp.task('enforce', function() {
     }
 });
 
-gulp.task('jshint', function() {
+gulp.task('lint', function() {
     return gulp.src(config.source + '/*.js')
-        .pipe($.plumber())
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish'));
+        .pipe(plumber())
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(jscs());
 });
 
 gulp.task('serve', ['browser-sync'], function() {
     gulp.watch(config.source + '/*.js', [
-        'js:build',
+        'scripts:build',
         browserSync.reload
     ]);
 });
 
-gulp.task('js:build', ['jshint', 'clean'], function() {
+gulp.task('scripts:build', ['lint', 'clean'], function() {
     return gulp.src(config.source + '/*.js')
         .pipe(babel())
         .pipe(wrap({
@@ -110,8 +134,8 @@ gulp.task('js:build', ['jshint', 'clean'], function() {
         }))
         .pipe(gulp.dest(config.dist))
         .pipe(gulp.dest(config.example + '/lib'))
-        .pipe($.uglify())
-        .pipe($.rename({
+        .pipe(uglify())
+        .pipe(rename({
             extname: '.min.js'
         }))
         .pipe(gulp.dest(config.dist))
@@ -119,29 +143,31 @@ gulp.task('js:build', ['jshint', 'clean'], function() {
 });
 
 gulp.task('test', function(done) {
-    karma.start({
-        configFile: __dirname + '/karma.conf.js'
+    let karmaConfigPath = resolve('.') + '/karma.conf.js';
+
+    server.start({
+        configFile: karmaConfigPath
     }, done);
 });
 
 gulp.task('default', [
-    'js:build',
+    'scripts:build',
     'serve'
 ]);
 
-gulp.task('dist', [
+gulp.task('build', [
     'test',
-    'js:build'
+    'scripts:build'
 ]);
 
-gulp.task('patch', function() {
+gulp.task('release:patch', function() {
     return release('patch');
 });
 
-gulp.task('feature', function() {
+gulp.task('release:minor', function() {
     return release('minor');
 });
 
-gulp.task('release', function() {
+gulp.task('release:major', function() {
     return release('major');
 });
