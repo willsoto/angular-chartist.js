@@ -1,5 +1,4 @@
-/* global angular, Chartist */
-'use strict';
+/*global angular, Chartist*/
 
 class AngularChartistCtrl {
     constructor($scope) {
@@ -69,7 +68,7 @@ class AngularChartistCtrl {
 
 AngularChartistCtrl.$inject = ['$scope'];
 
-function AngularChartistDirective() {
+function chartistDirective() {
     return {
         restrict: 'EA',
         scope: {
@@ -88,10 +87,12 @@ function AngularChartistDirective() {
     };
 }
 
-AngularChartistDirective.$inject = [];
+chartistDirective.$inject = [];
 
+/*eslint-disable no-unused-vars */
 var angularChartist = angular.module('angular-chartist', [])
 
 .controller('AngularChartistCtrl', AngularChartistCtrl)
 
-.directive('chartist', AngularChartistDirective);
+.directive('chartist', chartistDirective);
+/*eslint-enable no-unused-vars */

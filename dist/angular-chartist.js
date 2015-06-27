@@ -9,7 +9,8 @@
   }
 }(this, function(angular, Chartist) {
 
-/* global angular, Chartist */
+/*global angular, Chartist*/
+
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -82,11 +83,11 @@ var AngularChartistCtrl = (function () {
         }
     }, {
         key: 'element',
-        set: function (element) {
+        set: function set(element) {
             this._element = element;
             this.renderChart();
         },
-        get: function () {
+        get: function get() {
             return this._element;
         }
     }]);
@@ -96,7 +97,7 @@ var AngularChartistCtrl = (function () {
 
 AngularChartistCtrl.$inject = ['$scope'];
 
-function AngularChartistDirective() {
+function chartistDirective() {
     return {
         restrict: 'EA',
         scope: {
@@ -115,9 +116,11 @@ function AngularChartistDirective() {
     };
 }
 
-AngularChartistDirective.$inject = [];
+chartistDirective.$inject = [];
 
-var angularChartist = angular.module('angular-chartist', []).controller('AngularChartistCtrl', AngularChartistCtrl).directive('chartist', AngularChartistDirective);
+/*eslint-disable no-unused-vars */
+var angularChartist = angular.module('angular-chartist', []).controller('AngularChartistCtrl', AngularChartistCtrl).directive('chartist', chartistDirective);
+/*eslint-enable no-unused-vars */
 return angularChartist;
 
 }));
