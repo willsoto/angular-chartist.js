@@ -7,7 +7,7 @@
 # Submitting a PR
 
 1. Run `gulp dist`
-2. Fix any jshint errors and try again
+2. Fix any lint errors and try again
 3. Submit the PR - __do not__ bump the version.
 
 # Commit Conventions

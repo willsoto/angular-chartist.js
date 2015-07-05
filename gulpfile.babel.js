@@ -56,7 +56,7 @@ var release = function(importance) {
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
-            baseDir: './example'
+            baseDir: config.example
         }
     });
 });
@@ -111,12 +111,12 @@ gulp.task('lint', function() {
 
 gulp.task('serve', ['browser-sync'], function() {
     gulp.watch(config.source + '/*.js', [
-        'scripts:build',
+        'scripts',
         browserSync.reload
     ]);
 });
 
-gulp.task('scripts:build', ['lint', 'clean'], function() {
+gulp.task('scripts', ['lint', 'clean'], function() {
     return gulp.src(config.source + '/*.js')
         .pipe(babel())
         .pipe(wrap({
@@ -151,13 +151,13 @@ gulp.task('test', function(done) {
 });
 
 gulp.task('default', [
-    'scripts:build',
+    'scripts',
     'serve'
 ]);
 
 gulp.task('build', [
     'test',
-    'scripts:build'
+    'scripts'
 ]);
 
 gulp.task('release:patch', function() {
