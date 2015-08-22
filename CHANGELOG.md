@@ -1,109 +1,236 @@
-### 3.3.6 (2015-06-23)
-
-* **chartist:** Bump to 0.9
-([32c9742c](https://github.com/tuhoojabotti/angular-chartist.js/commit/32c9742c4c100007ce7e8409dcc60e46d79abd25))
-
-### 3.3.5 (2015-06-08)
+<a name="3.3.6"></a>
+## [3.3.6](https://github.com/paradox41/angular-chartist.js/compare/v3.3.6...v3.3.6) (2015-08-22)
 
 
-#### Bug Fixes
+### Bug Fixes
 
-* **angular-chartist:** Don't detach chart, if it has never been rendered. ([dd252a27](https://github.com/paradox41/angular-chartist.js/commit/dd252a27df2a2c0fd4d5840f2b5d637448dc2347))
-
-
-### 3.3.4 (2015-06-06)
+* **travis:** Fix travis build ([6006e42](https://github.com/paradox41/angular-chartist.js/commit/6006e42))
 
 
-#### Bug Fixes
 
-* **angular-chartist:** Fix events not binding ([0a287f4d](https://github.com/paradox41/angular-chartist.js/commit/0a287f4df8187f223e2d38acd7af78499725de93), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
-
-* **angular-chartist:** Fix events erroring on async data ([f97bc998](https://github.com/paradox41/angular-chartist.js/commit/f97bc998f4c69633238e6d93c9c138f3c3315904), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
-
-* **angular-chartist:** Work with async data ([f2a8af20](https://github.com/paradox41/angular-chartist.js/commit/f2a8af2083fdf22f4422e75c24ca9adbbd57e311), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47))
+<a name="3.3.6"></a>
+## [3.3.6](https://github.com/paradox41/angular-chartist.js/compare/v3.3.5...v3.3.6) (2015-06-23)
 
 
-## 3.3.0 (2015-06-02)
-
-* **chartist:**
-    * Bump Chartist to 0.8.0 ([89bdcde](https://github.com/paradox41/angular-chartist.js/commit/89bdcde9b3056affe90cdd2ec061a86a7bde80a3))
-
-### 3.2.0 (2015-05-22)
 
 
-#### Bug Fixes
-
-* **build:**
-  * Add bower as a dev-dep ([0ad74072](https://github.com/paradox41/angular-chartist.js/commit/0ad740722af185c6de817d55dab9be8173c04c79))
-  * Add bower as a dev dep ([602a2456](https://github.com/paradox41/angular-chartist.js/commit/602a245654dc6ed8167a6c24aaa7dd0acb250445))
+<a name="3.3.5"></a>
+## [3.3.5](https://github.com/paradox41/angular-chartist.js/compare/v3.3.4...v3.3.5) (2015-06-08)
 
 
-#### Features
+### Bug Fixes
 
-* **travis:** Get CI working ([0552e210](https://github.com/paradox41/angular-chartist.js/commit/0552e2104e86674176dc1be0ee732aaa19e94216))
-
-
-## 3.1.1 (2015-04-16)
+* **angular-chartist:** Don't detach chart, if it has never been rendered. ([dd252a2](https://github.com/paradox41/angular-chartist.js/commit/dd252a2))
 
 
-### 3.1.0 (2015-04-06)
+
+<a name="3.3.4"></a>
+## [3.3.4](https://github.com/paradox41/angular-chartist.js/compare/v3.3.3...v3.3.4) (2015-06-06)
 
 
-#### Bug Fixes
+### Bug Fixes
 
-* **angular-chartist:**
-  * Fixed issue with update and recreation performed in sequence ([b30f505a](https://github.com/paradox41/angular-chartist.js/commit/b30f505a6dda3e568b1eff46b1a83e6350756e6e))
-  * Fix typo ([7f17e7ec](https://github.com/paradox41/angular-chartist.js/commit/7f17e7ec31813eb71d5e52d2872a0b2b8f97e7e1))
-  * Call detach on ([9529e630](https://github.com/paradox41/angular-chartist.js/commit/9529e6308be42487378880329eef669fc61894cd), closes [#40](https://github.com/paradox41/angular-chartist.js/issues/40))
+* **angular-chartist:** Fix events not binding ([0a287f4](https://github.com/paradox41/angular-chartist.js/commit/0a287f4)), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47)
 
 
-### 3.0.3 (2015-02-17)
 
-#### Bug Fixes
-
-* **bower:** Fix location of main ([ec5210b3](https://github.com/paradox41/angular-chartist.js/commit/ec5210b379efecc0ed276727068599c14f866358))
+<a name="3.3.3"></a>
+## [3.3.3](https://github.com/paradox41/angular-chartist.js/compare/v3.3.2...v3.3.3) (2015-06-06)
 
 
-#### Features
+### Bug Fixes
 
-* **angular-chartist:**
-  * Rerender chart on options change ([af7b6fdf](https://github.com/paradox41/angular-chartist.js/commit/af7b6fdf9f6cf2eaf00f46ac7bc999f2a5fcdf72))
-  * Rerender chart on options change ([1815bf76](https://github.com/paradox41/angular-chartist.js/commit/1815bf76b222499c9f8da14e70138e8970f6628a))
+* **angular-chartist:** Fix events erroring on async data ([f97bc99](https://github.com/paradox41/angular-chartist.js/commit/f97bc99)), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47)
 
 
-### 3.0.1 (2015-02-08)
+
+<a name="3.3.2"></a>
+## [3.3.2](https://github.com/paradox41/angular-chartist.js/compare/v3.3.1...v3.3.2) (2015-06-06)
 
 
-## 3.0.0 (2015-02-04)
+### Bug Fixes
+
+* **angular-chartist:** Work with async data ([f2a8af2](https://github.com/paradox41/angular-chartist.js/commit/f2a8af2)), closes [#47](https://github.com/paradox41/angular-chartist.js/issues/47)
 
 
-#### Bug Fixes
 
-* **package.json:** Fix location of main ([469a7ed7](https://github.com/paradox41/angular-chartist.js/commit/469a7ed7d80d166dbd9f288ee16fd1c73e9df0ff))
-
-
-## 3.0.0 (2015-01-22)
-
-#### Bug Fixes
-
-* **angular-chartist:** Fixes chart not updating when chartType changes. ([df40605](https://github.com/paradox41/angular-chartist.js/commit/df40605210ff9330e9f363e39fbbe2d5296a570a))
-
-#### Breaking Changes
-
-* File name changed to `angular-chartist.js`
-
-## 2.0.0 (2014-12-03)
+<a name="3.3.1"></a>
+## [3.3.1](https://github.com/paradox41/angular-chartist.js/compare/v3.3.0...v3.3.1) (2015-06-06)
 
 
-#### Bug Fixes
-
-* **module:** Change the module name to angular-chartist ([f62d3483](https://github.com/paradox41/angular-chartist.js/commit/f62d3483e5a3d5de8715430c94f3e2389b1e521f))
 
 
-#### Breaking Changes
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/paradox41/angular-chartist.js/compare/v3.2.0...v3.3.0) (2015-06-02)
+
+
+
+
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/paradox41/angular-chartist.js/compare/v3.1.1...v3.2.0) (2015-05-22)
+
+
+### Bug Fixes
+
+* **build:** Add bower as a dev dep ([602a245](https://github.com/paradox41/angular-chartist.js/commit/602a245))
+* **build:** Add bower as a dev-dep ([0ad7407](https://github.com/paradox41/angular-chartist.js/commit/0ad7407))
+
+### Features
+
+* **travis:** Get CI working ([0552e21](https://github.com/paradox41/angular-chartist.js/commit/0552e21))
+
+
+
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/paradox41/angular-chartist.js/compare/v3.1.0...v3.1.1) (2015-04-16)
+
+
+
+
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/paradox41/angular-chartist.js/compare/v3.0.3...v3.1.0) (2015-04-06)
+
+
+### Bug Fixes
+
+* **angular-chartist:** Call detach on ([9529e63](https://github.com/paradox41/angular-chartist.js/commit/9529e63)), closes [#40](https://github.com/paradox41/angular-chartist.js/issues/40)
+* **angular-chartist:** Fix typo ([7f17e7e](https://github.com/paradox41/angular-chartist.js/commit/7f17e7e))
+* **angular-chartist:** Fixed issue with update and recreation performed in sequence ([b30f505](https://github.com/paradox41/angular-chartist.js/commit/b30f505))
+
+
+
+<a name="3.0.3"></a>
+## [3.0.3](https://github.com/paradox41/angular-chartist.js/compare/v3.0.2...v3.0.3) (2015-02-17)
+
+
+### Bug Fixes
+
+* **bower:** Fix location of main ([ec5210b](https://github.com/paradox41/angular-chartist.js/commit/ec5210b))
+
+### Features
+
+* **angular-chartist:** Rerender chart on options change ([af7b6fd](https://github.com/paradox41/angular-chartist.js/commit/af7b6fd))
+* **angular-chartist:** Rerender chart on options change ([1815bf7](https://github.com/paradox41/angular-chartist.js/commit/1815bf7))
+
+
+
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/paradox41/angular-chartist.js/compare/v3.0.0...v3.0.1) (2015-02-04)
+
+
+### Bug Fixes
+
+* **package.json:** Fix location of main ([469a7ed](https://github.com/paradox41/angular-chartist.js/commit/469a7ed))
+
+
+
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/paradox41/angular-chartist.js/compare/v2.0.3...v3.0.0) (2015-01-22)
+
+
+### Bug Fixes
+
+* **angular-chartist:** Fix live updating bug ([38a1830](https://github.com/paradox41/angular-chartist.js/commit/38a1830))
+* **angular-chartist:** Rename the file since ng is reserved by angular ([334420b](https://github.com/paradox41/angular-chartist.js/commit/334420b))
+* **angular-chartist:** Watch chartType for changes ([f25b0b5](https://github.com/paradox41/angular-chartist.js/commit/f25b0b5)), closes [#25](https://github.com/paradox41/angular-chartist.js/issues/25)
+* **gulp:** Change commit message ([7dc65b5](https://github.com/paradox41/angular-chartist.js/commit/7dc65b5))
+
+
+
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/paradox41/angular-chartist.js/compare/v2.0.2...v2.0.3) (2014-12-12)
+
+
+
+
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/paradox41/angular-chartist.js/compare/v2.0.1...v2.0.2) (2014-12-12)
+
+
+
+
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/paradox41/angular-chartist.js/compare/v1.1.0...v2.0.0) (2014-12-03)
+
+
+### Bug Fixes
+
+* **module:** Change the module name to angular-chartist ([f62d348](https://github.com/paradox41/angular-chartist.js/commit/f62d348))
+
+
+### BREAKING CHANGES
 
 * ngChartist is no longer a valid module name.
+Please update your module name to
 
-Please update your module name to `angular-chartist`
 
- ([f62d3483](https://github.com/paradox41/ng-chartistjs/commit/f62d3483e5a3d5de8715430c94f3e2389b1e521f))
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/paradox41/angular-chartist.js/compare/v1.0.8...v1.1.0) (2014-10-31)
+
+
+### Bug Fixes
+
+* **events:** rebind events after chart is updated ([9124301](https://github.com/paradox41/angular-chartist.js/commit/9124301))
+
+
+
+<a name="1.0.8"></a>
+## [1.0.8](https://github.com/paradox41/angular-chartist.js/compare/v1.0.7...v1.0.8) (2014-10-08)
+
+
+
+
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/paradox41/angular-chartist.js/compare/v1.0.6...v1.0.7) (2014-09-16)
+
+
+
+
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/paradox41/angular-chartist.js/compare/v1.0.5...v1.0.6) (2014-09-16)
+
+
+
+
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/paradox41/angular-chartist.js/compare/v1.0.4...v1.0.5) (2014-09-16)
+
+
+
+
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/paradox41/angular-chartist.js/compare/v1.0.3...v1.0.4) (2014-09-16)
+
+
+
+
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/paradox41/angular-chartist.js/compare/v1.0.2...v1.0.3) (2014-09-11)
+
+
+
+
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/paradox41/angular-chartist.js/compare/v1.0.1...v1.0.2) (2014-09-11)
+
+
+
+
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/paradox41/angular-chartist.js/compare/v1.0.0...v1.0.1) (2014-09-10)
+
+
+
+
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/paradox41/angular-chartist.js/compare/v0.1.2...v1.0.0) (2014-09-10)
+
+
+
+
+<a name="0.1.2"></a>
+## 0.1.2 (2014-09-10)
+
+
+
+
