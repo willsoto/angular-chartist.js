@@ -54,7 +54,8 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.18",
-    "phantomjs-polyfill": "0.0.1"
+    "phantomjs-polyfill": "0.0.1",
+    "run-sequence": "^1.1.2"
   },
   "dependencies": {
     "angular": "^1.2.28",
