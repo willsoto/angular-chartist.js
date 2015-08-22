@@ -1,0 +1,10 @@
+import './tasks/browser-sync';
+import './tasks/build';
+import './tasks/changelog';
+import './tasks/clean';
+import './tasks/default';
+import './tasks/lint';
+import './tasks/release';
+import './tasks/scripts';
+import './tasks/test';
+import './tasks/watch';
