@@ -17,7 +17,7 @@ import filter from 'gulp-filter';
 import git from 'gulp-git';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
-import tagVersion from 'gulp-tag-version';
+import tag from 'gulp-tag-version';
 import uglify from 'gulp-uglify';
 import wrap from 'gulp-wrap-umd';
 import changelog from 'gulp-conventional-changelog';
@@ -26,7 +26,7 @@ import changelog from 'gulp-conventional-changelog';
  * Import misc
  */
 import browserSync from 'browser-sync';
-
+import runSequence from 'run-sequence';
 import {Server} from 'karma';
 
 /**
