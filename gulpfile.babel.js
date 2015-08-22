@@ -15,43 +15,46 @@ import bump from 'gulp-bump';
 import eslint from 'gulp-eslint';
 import filter from 'gulp-filter';
 import git from 'gulp-git';
-import jscs from 'gulp-jscs';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import tagVersion from 'gulp-tag-version';
 import uglify from 'gulp-uglify';
 import wrap from 'gulp-wrap-umd';
+import changelog from 'gulp-conventional-changelog';
 
 /**
  * Import misc
  */
 import browserSync from 'browser-sync';
-import changelog from 'conventional-changelog';
 
-import {server} from 'karma';
+import {Server} from 'karma';
 
 /**
  * Common config options
  */
 var config = {
-    source: 'src',
-    dist: 'dist',
-    example: 'example'
+    source: './src',
+    dist: './dist',
+    example: './example',
+    importance: 'patch',
+    test: {
+        karma: resolve('.') + '/karma.conf.js'
+    }
 };
 
-var release = function(importance) {
-    return gulp.src([
-            './bower.json',
-            './package.json'
-        ])
-        .pipe(bump({
-            type: importance
-        }))
-        .pipe(gulp.dest('./'))
-        .pipe(git.commit('chore: prepare release'))
-        .pipe(filter('bower.json'))
-        .pipe(tagVersion());
-};
+function getImportance() {
+    return config.importance;
+}
+
+function release() {
+    runSequence(
+        'test',
+        'scripts',
+        'bump',
+        'changelog',
+        'commit-release'
+    );
+}
 
 gulp.task('browser-sync', function() {
     browserSync({
@@ -61,26 +64,26 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('changelog', function(done) {
-    function changeParsed(err, log) {
-        if (err) {
-            return done(err);
-        }
-        fs.writeFile('CHANGELOG.md', log, done);
-    }
-    fs.readFile('./package.json', 'utf8', function(err, data) {
-        if (err) {
-            return done(err);
-        }
+gulp.task('bump', function() {
+    return gulp.src([
+            './bower.json',
+            './package.json'
+        ])
+        .pipe(bump({
+            type: getImportance()
+        }))
+        .pipe(gulp.dest('./'));
+});
 
-        let ref = JSON.parse(data);
-        let {repository, version} = ref;
-
-        changelog({
-            repository: repository.url,
-            version: version
-        }, changeParsed);
-    });
+gulp.task('changelog', function() {
+    return gulp.src('CHANGELOG.md', {
+            buffer: false
+        })
+        .pipe(changelog({
+            preset: 'angular',
+            releaseCount: 0
+        }))
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('clean', function(cb) {
@@ -89,24 +92,26 @@ gulp.task('clean', function(cb) {
     }, cb);
 });
 
-gulp.task('enforce', function() {
-    let validateCommit = '.git/hooks/commit-msg';
-
-    if (!fs.existsSync(validateCommit)) {
-        // copy the file over
-        fs.createReadStream('./validate-commit-msg.js')
-        .pipe(fs.createWriteStream(validateCommit));
-        // make it executable
-        fs.chmodSync(validateCommit, '0755');
-    }
+gulp.task('commit-release', function() {
+    return gulp.src([
+            './bower.json',
+            './package.json',
+            './CHANGELOG.md',
+            config.dist
+        ])
+        .pipe(git.add({
+            args: '-f -A'
+        }))
+        .pipe(git.commit('chore(release): New ' + getImportance() + ' release'))
+        .pipe(filter('package.json'))
+        .pipe(tag());
 });
 
 gulp.task('lint', function() {
     return gulp.src(config.source + '/*.js')
         .pipe(plumber())
         .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(jscs());
+        .pipe(eslint.format());
 });
 
 gulp.task('serve', ['browser-sync'], function() {
@@ -142,12 +147,13 @@ gulp.task('scripts', ['lint', 'clean'], function() {
         .pipe(gulp.dest(config.example + '/lib'));
 });
 
-gulp.task('test', function(done) {
-    let karmaConfigPath = resolve('.') + '/karma.conf.js';
 
-    server.start({
-        configFile: karmaConfigPath
-    }, done);
+gulp.task('test', function() {
+    let server = new Server({
+        configFile: config.test.karma
+    });
+
+    server.start();
 });
 
 gulp.task('default', [
@@ -161,13 +167,17 @@ gulp.task('build', [
 ]);
 
 gulp.task('release:patch', function() {
-    return release('patch');
+    return release();
 });
 
 gulp.task('release:minor', function() {
-    return release('minor');
+    config.importance = 'minor';
+
+    return release();
 });
 
 gulp.task('release:major', function() {
-    return release('major');
+    config.importance = 'major';
+
+    return release();
 });

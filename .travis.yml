@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "node"
   - "iojs"
-script: bower install && gulp build
+script: npm run build
