@@ -1,3 +1,15 @@
+<a name="3.3.7"></a>
+## [3.3.7](https://github.com/paradox41/angular-chartist.js/compare/v3.3.6...v3.3.7) (2015-08-22)
+
+
+### Bug Fixes
+
+* **gulp:** Fix import for gulp-tag-version ([05404ed](https://github.com/paradox41/angular-chartist.js/commit/05404ed))
+* **gulp:** Remove releaseCount ([f238b26](https://github.com/paradox41/angular-chartist.js/commit/f238b26))
+* **travis:** Fix travis build ([6006e42](https://github.com/paradox41/angular-chartist.js/commit/6006e42))
+
+
+
 <a name="3.3.6"></a>
 ## [3.3.6](https://github.com/paradox41/angular-chartist.js/compare/v3.3.6...v3.3.6) (2015-08-22)
 
