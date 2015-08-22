@@ -80,8 +80,7 @@ gulp.task('changelog', function() {
             buffer: false
         })
         .pipe(changelog({
-            preset: 'angular',
-            releaseCount: 0
+            preset: 'angular'
         }))
         .pipe(gulp.dest('./'));
 });
