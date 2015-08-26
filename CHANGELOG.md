@@ -1,3 +1,13 @@
+<a name="3.3.9"></a>
+## [3.3.9](https://github.com/paradox41/angular-chartist.js/compare/v3.3.8...v3.3.9) (2015-08-26)
+
+
+### Bug Fixes
+
+* **gulp:** Task doesn't work when using config ([786eec6](https://github.com/paradox41/angular-chartist.js/commit/786eec6))
+
+
+
 <a name="3.3.8"></a>
 ## [3.3.8](https://github.com/paradox41/angular-chartist.js/compare/v3.3.7...v3.3.8) (2015-08-26)
 
