@@ -1,5 +1,3 @@
-import config from '../config';
-
 import gulp from 'gulp';
 import bump from 'gulp-bump';
 import git from 'gulp-git';
@@ -42,7 +40,7 @@ gulp.task('commit-release', function() {
             './bower.json',
             './package.json',
             './CHANGELOG.md',
-            config.dist,
+            './dist',
             './example'
         ])
         .pipe(git.add({
