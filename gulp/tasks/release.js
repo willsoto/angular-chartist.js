@@ -40,7 +40,8 @@ gulp.task('commit-release', function() {
             './bower.json',
             './package.json',
             './CHANGELOG.md',
-            config.dist
+            config.dist,
+            './example'
         ])
         .pipe(git.add({
             args: '-f -A'
