@@ -1,3 +1,5 @@
+import config from '../config';
+
 import gulp from 'gulp';
 import bump from 'gulp-bump';
 import git from 'gulp-git';
@@ -6,12 +8,12 @@ import tag from 'gulp-tag-version';
 
 import runSequence from 'run-sequence';
 
-var config = {
+var releaseConfig = {
     importance: 'patch'
 };
 
 function getImportance() {
-    return config.importance;
+    return releaseConfig.importance;
 }
 
 function release() {
@@ -56,13 +58,13 @@ gulp.task('release:patch', function() {
 });
 
 gulp.task('release:minor', function() {
-    config.importance = 'minor';
+    releaseConfig.importance = 'minor';
 
     return release();
 });
 
 gulp.task('release:major', function() {
-    config.importance = 'major';
+    releaseConfig.importance = 'major';
 
     return release();
 });
