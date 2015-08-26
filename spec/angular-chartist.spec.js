@@ -1,5 +1,4 @@
 /* global $, angular, Chartist */
-'use strict';
 
 describe('Dependencies', function() {
 
