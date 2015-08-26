@@ -1,14 +1,17 @@
 /*global angular, Chartist*/
 
 class AngularChartistCtrl {
-    constructor($scope) {
-
+    constructor($scope, $element) {
         this.data = $scope.data;
         this.chartType = $scope.chartType;
 
         this.events = $scope.events() || {};
         this.options = $scope.chartOptions() || null;
         this.responsiveOptions = $scope.responsiveOptions() || null;
+
+        this.element = $element[0];
+
+        this.renderChart();
 
         $scope.$watch(() => {
             return {
@@ -55,18 +58,9 @@ class AngularChartistCtrl {
             this.chart.update(this.data, this.options);
         }
     }
-
-    set element(element) {
-        this._element = element;
-        this.renderChart();
-    }
-
-    get element() {
-        return this._element;
-    }
 }
 
-AngularChartistCtrl.$inject = ['$scope'];
+AngularChartistCtrl.$inject = ['$scope', '$element'];
 
 function chartistDirective() {
     return {
@@ -80,10 +74,7 @@ function chartistDirective() {
             chartOptions: '&chartistChartOptions',
             responsiveOptions: '&chartistResponsiveOptions'
         },
-        controller: 'AngularChartistCtrl',
-        link: function(scope, element, attrs, Ctrl) {
-            Ctrl.element = element[0];
-        }
+        controller: 'AngularChartistCtrl'
     };
 }
 
