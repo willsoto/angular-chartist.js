@@ -18,7 +18,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var AngularChartistCtrl = (function () {
-    function AngularChartistCtrl($scope) {
+    function AngularChartistCtrl($scope, $element) {
         var _this = this;
 
         _classCallCheck(this, AngularChartistCtrl);
@@ -29,6 +29,10 @@ var AngularChartistCtrl = (function () {
         this.events = $scope.events() || {};
         this.options = $scope.chartOptions() || null;
         this.responsiveOptions = $scope.responsiveOptions() || null;
+
+        this.element = $element[0];
+
+        this.renderChart();
 
         $scope.$watch(function () {
             return {
@@ -81,21 +85,12 @@ var AngularChartistCtrl = (function () {
                 this.chart.update(this.data, this.options);
             }
         }
-    }, {
-        key: 'element',
-        set: function set(element) {
-            this._element = element;
-            this.renderChart();
-        },
-        get: function get() {
-            return this._element;
-        }
     }]);
 
     return AngularChartistCtrl;
 })();
 
-AngularChartistCtrl.$inject = ['$scope'];
+AngularChartistCtrl.$inject = ['$scope', '$element'];
 
 function chartistDirective() {
     return {
@@ -109,10 +104,7 @@ function chartistDirective() {
             chartOptions: '&chartistChartOptions',
             responsiveOptions: '&chartistResponsiveOptions'
         },
-        controller: 'AngularChartistCtrl',
-        link: function link(scope, element, attrs, Ctrl) {
-            Ctrl.element = element[0];
-        }
+        controller: 'AngularChartistCtrl'
     };
 }
 

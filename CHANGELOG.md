@@ -1,3 +1,18 @@
+<a name="3.3.8"></a>
+## [3.3.8](https://github.com/paradox41/angular-chartist.js/compare/v3.3.7...v3.3.8) (2015-08-26)
+
+
+### Bug Fixes
+
+* **gulp:** import the main config file ([fb82ff6](https://github.com/paradox41/angular-chartist.js/commit/fb82ff6))
+* **gulp:** use config value ([cc952c9](https://github.com/paradox41/angular-chartist.js/commit/cc952c9))
+
+### Features
+
+* **gulp:** Add example to release ([c863515](https://github.com/paradox41/angular-chartist.js/commit/c863515))
+
+
+
 <a name="3.3.7"></a>
 ## [3.3.7](https://github.com/paradox41/angular-chartist.js/compare/v3.3.6...v3.3.7) (2015-08-22)
 
