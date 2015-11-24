@@ -5,8 +5,7 @@
   "main": "dist/angular-chartist.js",
   "scripts": {
     "build": "npm install && gulp build",
-    "test": "gulp test",
-    "postinstall": "bower install"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
