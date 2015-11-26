@@ -40,13 +40,12 @@ gulp.task('commit-release', function() {
             './bower.json',
             './package.json',
             './CHANGELOG.md',
-            './dist',
-            './example'
+            './dist'
         ])
         .pipe(git.add({
-            args: '-f -A'
+            args: '-A'
         }))
-        .pipe(git.commit('chore(release): New ' + getImportance() + ' release'))
+        .pipe(git.commit(`chore(release): New ${getImportance()} release`))
         .pipe(filter('bower.json'))
         .pipe(tag());
 });
