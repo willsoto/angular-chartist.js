@@ -2,7 +2,7 @@
   "name": "angular-chartist.js",
   "version": "3.3.11",
   "authors": [
-    "will.soto9@gmail.com"
+    "Will <will.soto9+github@gmail.com>"
   ],
   "description": "Angular directive for Chartist.js",
   "main": "dist/angular-chartist.js",
@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "bootstrap": "~3.2.0",
-    "bootswatch": "~3.2.0",
-    "angular-mocks": "~1.3.6"
+    "bootswatch": "~3.2.0"
   }
 }
