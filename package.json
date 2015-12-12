@@ -23,7 +23,7 @@
   },
   "git": {
     "scripts": {
-      "commit-msg": "node ./validate-commit-msg $1"
+      "commit-msg": "./node_modules/.bin/validate-commit-msg $1"
     }
   },
   "homepage": "https://github.com/paradox41/angular-chartist.js",
@@ -57,7 +57,8 @@
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.18",
     "phantomjs-polyfill": "0.0.1",
-    "run-sequence": "^1.1.2"
+    "run-sequence": "^1.1.2",
+    "validate-commit": "^1.0.13"
   },
   "dependencies": {
     "angular": "^1.2.28",
