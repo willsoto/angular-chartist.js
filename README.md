@@ -5,6 +5,7 @@
 [![npm installs](https://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat)](https://github.com/paradox41/angular-chartist.js)
 [![Travis CI](https://api.travis-ci.org/paradox41/angular-chartist.js.svg)](https://travis-ci.org/paradox41/angular-chartist.js)
 [![David](https://david-dm.org/paradox41/angular-chartist.js.svg)](https://github.com/paradox41/angular-chartist.js)
+[![devDependency Status](https://david-dm.org/paradox41/angular-chartist.js/dev-status.svg)](https://david-dm.org/paradox41/angular-chartist.js#info=devDependencies)
 
 Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
