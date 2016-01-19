@@ -1,3 +1,9 @@
+<a name="3.3.13"></a>
+## [3.3.13](https://github.com/paradox41/angular-chartist.js/compare/v3.3.12...v3.3.13) (2016-01-19)
+
+
+
+
 <a name="3.3.12"></a>
 ## [3.3.12](https://github.com/paradox41/angular-chartist.js/compare/v3.3.11...v3.3.12) (2015-11-26)
 
