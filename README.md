@@ -1,11 +1,11 @@
 # angular-chartist.js
 
-[![Bower Version](https://img.shields.io/bower/v/ng-chartistjs.svg?style=flat)](https://github.com/paradox41/angular-chartist.js)
-[![npm Version](https://img.shields.io/npm/v/angular-chartist.js.svg?style=flat)](https://github.com/paradox41/angular-chartist.js)
-[![npm installs](https://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat)](https://github.com/paradox41/angular-chartist.js)
-[![Travis CI](https://api.travis-ci.org/paradox41/angular-chartist.js.svg)](https://travis-ci.org/paradox41/angular-chartist.js)
-[![David](https://david-dm.org/paradox41/angular-chartist.js.svg)](https://github.com/paradox41/angular-chartist.js)
-[![devDependency Status](https://david-dm.org/paradox41/angular-chartist.js/dev-status.svg)](https://david-dm.org/paradox41/angular-chartist.js#info=devDependencies)
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Coveralls Status][coveralls-image]][coveralls-url]
+[![Dependency Status][depstat-image]][depstat-url]
+[![devDependency Status][devstat-image]](devstat-url)
+[![Downloads][download-badge]][npm-url]
 
 Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
@@ -73,3 +73,20 @@ This directive is simply a wrapper, anything you pass to the directive gets pass
 on the Chartist side. Any issues with the charts, data, options, etc, should be filed against [Chartist.js](https://github.com/gionkunz/chartist-js)
 
 Feel free to file an issue / PR if you feel that the directive can be improved in some way though.
+
+[npm-url]: https://npmjs.org/package/angular-chartist.js
+[npm-image]: https://img.shields.io/npm/v/angular-chartist.js.svg?style=flat-square
+
+[travis-url]: https://travis-ci.org/paradox41/angular-chartist.js
+[travis-image]: https://img.shields.io/travis/paradox41/angular-chartist.js.svg?style=flat-square
+
+[coveralls-url]: https://coveralls.io/r/paradox41/angular-chartist.js
+[coveralls-image]: https://img.shields.io/coveralls/paradox41/angular-chartist.js.svg?style=flat-square
+
+[depstat-url]: https://david-dm.org/paradox41/angular-chartist.js
+[depstat-image]: https://david-dm.org/paradox41/angular-chartist.js.svg?style=flat-square
+
+[devstat-url]: https://david-dm.org/paradox41/angular-chartist.js#info=devDependencies
+[devstat-image]: https://david-dm.org/paradox41/angular-chartist.js/dev-status.svg
+
+[download-badge]: http://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat-square
