@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Coveralls Status][coveralls-image]][coveralls-url]
 [![Dependency Status][depstat-image]][depstat-url]
-[![devDependency Status][devstat-image]](devstat-url)
+[![devDependency Status][devstat-image]][devstat-url]
 [![Downloads][download-badge]][npm-url]
 
 Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
