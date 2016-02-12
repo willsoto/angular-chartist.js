@@ -54,9 +54,9 @@
     "karma-babel-preprocessor": "^6.0.1",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.2.0",
-    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-phantomjs-launcher": "^0.2.3",
     "mocha": "^2.2.5",
-    "phantomjs": "^1.9.18",
+    "phantomjs": "^1.9.19",
     "phantomjs-polyfill": "0.0.1",
     "run-sequence": "^1.1.2",
     "validate-commit": "^1.0.13"
