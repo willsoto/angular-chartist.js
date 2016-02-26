@@ -67,6 +67,22 @@ Possible attributes:
 
 For the sorts of values these options accept, check out the [Chartist.js docs](http://gionkunz.github.io/chartist-js/api-documentation.html)
 
+## Using Plugins
+
+Simply put the plugins array in the `options` object.
+
+Example:
+
+```js
+$scope.chartOptions = {
+    plugins: [
+        ctPointLabels({
+          textAnchor: 'middle'
+        })
+    ]
+};
+```
+
 ## Issues?
 
 This directive is simply a wrapper, anything you pass to the directive gets passed right through to the appropriate method
