@@ -1,8 +1,5 @@
 **/*.
 spec/
-gulp/
 example/
-bower.json
 gulpfile.babel.js
 karma.conf.js
-validate-commit-msg.js

@@ -1,34 +1,81 @@
+var path = require('path');
+
 module.exports = function(config) {
-    'use strict';
+  var options = {
+    files: [
+      'test/index.spec.js'
+    ],
 
-    config.set({
-        files: [
-            './node_modules/phantomjs-polyfill/bind-polyfill.js',
-            './node_modules/jquery/dist/jquery.js',
-            './node_modules/chartist/dist/chartist.js',
-            './node_modules/angular/angular.js',
-            './node_modules/angular-mocks/angular-mocks.js',
-            'src/*.js',
-            'spec/*.js'
-        ],
+    preprocessors: {
+      'test/index.spec.js': ['webpack']
+    },
 
-        reporters: ['progress'],
+    webpack: {
+      module: {
+        preLoaders: [{
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel'
+        }, {
+          test: /\.js$/,
+          include: path.resolve('src/'),
+          loader: 'isparta'
+        }]
+      }
+    },
 
-        port: 9876,
-        colors: true,
+    webpackMiddleware: {
+      noInfo: true
+    },
 
-        logLevel: config.LOG_INFO,
+    reporters: [
+      'spec',
+      'coverage'
+    ],
 
-        browsers: ['PhantomJS'],
-        frameworks: ['mocha', 'chai'],
+    coverageReporter: {
+      type: 'lcov',
+      dir: 'coverage/',
+      subdir: '.'
+    },
 
-        captureTimeout: 60000,
+    port: 9876,
+    colors: true,
 
-        autoWatch: false,
-        singleRun: true,
+    logLevel: config.LOG_INFO,
 
-        preprocessors: {
-            'src/*.js': ['babel']
-        }
-    });
+    browsers: ['Chrome'],
+    customLaunchers: {
+      ChromeTravisCI: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
+
+    frameworks: ['mocha', 'chai'],
+
+    plugins: [
+      'karma-mocha',
+      'karma-chai',
+      'karma-coverage',
+      'karma-webpack',
+      'karma-chrome-launcher',
+      'karma-spec-reporter'
+    ],
+
+    captureTimeout: 60000,
+
+    autoWatch: false,
+    singleRun: true,
+
+    // tests on Travis were timing out
+    browserDisconnectTimeout: 60000,
+    browserNoActivityTimeout: 60000
+  };
+
+  if (process.env.TRAVIS) {
+    options.browsers = ['ChromeTravisCI'];
+  }
+
+  config.set(options);
 };

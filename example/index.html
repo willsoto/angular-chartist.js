@@ -2,85 +2,85 @@
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Angular Chartist</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular Chartist</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootswatch/paper/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
-    <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootswatch/paper/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+  <link rel="stylesheet" href="app.css">
 </head>
 
 <body ng-app="app">
-    <section class="container-fluid" ng-controller="ChartistExampleCtrl as Chartist">
-        <h1>Chart Examples</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Bar Chart (with live updating)</h3>
-                    </div>
-                    <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.barData" chartist-chart-type="Bar" chartist-chart-options="Chartist.barOptions" chartist-responsive-options="Chartist.barResponsiveOptions"></chartist>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Line Chart</h3>
-                    </div>
-                    <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.lineData" chartist-chart-type="Line" chartist-chart-options="Chartist.lineOptions"></chartist>
-                    </div>
-                </div>
-            </div>
+  <section class="container-fluid" ng-controller="ChartistExampleCtrl as Chartist">
+    <h1>Chart Examples</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Bar Chart (with live updating)</h3>
+          </div>
+          <div class="panel-body">
+            <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.barData" chartist-chart-type="Bar" chartist-chart-options="Chartist.barOptions" chartist-responsive-options="Chartist.barResponsiveOptions"></chartist>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Pie Chart</h3>
-                    </div>
-                    <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.pieData" chartist-chart-type="Pie"></chartist>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Donut Chart</h3>
-                    </div>
-                    <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.pieData" chartist-chart-type="Pie" chartist-chart-options="Chartist.donutOptions"></chartist>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Line Chart</h3>
+          </div>
+          <div class="panel-body">
+            <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.lineData" chartist-chart-type="Line" chartist-chart-options="Chartist.lineOptions"></chartist>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Async Data</h3>
-                    </div>
-                    <div class="panel-body">
-                        <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.asyncData" chartist-chart-type="Line" chartist-events="Chartist.events"></chartist>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Pie Chart</h3>
+          </div>
+          <div class="panel-body">
+            <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.pieData" chartist-chart-type="Pie"></chartist>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Donut Chart</h3>
+          </div>
+          <div class="panel-body">
+            <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.pieData" chartist-chart-type="Pie" chartist-chart-options="Chartist.donutOptions"></chartist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Async Data</h3>
+          </div>
+          <div class="panel-body">
+            <chartist class="ct-chart ct-golden-section" chartist-data="Chartist.asyncData" chartist-chart-type="Line" chartist-events="Chartist.events"></chartist>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </section>
 
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="bower_components/chartist/dist/chartist.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/chartist/dist/chartist.min.js"></script>
 
-    <script type="text/javascript" src="lib/angular-chartist.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="lib/angular-chartist.js"></script>
+  <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
