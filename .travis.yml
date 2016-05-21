@@ -1,4 +1,6 @@
 language: node_js
+sudo: required
+dist: trusty
 node_js:
   - stable
   - '5.1'
@@ -9,12 +11,15 @@ node_js:
 after_script:
   - npm run coveralls
 
-# Google Chrome
-#
-# https://github.com/travis-ci/travis-ci/issues/272#issuecomment-14402117
-# http://stackoverflow.com/questions/19255976/how-to-make-travis-execute-angular-tests-on-chrome-please-set-env-variable-chr
-# http://swizec.com/blog/how-to-run-javascript-tests-in-chrome-on-travis/swizec/6647
-before_install:
-  - export CHROME_BIN=chromium-browser
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+# For Chrome to work
+before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+  - sleep 3
