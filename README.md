@@ -15,14 +15,6 @@ Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
 ## Installation
 
-Install via `bower`
-
-```
-bower install angular-chartist.js --save
-```
-
-Install via `npm`
-
 ```
 npm install angular-chartist.js --save
 ```
@@ -36,24 +28,21 @@ Add `angular-chartist` as a module dependency, like so:
 var app = angular.module('app', ['angular-chartist']);
 ```
 
-> Please note: if you were using this prior to 2.0, the module name was `ngChartist`.
-
 In your HTML, add the `chartist` directive to any `div` or make it a custom element:
 
 ```html
 <chartist class="ct-chart" chartist-data="chartist.barData" chartist-chart-type="Bar"></chartist>
 ```
 
-Ensure that you also have, at the very least, the `ct-chart` class on the element and that you provide
-the `chartist-data` and `chartist-chart-type` attributes.
+| Attribute | Type | Required |
+| ------------- | ------------- | ------------- |
+| `chartist-data` | Object  | Yes |
+| `chartist-chart-type` | String  | Yes |
+| `chartist-events`* | Object  | No |
+| `chartist-chart-options` | Object  | No |
+| `chartist-responsive-options` | Array  | No |
 
-All attributes are namespaced under `chartist`
-
-Possible attributes:
-
-- `chartist-data` (required)
-- `chartist-chart-type` (required): The chart type should start with a capital letter
-- `chartist-events` (optional): An object containing `key:value` pairs in the following format:
+Format for Chartist events:
 ```js
 {
   event: function eventHandler(obj) {
@@ -61,9 +50,6 @@ Possible attributes:
   }
 }
 ```
-- `chartist-chart-options` (optional)
-- `chartist-responsive-options` (optional)
-
 
 For the sorts of values these options accept, check out the [Chartist.js docs](http://gionkunz.github.io/chartist-js/api-documentation.html)
 
