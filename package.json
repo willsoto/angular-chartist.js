@@ -12,6 +12,7 @@
     "uglify": "uglifyjs dist/angular-chartist.js --compress --mangle --screw-ie8 -o dist/angular-chartist.min.js",
     "pretest": "npm run build",
     "test": "karma start",
+    "test:watch": "npm run test -- --no-single-run --auto-watch",
     "lint": "eslint src/ test/",
     "coveralls": "coveralls < coverage/lcov.info",
     "postcoveralls": "rimraf ./coverage",
