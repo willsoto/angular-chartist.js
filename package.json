@@ -14,7 +14,13 @@
     "test": "karma start",
     "lint": "eslint src/ test/",
     "coveralls": "coveralls < coverage/lcov.info",
-    "postcoveralls": "rimraf ./coverage"
+    "postcoveralls": "rimraf ./coverage",
+    "prepublish": "npm run build",
+    "deploy": "git pull --rebase origin master && git push origin master",
+    "patch": "gulp release:patch && npm publish",
+    "minor": "gulp release:minor && npm publish",
+    "major": "gulp release:major && npm publish",
+    "postpublish": "git push origin master --follow-tags"
   },
   "repository": {
     "type": "git",
