@@ -3,122 +3,169 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
     <title>Angular-chartist.js by paradox41</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
+    <a id="forkme_banner" href="https://github.com/paradox41/angular-chartist.js">View on GitHub</a>
+    <div class="shell">
 
-        <header>
-          <h1>Angular-chartist.js</h1>
-          <h2>Angular directive for Chartist.js</h2>
-        </header>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Angular-chartist.js</h1>
+            <h2>Angular directive for Chartist.js</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/paradox41/angular-chartist.js/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/paradox41/angular-chartist.js/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/paradox41/angular-chartist.js" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/paradox41/angular-chartist.js/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/paradox41/angular-chartist.js/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-        <hr>
 
-        <section id="main_content">
-          <h1>
-<a id="angular-chartistjs" class="anchor" href="#angular-chartistjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>angular-chartist.js</h1>
+      <span class="banner-fix"></span>
 
-<p><a href="https://github.com/paradox41/angular-chartist.js"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License"></a>
-<a href="https://github.com/paradox41/angular-chartist.js"><img src="https://img.shields.io/bower/v/ng-chartistjs.svg?style=flat" alt="Bower Version"></a>
-<a href="https://github.com/paradox41/angular-chartist.js"><img src="https://img.shields.io/npm/v/angular-chartist.js.svg?style=flat" alt="npm Version"></a>
-<a href="https://github.com/paradox41/angular-chartist.js"><img src="https://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat" alt="npm installs"></a></p>
+
+      <section id="main_content">
+        <h1>
+<a id="angular-chartistjs" class="anchor" href="#angular-chartistjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>angular-chartist.js</h1>
+
+<p><a href="https://npmjs.org/package/angular-chartist.js"><img src="https://img.shields.io/npm/v/angular-chartist.js.svg?style=flat-square" alt="NPM version"></a>
+<a href="https://travis-ci.org/paradox41/angular-chartist.js"><img src="https://img.shields.io/travis/paradox41/angular-chartist.js.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://coveralls.io/r/paradox41/angular-chartist.js"><img src="https://img.shields.io/coveralls/paradox41/angular-chartist.js.svg?style=flat-square" alt="Coveralls Status"></a>
+<a href="https://david-dm.org/paradox41/angular-chartist.js"><img src="https://david-dm.org/paradox41/angular-chartist.js.svg?style=flat-square" alt="Dependency Status"></a>
+<a href="https://david-dm.org/paradox41/angular-chartist.js#info=devDependencies"><img src="https://david-dm.org/paradox41/angular-chartist.js/dev-status.svg" alt="devDependency Status"></a>
+<a href="https://npmjs.org/package/angular-chartist.js"><img src="http://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat-square" alt="Downloads"></a></p>
 
 <p>Angular directive for <a href="http://gionkunz.github.io/chartist-js/">Chartist.js</a></p>
 
 <p><em>Formerly known as ng-chartist.js</em></p>
 
+<p><a href="http://paradox41.github.io/angular-chartist.js">http://paradox41.github.io/angular-chartist.js</a></p>
+
 <h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
-
-<p>Install via <code>bower</code></p>
-
-<pre><code>bower install angular-chartist.js --save
-</code></pre>
-
-<p>Install via <code>npm</code></p>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
 <pre><code>npm install angular-chartist.js --save
 </code></pre>
 
 <h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Make sure you have loaded the necessary scripts in the correct order.
 Add <code>angular-chartist</code> as a module dependency, like so:</p>
 
-<div class="highlight highlight-js"><pre><span class="pl-s">var</span> app <span class="pl-k">=</span> angular.module(<span class="pl-s1"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>, [<span class="pl-s1"><span class="pl-pds">'</span>angular-chartist<span class="pl-pds">'</span></span>]);</pre></div>
-
-<blockquote>
-<p>Please note: if you were using this prior to 2.0, the module name was <code>ngChartist</code>.</p>
-</blockquote>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> app <span class="pl-k">=</span> <span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>angular-chartist<span class="pl-pds">'</span></span>]);</pre></div>
 
 <p>In your HTML, add the <code>chartist</code> directive to any <code>div</code> or make it a custom element:</p>
 
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">chartist</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>ct-chart<span class="pl-pds">"</span></span> <span class="pl-e">chartist-data</span>=<span class="pl-s1"><span class="pl-pds">"</span>chartist.barData<span class="pl-pds">"</span></span> <span class="pl-e">chartist-chart-type</span>=<span class="pl-s1"><span class="pl-pds">"</span>Bar<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">chartist</span>&gt;</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">chartist</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>ct-chart<span class="pl-pds">"</span></span> <span class="pl-e">chartist-data</span>=<span class="pl-s"><span class="pl-pds">"</span>chartist.barData<span class="pl-pds">"</span></span> <span class="pl-e">chartist-chart-type</span>=<span class="pl-s"><span class="pl-pds">"</span>Bar<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">chartist</span>&gt;</pre></div>
 
-<p>Ensure that you also have, at the very least, the <code>ct-chart</code> class on the element and that you provide
-the <code>chartist-data</code> and <code>chartist-chart-type</code> attributes.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chartist-data</code></td>
+<td>Object</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>chartist-chart-type</code></td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>
+<code>chartist-events</code>*</td>
+<td>Object</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>chartist-chart-options</code></td>
+<td>Object</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>chartist-responsive-options</code></td>
+<td>Array</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 
-<p>All attributes are namespaced under <code>chartist</code></p>
+<p>Format for Chartist events:</p>
 
-<p>Possible attributes:</p>
-
-<ul>
-<li>
-<code>chartist-data</code> (required)</li>
-<li>
-<code>chartist-chart-type</code> (required): The chart type should start with a capital letter</li>
-<li>
-<code>chartist-events</code> (optional): An object containing <code>key:value</code> pairs in the following format:</li>
-</ul>
-
-<div class="highlight highlight-js"><pre>{
-  <span class="pl-s3">event</span><span class="pl-k">:</span> <span class="pl-st">function</span> <span class="pl-en">eventHandler</span>(<span class="pl-vpf">obj</span>) {
+<div class="highlight highlight-source-js"><pre>{
+  <span class="pl-en">event</span><span class="pl-k">:</span> <span class="pl-k">function</span> <span class="pl-en">eventHandler</span>(<span class="pl-smi">obj</span>) {
     <span class="pl-c">// do stuff on event</span>
   }
 }</pre></div>
 
-<ul>
-<li>
-<code>chartist-chart-options</code> (optional)</li>
-<li>
-<code>chartist-responsive-options</code> (optional)</li>
-</ul>
-
 <p>For the sorts of values these options accept, check out the <a href="http://gionkunz.github.io/chartist-js/api-documentation.html">Chartist.js docs</a></p>
 
 <h2>
-<a id="issues" class="anchor" href="#issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues?</h2>
+<a id="using-plugins" class="anchor" href="#using-plugins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Plugins</h2>
+
+<p>Simply put the plugins array in the <code>options</code> object.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">$scope</span>.<span class="pl-smi">chartOptions</span> <span class="pl-k">=</span> {
+    plugins<span class="pl-k">:</span> [
+        <span class="pl-en">ctPointLabels</span>({
+          textAnchor<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>middle<span class="pl-pds">'</span></span>
+        })
+    ]
+};</pre></div>
+
+<h2>
+<a id="issues" class="anchor" href="#issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Issues?</h2>
 
 <p>This directive is simply a wrapper, anything you pass to the directive gets passed right through to the appropriate method
 on the Chartist side. Any issues with the charts, data, options, etc, should be filed against <a href="https://github.com/gionkunz/chartist-js">Chartist.js</a></p>
 
 <p>Feel free to file an issue / PR if you feel that the directive can be improved in some way though.</p>
-        </section>
+      </section>
 
-        <footer>
-          Angular-chartist.js is maintained by <a href="https://github.com/paradox41">paradox41</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/paradox41">paradox41</a> can be found on <a href="https://github.com/paradox41/angular-chartist.js">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
 
-        
-      </div>
     </div>
+
+    
   </body>
 </html>
