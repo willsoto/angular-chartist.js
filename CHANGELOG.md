@@ -1,3 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="4.0.0-beta.1"></a>
+# [4.0.0-beta.1](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta...v4.0.0-beta.1) (2016-06-09)
+
+
+### Bug Fixes
+
+* **angular-chartist:** fix responsive options not being updated on initial render ([c53b7a8](https://github.com/paradox41/angular-chartist.js/commit/c53b7a8)), closes [#80](https://github.com/paradox41/angular-chartist.js/issues/80)
+
+
+
 <a name="3.3.13"></a>
 ## [3.3.13](https://github.com/paradox41/angular-chartist.js/compare/v3.3.12...v3.3.13) (2016-01-19)
 
@@ -299,7 +313,3 @@ Please update your module name to
 
 <a name="0.1.2"></a>
 ## 0.1.2 (2014-09-10)
-
-
-
-
