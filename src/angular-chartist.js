@@ -21,7 +21,8 @@ class AngularChartistCtrl {
         data: $scope.data,
         chartType: $scope.chartType,
         chartOptions: $scope.chartOptions(),
-        responsiveOptions: $scope.responsiveOptions()
+        responsiveOptions: $scope.responsiveOptions(),
+        events: $scope.events()
       };
     }, this.update.bind(this), true);
 
@@ -55,6 +56,7 @@ class AngularChartistCtrl {
     this.data = newConfig.data;
     this.options = newConfig.chartOptions;
     this.responsiveOptions = newConfig.responsiveOptions;
+    this.events = newConfig.events;
 
     // If chart type changed we need to recreate whole chart, otherwise we can update
     if (!this.chart || newConfig.chartType !== oldConfig.chartType) {
