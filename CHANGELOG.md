@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0-beta.2"></a>
+# [4.0.0-beta.2](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta.1...v4.0.0-beta.2) (2016-06-12)
+
+
+### Bug Fixes
+
+* **angular-chartist:** fix event definitions not being updated on initial render ([406e553](https://github.com/paradox41/angular-chartist.js/commit/406e553)), closes [#82](https://github.com/paradox41/angular-chartist.js/issues/82)
+
+
+
 <a name="4.0.0-beta.1"></a>
 # [4.0.0-beta.1](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta...v4.0.0-beta.1) (2016-06-09)
 
