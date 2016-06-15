@@ -7,9 +7,9 @@
 [![devDependency Status][devstat-image]][devstat-url]
 [![Downloads][download-badge]][npm-url]
 
-Angular directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
+Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
-[http://paradox41.github.io/angular-chartist.js](http://paradox41.github.io/angular-chartist.js)
+[Looking for the Angular 2 version?](https://github.com/paradox41/angular2-chartist)
 
 ## Installation
 
