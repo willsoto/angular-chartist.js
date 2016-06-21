@@ -23,7 +23,7 @@ Make sure you have loaded the necessary scripts in the correct order.
 Add `angular-chartist` as a module dependency, like so:
 
 ```js
-// >= 4.0
+// >= 4.1
 import angular from 'angular';
 import angularChartist from 'angular-chartist.js';
 
