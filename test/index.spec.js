@@ -3,7 +3,7 @@ import 'angular-mocks';
 
 import { expect } from 'chai';
 
-import angularChartist from '../src/angular-chartist';
+import angularChartist from '../dist/angular-chartist';
 
 const templates = {
   'default': {
@@ -22,7 +22,7 @@ const templates = {
 };
 
 describe('angular-chartist', function() {
-  beforeEach(angular.mock.module(angularChartist.name));
+  beforeEach(angular.mock.module(angularChartist));
 
   beforeEach(angular.mock.inject(function($injector) {
     this.$scope = $injector.get('$rootScope');
@@ -40,6 +40,10 @@ describe('angular-chartist', function() {
       return element;
     };
   }));
+
+  it('should correctly export itself', function() {
+    expect(angularChartist).to.equal('angular-chartist');
+  });
 
   it('should contain data and chartType', function() {
     const element = this.compileDirective();

@@ -23,7 +23,23 @@ Make sure you have loaded the necessary scripts in the correct order.
 Add `angular-chartist` as a module dependency, like so:
 
 ```js
-var app = angular.module('app', ['angular-chartist']);
+// >= 4.0
+import angular from 'angular';
+import angularChartist from 'angular-chartist.js';
+
+angular.module('app', [
+  angularChartist
+]);
+```
+
+```js
+// <= 4.0
+import angular from 'angular';
+import angularChartist from 'angular-chartist.js';
+
+angular.module('app', [
+  angularChartist.name
+]);
 ```
 
 In your HTML, add the `chartist` directive to any `div` or make it a custom element:

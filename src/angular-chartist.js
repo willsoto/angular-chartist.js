@@ -1,6 +1,8 @@
 import angular from 'angular';
 import Chartist from 'chartist';
 
+const angularChartistModule = angular.module('angular-chartist', []);
+
 class AngularChartistCtrl {
   constructor($scope, $element) {
     'ngInject';
@@ -67,7 +69,7 @@ class AngularChartistCtrl {
   }
 }
 
-export default angular.module('angular-chartist', [])
+angularChartistModule
 
 .controller('AngularChartistCtrl', AngularChartistCtrl)
 
@@ -88,3 +90,5 @@ export default angular.module('angular-chartist', [])
     controller: 'AngularChartistCtrl'
   };
 });
+
+export default angularChartistModule.name;
