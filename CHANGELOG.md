@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.0-beta.0"></a>
+# [4.1.0-beta.0](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta.2...v4.1.0-beta.0) (2016-06-21)
+
+
+### Code Refactoring
+
+* **angular-chartist:** change the export ([bb9a113](https://github.com/paradox41/angular-chartist.js/commit/bb9a113))
+
+
+### BREAKING CHANGES
+
+* angular-chartist: only export the name of the module instead of the whole module
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="4.0.0-beta.2"></a>
 # [4.0.0-beta.2](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta.1...v4.0.0-beta.2) (2016-06-12)
 
