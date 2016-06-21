@@ -38,11 +38,9 @@
 <a href="https://david-dm.org/paradox41/angular-chartist.js#info=devDependencies"><img src="https://david-dm.org/paradox41/angular-chartist.js/dev-status.svg" alt="devDependency Status"></a>
 <a href="https://npmjs.org/package/angular-chartist.js"><img src="http://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat-square" alt="Downloads"></a></p>
 
-<p>Angular directive for <a href="http://gionkunz.github.io/chartist-js/">Chartist.js</a></p>
+<p>Angular 1.x directive for <a href="http://gionkunz.github.io/chartist-js/">Chartist.js</a></p>
 
-<p><em>Formerly known as ng-chartist.js</em></p>
-
-<p><a href="http://paradox41.github.io/angular-chartist.js">http://paradox41.github.io/angular-chartist.js</a></p>
+<p><a href="https://github.com/paradox41/angular2-chartist">Looking for the Angular 2 version?</a></p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
@@ -56,7 +54,21 @@
 <p>Make sure you have loaded the necessary scripts in the correct order.
 Add <code>angular-chartist</code> as a module dependency, like so:</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> app <span class="pl-k">=</span> <span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>angular-chartist<span class="pl-pds">'</span></span>]);</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// &gt;= 4.1</span>
+<span class="pl-k">import</span> <span class="pl-smi">angular</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>angular<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">angularChartist</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>angular-chartist.js<span class="pl-pds">'</span></span>;
+
+<span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>, [
+  angularChartist
+]);</pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// &lt;= 4.0</span>
+<span class="pl-k">import</span> <span class="pl-smi">angular</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>angular<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">angularChartist</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>angular-chartist.js<span class="pl-pds">'</span></span>;
+
+<span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>, [
+  <span class="pl-smi">angularChartist</span>.<span class="pl-c1">name</span>
+]);</pre></div>
 
 <p>In your HTML, add the <code>chartist</code> directive to any <code>div</code> or make it a custom element:</p>
 
