@@ -20,7 +20,7 @@
     "postpublish": "git push origin master --follow-tags",
     "example": "webpack-dev-server --content-base example/",
     "prerelease": "npm test",
-    "release": "standard-version && git push --follow-tags origin master && npm publish"
+    "release": "standard-version --sign && git push --follow-tags origin master && npm publish"
   },
   "repository": {
     "type": "git",
