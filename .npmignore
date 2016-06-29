@@ -1,5 +1,5 @@
 **/*.
-spec/
+test/
 example/
-gulpfile.babel.js
-karma.conf.js
+*.conf.js
+*.config.js
