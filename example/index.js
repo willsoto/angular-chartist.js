@@ -1,5 +1,5 @@
 import angular from 'angular';
-import Chartist from 'chartist';
+import 'chartist';
 
 import 'chartist/dist/chartist.min.css';
 import './app.css';
@@ -7,7 +7,7 @@ import './app.css';
 import angularChartistModule from '../dist/angular-chartist';
 
 angular.module('app', [
-  angularChartistModule.name
+  angularChartistModule
 ])
 
 .controller('ChartistExampleCtrl', ['$scope', '$interval', '$timeout',
