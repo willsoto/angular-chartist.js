@@ -60,7 +60,7 @@
     "eslint": "^2.10.2",
     "git-scripts": "^0.2.1",
     "isparta-loader": "^2.0.0",
-    "karma": "^0.13.22",
+    "karma": "^1.1.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.0.0",
