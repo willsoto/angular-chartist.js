@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.0-beta.1"></a>
+# [4.1.0-beta.1](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta...v4.1.0-beta.1) (2016-06-29)
+
+
+### Bug Fixes
+
+* **angular-chartist:** fix event definitions not being updated on initial render ([406e553](https://github.com/paradox41/angular-chartist.js/commit/406e553)), closes [#82](https://github.com/paradox41/angular-chartist.js/issues/82)
+* **angular-chartist:** fix responsive options not being updated on initial render ([c53b7a8](https://github.com/paradox41/angular-chartist.js/commit/c53b7a8)), closes [#80](https://github.com/paradox41/angular-chartist.js/issues/80)
+
+
+### Code Refactoring
+
+* **angular-chartist:** change the export ([ce89a24](https://github.com/paradox41/angular-chartist.js/commit/ce89a24))
+
+
+### BREAKING CHANGES
+
+* angular-chartist: only export the name of the module instead of the whole module
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="4.1.0-beta.0"></a>
 # [4.1.0-beta.0](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta.2...v4.1.0-beta.0) (2016-06-21)
 
