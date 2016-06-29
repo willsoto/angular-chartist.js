@@ -14,7 +14,7 @@ Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 ## Installation
 
 ```
-npm install angular-chartist.js --save
+npm install angular-chartist.js chartist angular --save
 ```
 
 ## Usage
