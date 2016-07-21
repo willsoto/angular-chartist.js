@@ -18,7 +18,7 @@
     "postcoveralls": "rimraf ./coverage",
     "prepublish": "npm run build",
     "postpublish": "git push origin master --follow-tags",
-    "example": "webpack-dev-server --content-base example/",
+    "start": "webpack-dev-server --content-base example/",
     "prerelease": "npm test",
     "release": "standard-version --sign && git push --follow-tags origin master && npm publish"
   },
