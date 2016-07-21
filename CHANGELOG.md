@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta.2...v4.2.0) (2016-07-21)
+
+
+### Bug Fixes
+
+* **example:** fix module name and add bootstrap ([0b698d1](https://github.com/paradox41/angular-chartist.js/commit/0b698d1))
+* **package:** make angular and chartist peerDependencies ([6ce986e](https://github.com/paradox41/angular-chartist.js/commit/6ce986e))
+
+
+### Code Refactoring
+
+* **angular-chartist:** change the export ([ce89a24](https://github.com/paradox41/angular-chartist.js/commit/ce89a24))
+
+
+### BREAKING CHANGES
+
+* package: Angular and Chartist will need to be installed explicitly now
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+* angular-chartist: only export the name of the module instead of the whole module
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="4.2.0-beta.0"></a>
 # [4.2.0-beta.0](https://github.com/paradox41/angular-chartist.js/compare/v4.1.0-beta.1...v4.2.0-beta.0) (2016-06-29)
 
