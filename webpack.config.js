@@ -1,8 +1,10 @@
+const path = require('path');
+
 module.exports = {
-  context: `${__dirname}/example`,
+  context: path.resolve(__dirname, 'example'),
   entry: './index.js',
   output: {
-    path: `${__dirname}/example`,
+    path: path.resolve(__dirname, 'example'),
     filename: 'index.bundle.js'
   },
   module: {
