@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.2.1"></a>
+## [4.2.1](https://github.com/paradox41/angular-chartist.js/compare/v4.2.0...v4.2.1) (2016-08-04)
+
+
+### Bug Fixes
+
+* **umd:** map to the correct Chartist global ([745d591](https://github.com/paradox41/angular-chartist.js/commit/745d591)), closes [#87](https://github.com/paradox41/angular-chartist.js/issues/87)
+
+
+
 <a name="4.2.0"></a>
 # [4.2.0](https://github.com/paradox41/angular-chartist.js/compare/v4.0.0-beta.2...v4.2.0) (2016-07-21)
 
