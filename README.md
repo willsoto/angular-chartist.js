@@ -17,6 +17,13 @@ Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 npm install angular-chartist.js chartist angular --save
 ```
 
+For package managers other than NPM, you can install via the git url:
+
+For example, with Bower:
+```
+bower install 'https://github.com/paradox41/angular-chartist.js.git#<tag>' --save
+```
+
 ## Usage
 
 Make sure you have loaded the necessary scripts in the correct order.
