@@ -13,14 +13,37 @@ Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
 ## Installation
 
+#### npm
+
 ```
 npm install angular-chartist.js chartist angular --save
 ```
 
-For package managers other than NPM, you can install via the git url:
+#### Bower
 
-For example, with Bower:
+Bower support has been dropped since version 4.0.0 but you can still use angular-chartist with Bower thanks to [bower-npm-resolver](https://www.npmjs.com/package/bower-npm-resolver).
+
+First, add the resolver in your .bowerrc file:
+
+```json
+{
+  "resolvers": [
+    "bower-npm-resolver"
+  ]
+}
 ```
+
+Then:
+
+```sh
+npm install -g bower-npm-resolver
+bower install npm:angular-chartist.js chartist angular --save
+```
+
+For package managers other than npm, you can install via the git url:
+
+For example, with Bower (if not using bower-npm-resolver):
+```sh
 bower install 'https://github.com/paradox41/angular-chartist.js.git#<tag>' --save
 ```
 
