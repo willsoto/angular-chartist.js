@@ -12,7 +12,7 @@ module.exports = function(config) {
 
     webpack: {
       module: {
-        preLoaders: [{
+        loaders: [{
           test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel'
