@@ -41,6 +41,12 @@ class AngularChartistCtrl {
     });
   }
 
+  unbindEvents(events) {
+    Object.keys(events).forEach((eventName) => {
+      this.chart.off(eventName, events[eventName]);
+    });
+  }
+
   renderChart() {
     // ensure that the chart does not get created without data
     if (this.data) {
@@ -64,6 +70,10 @@ class AngularChartistCtrl {
     if (!this.chart || newConfig.chartType !== oldConfig.chartType) {
       this.renderChart();
     } else {
+      if (!angular.equals(newConfig.events, oldConfig.events)) {
+        this.unbindEvents(oldConfig.events);
+        this.bindEvents();
+      }
       this.chart.update(this.data, this.options);
     }
   }
