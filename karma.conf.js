@@ -15,11 +15,11 @@ module.exports = function(config) {
         loaders: [{
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: 'babel'
+          loader: 'babel-loader'
         }, {
           test: /\.js$/,
           include: path.resolve('src/'),
-          loader: 'isparta'
+          loader: 'isparta-loader'
         }]
       }
     },
