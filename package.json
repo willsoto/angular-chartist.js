@@ -56,7 +56,7 @@
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "coveralls": "^2.11.14",
-    "css-loader": "^0.25.0",
+    "css-loader": "^0.26.0",
     "eslint": "^3.9.1",
     "git-scripts": "^0.2.1",
     "isparta-loader": "^2.0.0",
