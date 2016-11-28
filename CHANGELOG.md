@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.2.3"></a>
+## [4.2.3](https://github.com/paradox41/angular-chartist.js/compare/v4.2.2...v4.2.3) (2016-11-28)
+
+
+### Bug Fixes
+
+* **webpack:** fix loader names for latest webpack ([98b9bf1](https://github.com/paradox41/angular-chartist.js/commit/98b9bf1))
+* Fixes events update ([3643e5f](https://github.com/paradox41/angular-chartist.js/commit/3643e5f))
+
+
+
 <a name="4.2.2"></a>
 ## [4.2.2](https://github.com/paradox41/angular-chartist.js/compare/v4.2.1...v4.2.2) (2016-11-15)
 
