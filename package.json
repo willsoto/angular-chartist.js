@@ -70,7 +70,7 @@
     "mocha": "^3.1.2",
     "ng-annotate": "^1.2.1",
     "rimraf": "^2.5.4",
-    "standard-version": "^3.0.0",
+    "standard-version": "^4.0.0",
     "style-loader": "^0.13.1",
     "uglify-js": "^2.7.4",
     "validate-commit": "^2.3.2",
