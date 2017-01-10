@@ -2,5 +2,4 @@
 node_modules/
 *.log
 coverage/
-dist/
 example/index.bundle.js
