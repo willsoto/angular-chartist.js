@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.0"></a>
+# [4.3.0](https://github.com/paradox41/angular-chartist.js/compare/v4.2.3...v4.3.0) (2017-01-10)
+
+
+### Bug Fixes
+
+* **dist:** add dist to version control ([b15a4fc](https://github.com/paradox41/angular-chartist.js/commit/b15a4fc)), closes [#104](https://github.com/paradox41/angular-chartist.js/issues/104)
+
+
+### Features
+
+* **yarn:** add yarn and update devDependencies ([a2013de](https://github.com/paradox41/angular-chartist.js/commit/a2013de))
+
+
+
 <a name="4.2.3"></a>
 ## [4.2.3](https://github.com/paradox41/angular-chartist.js/compare/v4.2.2...v4.2.3) (2016-11-28)
 
