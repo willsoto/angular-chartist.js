@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/paradox41/angular-chartist.js"
+    "url": "https://github.com/willsoto/angular-chartist.js"
   },
   "keywords": [
     "angular",
@@ -34,14 +34,14 @@
   "author": "Will <will.soto9+github@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/paradox41/angular-chartist.js/issues"
+    "url": "https://github.com/willsoto/angular-chartist.js/issues"
   },
   "git": {
     "scripts": {
       "commit-msg": "./node_modules/.bin/validate-commit-msg $1"
     }
   },
-  "homepage": "https://github.com/paradox41/angular-chartist.js",
+  "homepage": "https://github.com/willsoto/angular-chartist.js",
   "devDependencies": {
     "angular": "^1.6.1",
     "angular-mocks": "^1.6.1",
