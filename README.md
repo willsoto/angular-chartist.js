@@ -1,5 +1,7 @@
 # angular-chartist.js
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/willsoto/angular-chartist.js.svg)](https://greenkeeper.io/)
+
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Coveralls Status][coveralls-image]][coveralls-url]
