@@ -1,0 +1,8 @@
+title: Angular-chartist.js
+description: Angular directive for Chartist.js
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-midnight
+
+gems:
+  - jekyll-mentions
