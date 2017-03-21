@@ -11,7 +11,7 @@
 
 Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
-[Looking for the Angular 2 version?](https://github.com/paradox41/angular2-chartist)
+[Looking for the Angular version?](https://github.com/willsoto/ng-chartist)
 
 ## Installation
 
@@ -46,7 +46,7 @@ For package managers other than npm, you can install via the git url:
 
 For example, with Bower (if not using bower-npm-resolver):
 ```sh
-bower install 'https://github.com/paradox41/angular-chartist.js.git#<tag>' --save
+bower install 'https://github.com/willsoto/angular-chartist.js.git#<tag>' --save
 ```
 
 ## Usage
@@ -125,16 +125,16 @@ Feel free to file an issue / PR if you feel that the directive can be improved i
 [npm-url]: https://npmjs.org/package/angular-chartist.js
 [npm-image]: https://img.shields.io/npm/v/angular-chartist.js.svg?style=flat-square
 
-[travis-url]: https://travis-ci.org/paradox41/angular-chartist.js
-[travis-image]: https://img.shields.io/travis/paradox41/angular-chartist.js.svg?style=flat-square
+[travis-url]: https://travis-ci.org/willsoto/angular-chartist.js
+[travis-image]: https://img.shields.io/travis/willsoto/angular-chartist.js.svg?style=flat-square
 
-[coveralls-url]: https://coveralls.io/r/paradox41/angular-chartist.js
-[coveralls-image]: https://img.shields.io/coveralls/paradox41/angular-chartist.js.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/willsoto/angular-chartist.js
+[coveralls-image]: https://img.shields.io/coveralls/willsoto/angular-chartist.js.svg?style=flat-square
 
-[depstat-url]: https://david-dm.org/paradox41/angular-chartist.js
-[depstat-image]: https://david-dm.org/paradox41/angular-chartist.js.svg?style=flat-square
+[depstat-url]: https://david-dm.org/willsoto/angular-chartist.js
+[depstat-image]: https://david-dm.org/willsoto/angular-chartist.js.svg?style=flat-square
 
-[devstat-url]: https://david-dm.org/paradox41/angular-chartist.js#info=devDependencies
-[devstat-image]: https://david-dm.org/paradox41/angular-chartist.js/dev-status.svg
+[devstat-url]: https://david-dm.org/willsoto/angular-chartist.js#info=devDependencies
+[devstat-image]: https://david-dm.org/willsoto/angular-chartist.js/dev-status.svg
 
 [download-badge]: http://img.shields.io/npm/dm/angular-chartist.js.svg?style=flat-square
