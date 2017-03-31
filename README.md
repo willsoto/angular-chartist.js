@@ -108,7 +108,7 @@ Example:
 ```js
 $scope.chartOptions = {
     plugins: [
-        ctPointLabels({
+        Chartist.plugins.ctPointLabels({
           textAnchor: 'middle'
         })
     ]
