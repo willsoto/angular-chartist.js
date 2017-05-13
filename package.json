@@ -73,7 +73,7 @@
     "standard-version": "^4.0.0",
     "style-loader": "^0.17.0",
     "uglify-js": "^3.0.4",
-    "validate-commit": "^2.3.2",
+    "validate-commit": "^3.2.0",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.5"
   },
