@@ -5,26 +5,15 @@
     "node": true,
     "mocha": true
   },
-  "extends": "eslint:recommended",
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "prettier"],
   "parserOptions": {
     "sourceType": "module"
   },
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
   }
 }

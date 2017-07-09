@@ -2,9 +2,7 @@ var path = require('path');
 
 module.exports = function(config) {
   var options = {
-    files: [
-      'test/index.spec.js'
-    ],
+    files: ['test/index.spec.js'],
 
     preprocessors: {
       'test/index.spec.js': ['webpack']
@@ -12,15 +10,18 @@ module.exports = function(config) {
 
     webpack: {
       module: {
-        loaders: [{
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader'
-        }, {
-          test: /\.js$/,
-          include: path.resolve('src/'),
-          loader: 'isparta-loader'
-        }]
+        loaders: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+          },
+          {
+            test: /\.js$/,
+            include: path.resolve('src/'),
+            loader: 'istanbul-instrumenter-loader'
+          }
+        ]
       }
     },
 
@@ -28,10 +29,7 @@ module.exports = function(config) {
       noInfo: true
     },
 
-    reporters: [
-      'spec',
-      'coverage'
-    ],
+    reporters: ['spec', 'coverage'],
 
     coverageReporter: {
       type: 'lcov',

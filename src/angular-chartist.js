@@ -6,7 +6,6 @@ const angularChartistModule = angular.module('angular-chartist', []);
 class AngularChartistCtrl {
   constructor($scope, $element) {
     'ngInject';
-
     this.data = $scope.data;
     this.chartType = $scope.chartType;
 
@@ -18,15 +17,19 @@ class AngularChartistCtrl {
 
     this.renderChart();
 
-    $scope.$watch(() => {
-      return {
-        data: $scope.data,
-        chartType: $scope.chartType,
-        chartOptions: $scope.chartOptions(),
-        responsiveOptions: $scope.responsiveOptions(),
-        events: $scope.events()
-      };
-    }, this.update.bind(this), true);
+    $scope.$watch(
+      () => {
+        return {
+          data: $scope.data,
+          chartType: $scope.chartType,
+          chartOptions: $scope.chartOptions(),
+          responsiveOptions: $scope.responsiveOptions(),
+          events: $scope.events()
+        };
+      },
+      this.update.bind(this),
+      true
+    );
 
     $scope.$on('$destroy', () => {
       if (this.chart) {
@@ -36,13 +39,13 @@ class AngularChartistCtrl {
   }
 
   bindEvents() {
-    Object.keys(this.events).forEach((eventName) => {
+    Object.keys(this.events).forEach(eventName => {
       this.chart.on(eventName, this.events[eventName]);
     });
   }
 
   unbindEvents(events) {
-    Object.keys(events).forEach((eventName) => {
+    Object.keys(events).forEach(eventName => {
       this.chart.off(eventName, events[eventName]);
     });
   }
@@ -79,13 +82,8 @@ class AngularChartistCtrl {
   }
 }
 
-angularChartistModule
-
-.controller('AngularChartistCtrl', AngularChartistCtrl)
-
-.directive('chartist', function() {
+angularChartistModule.controller('AngularChartistCtrl', AngularChartistCtrl).directive('chartist', function() {
   'ngInject';
-
   return {
     restrict: 'EA',
     scope: {

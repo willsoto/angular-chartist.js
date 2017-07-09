@@ -1,13 +1,13 @@
 {
-  "plugins": [
-    "add-module-exports",
-    ["transform-es2015-modules-umd", {
-      "globals": {
-        "chartist": "Chartist"
-      }
-    }]
-  ],
   "presets": [
-    "latest"
+    "stage-2",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions"]
+        }
+      }
+    ]
   ]
 }
