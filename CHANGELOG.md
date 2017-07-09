@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.2"></a>
+## [4.3.2](https://github.com/willsoto/angular-chartist.js/compare/v4.3.1...v4.3.2) (2017-07-09)
+
+
+### Bug Fixes
+
+* **events:** ensure defaults are still set after watch is triggered ([822f20e](https://github.com/willsoto/angular-chartist.js/commit/822f20e)), closes [#135](https://github.com/willsoto/angular-chartist.js/issues/135)
+
+
+
 <a name="4.3.1"></a>
 ## [4.3.1](https://github.com/willsoto/angular-chartist.js/compare/v4.3.0...v4.3.1) (2017-02-10)
 
