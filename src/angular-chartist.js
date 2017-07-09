@@ -22,9 +22,9 @@ class AngularChartistCtrl {
         return {
           data: $scope.data,
           chartType: $scope.chartType,
-          chartOptions: $scope.chartOptions(),
-          responsiveOptions: $scope.responsiveOptions(),
-          events: $scope.events()
+          chartOptions: $scope.chartOptions() || null,
+          responsiveOptions: $scope.responsiveOptions() || null,
+          events: $scope.events() || {}
         };
       },
       this.update.bind(this),

@@ -6,14 +6,11 @@ import { expect } from 'chai';
 import angularChartist from '../dist/angular-chartist';
 
 const templates = {
-  'default': {
+  default: {
     scope: {
       data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        series: [
-          [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
-          [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
-        ]
+        series: [[5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8], [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]]
       },
       chartType: 'Bar'
     },
@@ -24,22 +21,24 @@ const templates = {
 describe('angular-chartist', function() {
   beforeEach(angular.mock.module(angularChartist));
 
-  beforeEach(angular.mock.inject(function($injector) {
-    this.$scope = $injector.get('$rootScope');
-    this.$compile = $injector.get('$compile');
+  beforeEach(
+    angular.mock.inject(function($injector) {
+      this.$scope = $injector.get('$rootScope');
+      this.$compile = $injector.get('$compile');
 
-    this.compileDirective = (template = 'default') => {
-      const selectedTemplate = templates[template];
+      this.compileDirective = (template = 'default') => {
+        const selectedTemplate = templates[template];
 
-      this.$scope = Object.assign(this.$scope, selectedTemplate.scope);
+        this.$scope = Object.assign(this.$scope, selectedTemplate.scope);
 
-      const element = this.$compile(selectedTemplate.element)(this.$scope);
+        const element = this.$compile(selectedTemplate.element)(this.$scope);
 
-      this.$scope.$digest();
+        this.$scope.$digest();
 
-      return element;
-    };
-  }));
+        return element;
+      };
+    })
+  );
 
   it('should correctly export itself', function() {
     expect(angularChartist).to.equal('angular-chartist');
@@ -66,5 +65,28 @@ describe('angular-chartist', function() {
     expect(scope.data).to.exist.and.to.not.equal(templates['default'].scope.data);
     expect(scope.data.labels).to.be.empty;
     expect(scope.data.series).to.be.empty;
+  });
+
+  describe('defaults', function() {
+    it('should set events to an empty object when they are not provided', function() {
+      const element = this.compileDirective();
+      const controller = element.controller('chartist');
+
+      expect(controller.events).to.eql({});
+    });
+
+    it('should set options to null when they are not provided', function() {
+      const element = this.compileDirective();
+      const controller = element.controller('chartist');
+
+      expect(controller.options).to.eql(null);
+    });
+
+    it('should set responsiveOptions to null when they are not provided', function() {
+      const element = this.compileDirective();
+      const controller = element.controller('chartist');
+
+      expect(controller.responsiveOptions).to.eql(null);
+    });
   });
 });
