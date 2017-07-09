@@ -16,7 +16,7 @@
     "lint": "eslint src/ test/",
     "coveralls": "coveralls < coverage/lcov.info",
     "postcoveralls": "rimraf ./coverage",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "postpublish": "git push origin master --follow-tags",
     "start": "webpack-dev-server --content-base example/",
     "prerelease": "npm test",
