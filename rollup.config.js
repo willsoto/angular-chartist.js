@@ -11,7 +11,7 @@ export default {
   external: ['angular', 'chartist'],
   globals: {
     angular: 'angular',
-    chartist: 'Charitst'
+    chartist: 'Chartist'
   },
   plugins: [
     eslint(),
