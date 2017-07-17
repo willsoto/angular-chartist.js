@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.3"></a>
+## [4.3.3](https://github.com/willsoto/angular-chartist.js/compare/v4.3.2...v4.3.3) (2017-07-17)
+
+
+### Bug Fixes
+
+* **rollup:** correctly spell global name for Chartist ([66f0b93](https://github.com/willsoto/angular-chartist.js/commit/66f0b93)), closes [#141](https://github.com/willsoto/angular-chartist.js/issues/141)
+
+
+
 <a name="4.3.2"></a>
 ## [4.3.2](https://github.com/willsoto/angular-chartist.js/compare/v4.3.1...v4.3.2) (2017-07-09)
 
