@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('angular'), require('chartist')) :
 	typeof define === 'function' && define.amd ? define(['angular', 'chartist'], factory) :
-	(global['angular-chartist'] = factory(global.angular,global.Charitst));
+	(global['angular-chartist'] = factory(global.angular,global.Chartist));
 }(this, (function (angular,Chartist) { 'use strict';
 
 angular = angular && 'default' in angular ? angular['default'] : angular;
