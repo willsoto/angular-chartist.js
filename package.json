@@ -56,7 +56,7 @@
     "eslint-plugin-prettier": "^2.1.2",
     "husky": "^0.14.3",
     "isparta-loader": "^2.0.0",
-    "istanbul-instrumenter-loader": "^2.0.0",
+    "istanbul-instrumenter-loader": "^3.0.0",
     "karma": "^1.7.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
