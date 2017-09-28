@@ -28,7 +28,11 @@
     "type": "git",
     "url": "https://github.com/willsoto/angular-chartist.js"
   },
-  "keywords": ["angular", "chartist.js", "directive"],
+  "keywords": [
+    "angular",
+    "chartist.js",
+    "directive"
+  ],
   "author": "Will <will.soto9+github@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -67,7 +71,7 @@
     "lint-staged": "^4.0.1",
     "mocha": "^3.4.2",
     "ng-annotate": "^1.2.2",
-    "prettier": "^1.5.2",
+    "prettier": "^1.7.2",
     "rimraf": "^2.6.1",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.1",
@@ -86,7 +90,14 @@
     "chartist": ">=0.9.0"
   },
   "lint-staged": {
-    "*.js": ["prettier --single-quote --print-width 120 --write", "eslint --fix", "git add"],
-    "*.json": ["prettier --print-width 120 --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
