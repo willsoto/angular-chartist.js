@@ -73,7 +73,7 @@
     "ng-annotate": "^1.2.2",
     "prettier": "^1.7.2",
     "rimraf": "^2.6.1",
-    "rollup": "^0.50.0",
+    "rollup": "^0.51.7",
     "rollup-plugin-babel": "^3.0.1",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-filesize": "^1.4.2",
