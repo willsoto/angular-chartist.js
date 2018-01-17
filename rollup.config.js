@@ -3,16 +3,18 @@ import filesize from 'rollup-plugin-filesize';
 import eslint from 'rollup-plugin-eslint';
 
 export default {
-  entry: 'src/angular-chartist.js',
-  moduleName: 'angular-chartist',
-  format: 'umd',
-  dest: 'dist/angular-chartist.js',
-  sourceMap: true,
-  external: ['angular', 'chartist'],
-  globals: {
-    angular: 'angular',
-    chartist: 'Chartist'
+  input: 'src/angular-chartist.js',
+  output: {
+    name: 'angular-chartist',
+    globals: {
+      angular: 'angular',
+      chartist: 'Chartist'
+    },
+    sourcemap: true,
+    format: 'umd',
+    file: 'dist/angular-chartist.js'
   },
+  external: ['angular', 'chartist'],
   plugins: [
     eslint(),
     babel({
