@@ -42,24 +42,9 @@ module.exports = function(config) {
 
     logLevel: config.LOG_INFO,
 
-    browsers: ['Chrome'],
-    customLaunchers: {
-      ChromeTravisCI: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
+    browsers: ['ChromeHeadless'],
 
     frameworks: ['mocha', 'chai'],
-
-    plugins: [
-      'karma-mocha',
-      'karma-chai',
-      'karma-coverage',
-      'karma-webpack',
-      'karma-chrome-launcher',
-      'karma-spec-reporter'
-    ],
 
     captureTimeout: 60000,
 
@@ -70,10 +55,6 @@ module.exports = function(config) {
     browserDisconnectTimeout: 60000,
     browserNoActivityTimeout: 60000
   };
-
-  if (process.env.TRAVIS) {
-    options.browsers = ['ChromeTravisCI'];
-  }
 
   config.set(options);
 };
