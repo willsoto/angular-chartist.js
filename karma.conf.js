@@ -1,7 +1,9 @@
-var path = require('path');
+const path = require('path');
+
+process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function(config) {
-  var options = {
+  const options = {
     files: ['test/index.spec.js'],
 
     preprocessors: {
