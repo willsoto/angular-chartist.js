@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-apt-get update
-apt-get install \
+sudo apt-get update
+sudo apt-get install \
   gconf-service \
   libasound2 \
   libatk1.0-0 \
