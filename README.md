@@ -1,11 +1,9 @@
 # angular-chartist.js
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/willsoto/angular-chartist.js.svg)](https://greenkeeper.io/)
-
 [![NPM version][npm-image]][npm-url]
-[![Dependency Status][depstat-image]][depstat-url]
-[![devDependency Status][devstat-image]][devstat-url]
 [![Downloads][download-badge]][npm-url]
+[![CircleCI](https://circleci.com/gh/willsoto/angular-chartist.js.svg?style=svg)](https://circleci.com/gh/willsoto/angular-chartist.js)
 
 Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 

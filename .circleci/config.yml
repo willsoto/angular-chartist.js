@@ -7,20 +7,12 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+      - image: circleci/node:9-browsers
 
     working_directory: ~/repo
 
     steps:
       - checkout
-
-      # workaround for https://github.com/GoogleChrome/puppeteer/issues/290
-      - run: ./bin/chrome-deps.sh
 
       # Download and cache dependencies
       - restore_cache:
@@ -29,7 +21,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
 
       - save_cache:
           paths:
