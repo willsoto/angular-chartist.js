@@ -3,3 +3,4 @@ node_modules/
 *.log
 coverage/
 example/index.bundle.js
+yarn.lock
