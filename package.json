@@ -83,7 +83,7 @@
     "uglify-js": "^3.3.10",
     "validate-commit": "^3.4.0",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.1.2"
   },
   "peerDependencies": {
     "angular": ">=1.2.28",
