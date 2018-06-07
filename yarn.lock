@@ -7315,9 +7315,9 @@ rollup-plugin-eslint@^4.0.0:
     eslint "^4.1.1"
     rollup-pluginutils "^2.0.1"
 
-rollup-plugin-filesize@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-filesize/-/rollup-plugin-filesize-1.5.0.tgz#bb5841242d88be57f231c9e8a3a541925392178b"
+rollup-plugin-filesize@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-filesize/-/rollup-plugin-filesize-2.0.0.tgz#28d160bd7db7362f394fa0b4f7cdcf5c7ecdfced"
   dependencies:
     boxen "^1.1.0"
     colors "^1.1.2"
