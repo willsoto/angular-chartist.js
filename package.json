@@ -82,7 +82,7 @@
     "style-loader": "^0.21.0",
     "uglify-js": "^3.3.10",
     "validate-commit": "^3.4.0",
-    "webpack": "^3.11.0",
+    "webpack": "^4.12.0",
     "webpack-dev-server": "^3.1.4"
   },
   "peerDependencies": {
