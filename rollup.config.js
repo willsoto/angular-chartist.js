@@ -21,9 +21,9 @@ export default {
     babel({
       babelrc: false,
       presets: [
-        'stage-2',
+        '@babel/stage-2',
         [
-          'env',
+          '@babel/env',
           {
             targets: {
               browsers: ['last 2 versions']
@@ -33,7 +33,6 @@ export default {
         ]
       ],
       plugins: [
-        'external-helpers',
         [
           'angularjs-annotate',
           {

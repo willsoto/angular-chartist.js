@@ -1,11 +1,18 @@
 {
   "presets": [
-    "stage-2",
     [
-      "env",
+      "@babel/preset-stage-2",
+      {
+        "decoratorsLegacy": true
+      }
+    ],
+    [
+      "@babel/preset-env",
       {
         "targets": {
-          "browsers": ["last 2 versions"]
+          "browsers": [
+            "last 2 versions"
+          ]
         }
       }
     ]
