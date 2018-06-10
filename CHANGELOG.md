@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0-beta.0"></a>
+# [5.0.0-beta.0](https://github.com/willsoto/angular-chartist.js/compare/v4.3.4...v5.0.0-beta.0) (2018-06-10)
+
+
+### Bug Fixes
+
+* **circleci:** add shell script for installing dependencies for Chrome ([bafbc4b](https://github.com/willsoto/angular-chartist.js/commit/bafbc4b))
+* **Circleci:** change base image to one that includes Puppeteer ([5c64382](https://github.com/willsoto/angular-chartist.js/commit/5c64382))
+
+
+### Code Refactoring
+
+* **dist:** remove dist from version control ([0040b04](https://github.com/willsoto/angular-chartist.js/commit/0040b04))
+
+
+### Features
+
+* upgrade all packages and clean up build pipeline ([25650b1](https://github.com/willsoto/angular-chartist.js/commit/25650b1))
+* **ci:** use circleCI over Travis ([91f823e](https://github.com/willsoto/angular-chartist.js/commit/91f823e))
+
+
+### BREAKING CHANGES
+
+* **dist:** dist no longer stored in git
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="4.3.4"></a>
 ## [4.3.4](https://github.com/willsoto/angular-chartist.js/compare/v4.3.3...v4.3.4) (2017-09-28)
 
