@@ -11,7 +11,6 @@
     "test:watch": "npm run test -- --no-single-run --auto-watch",
     "lint": "eslint src/ test/",
     "prepare": "npm run build",
-    "postpublish": "git push origin master --follow-tags",
     "start": "webpack-serve",
     "prerelease": "npm test",
     "release": "standard-version --sign",
