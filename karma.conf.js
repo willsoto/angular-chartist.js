@@ -11,17 +11,18 @@ module.exports = function(config) {
     },
 
     webpack: {
+      mode: 'production',
       module: {
-        loaders: [
+        rules: [
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            loaders: ['babel-loader']
           },
           {
             test: /\.js$/,
             include: path.resolve('src/'),
-            loader: 'istanbul-instrumenter-loader'
+            loaders: ['istanbul-instrumenter-loader']
           }
         ]
       }

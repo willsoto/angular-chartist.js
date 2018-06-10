@@ -9,5 +9,13 @@
         }
       }
     ]
+  ],
+  "plugins": [
+    [
+      "angularjs-annotate",
+      {
+        "explicitOnly": true
+      }
+    ]
   ]
 }

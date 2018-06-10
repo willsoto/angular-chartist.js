@@ -1,6 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import filesize from 'rollup-plugin-filesize';
 import eslint from 'rollup-plugin-eslint';
+import { uglify } from 'rollup-plugin-uglify';
 
 export default {
   input: 'src/angular-chartist.js',
@@ -31,8 +32,17 @@ export default {
           }
         ]
       ],
-      plugins: ['external-helpers']
+      plugins: [
+        'external-helpers',
+        [
+          'angularjs-annotate',
+          {
+            explicitOnly: true
+          }
+        ]
+      ]
     }),
+    uglify(),
     filesize()
-  ].filter(plugin => !!plugin)
+  ]
 };
