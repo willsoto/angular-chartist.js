@@ -69,7 +69,7 @@
     "prettier": "^1.13.5",
     "puppeteer": "^1.5.0",
     "rimraf": "^2.6.2",
-    "rollup": "^0.60.1",
+    "rollup": "^0.61.1",
     "rollup-plugin-babel": "^4.0.0-beta.2",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-filesize": "^2.0.0",
