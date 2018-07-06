@@ -38,7 +38,7 @@
     "@babel/cli": "7.0.0-beta.44",
     "@babel/core": "7.0.0-beta.44",
     "@babel/preset-env": "7.0.0-beta.44",
-    "@babel/preset-stage-2": "7.0.0-beta.44",
+    "@babel/preset-stage-2": "7.0.0-beta.52",
     "@babel/register": "7.0.0-beta.44",
     "angular": "^1.7.1",
     "angular-mocks": "^1.7.1",
