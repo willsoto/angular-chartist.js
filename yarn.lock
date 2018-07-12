@@ -664,6 +664,10 @@
     "@shellscape/koa-send" "^4.1.0"
     debug "^2.6.8"
 
+"@sindresorhus/is@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
@@ -807,6 +811,20 @@
     "@webassemblyjs/ast" "1.5.12"
     "@webassemblyjs/wast-parser" "1.5.12"
     long "^3.2.0"
+
+"@webpack-contrib/cli-utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@webpack-contrib/cli-utils/-/cli-utils-1.0.1.tgz#c51ac91194be72d777e5a087fa0d584eb3f08f06"
+  dependencies:
+    "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
+    camelize "^1.0.0"
+    chalk "^2.4.1"
+    decamelize "^2.0.0"
+    loader-utils "^1.1.0"
+    meant "^1.0.1"
+    strip-ansi "^4.0.0"
+    text-table "^0.2.0"
+    webpack-log "^1.2.0"
 
 "@webpack-contrib/config-loader@^1.1.1":
   version "1.1.3"
@@ -1744,6 +1762,10 @@ camelcase@^2.0.0:
 camelcase@^4.0.0, camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
+
+camelize@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
 
 caniuse-api@^1.5.2:
   version "1.6.1"
@@ -2743,6 +2765,12 @@ decamelize-keys@^1.0.0:
 decamelize@^1.0.0, decamelize@^1.1.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
+
+decamelize@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-2.0.0.tgz#656d7bbc8094c4c788ea53c5840908c9c7d063c7"
+  dependencies:
+    xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -5239,14 +5267,16 @@ koa-is-json@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/koa-is-json/-/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
 
-koa-webpack@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/koa-webpack/-/koa-webpack-4.0.0.tgz#1d9b83c109db106d8ef65db376f910a45ba964c7"
+koa-webpack@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/koa-webpack/-/koa-webpack-5.1.0.tgz#7b9f04ea85c43c4d7ad845d0de01f0ed495eb5c0"
   dependencies:
+    "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
     app-root-path "^2.0.1"
+    loud-rejection "^1.6.0"
     merge-options "^1.0.0"
     webpack-dev-middleware "^3.0.0"
-    webpack-hot-client "^3.0.0"
+    webpack-hot-client "^4.1.0"
     webpack-log "^1.1.1"
 
 koa@^2.4.1:
@@ -5674,6 +5704,10 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+meant@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/meant/-/meant-1.0.1.tgz#66044fea2f23230ec806fb515efea29c44d2115d"
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -5683,6 +5717,13 @@ mem@^1.1.0:
   resolved "https://registry.yarnpkg.com/mem/-/mem-1.1.0.tgz#5edd52b485ca1d900fe64895505399a0dfa45f76"
   dependencies:
     mimic-fn "^1.0.0"
+
+mem@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mem/-/mem-3.0.1.tgz#152410d0d7e835e4a4363e626238d9e5be3d6f5a"
+  dependencies:
+    mimic-fn "^1.0.0"
+    p-is-promise "^1.1.0"
 
 memory-fs@^0.4.0, memory-fs@~0.4.1:
   version "0.4.1"
@@ -6132,6 +6173,10 @@ node-uuid@~1.4.7:
   version "1.4.8"
   resolved "https://registry.yarnpkg.com/node-uuid/-/node-uuid-1.4.8.tgz#b040eb0923968afabf8d32fb1f17f1167fdab907"
 
+node-version@^1.1.3:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/node-version/-/node-version-1.2.0.tgz#34fde3ffa8e1149bd323983479dda620e1b5060d"
+
 nodemailer-direct-transport@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/nodemailer-direct-transport/-/nodemailer-direct-transport-3.3.2.tgz#e96fafb90358560947e569017d97e60738a50a86"
@@ -6444,9 +6489,17 @@ output-file-sync@^2.0.0:
     is-plain-obj "^1.1.0"
     mkdirp "^0.5.1"
 
+p-defer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/p-defer/-/p-defer-1.0.0.tgz#9f6eb182f6c9aa8cd743004a7d4f96b196b0fb0c"
+
 p-finally@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
+
+p-is-promise@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-1.1.0.tgz#9c9456989e9f6588017b0434d56097675c3da05e"
 
 p-limit@^1.1.0:
   version "1.2.0"
@@ -6463,6 +6516,17 @@ p-locate@^2.0.0:
 p-map@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
+
+p-reduce@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/p-reduce/-/p-reduce-1.0.0.tgz#18c2b0dd936a4690a529f8231f58a0fdb6a47dfa"
+
+p-series@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/p-series/-/p-series-1.1.0.tgz#f2d8522cdfd58b464eb9685651d465037ee3c957"
+  dependencies:
+    "@sindresorhus/is" "^0.7.0"
+    p-reduce "^1.0.0"
 
 p-try@^1.0.0:
   version "1.0.0"
@@ -8739,10 +8803,6 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
 
-url-join@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/url-join/-/url-join-3.0.0.tgz#26e8113ace195ea30d0fc38186e45400f9cea672"
-
 url-join@^2.0.2:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
@@ -8913,12 +8973,14 @@ webpack-dev-middleware@^3.0.0:
     url-join "^4.0.0"
     webpack-log "^1.0.1"
 
-webpack-hot-client@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/webpack-hot-client/-/webpack-hot-client-3.0.0.tgz#b714f257a264001275bc1491741685779cde12f2"
+webpack-hot-client@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-hot-client/-/webpack-hot-client-4.1.0.tgz#163d2a311a6e4f1425314b4d68c16709c1eae93c"
   dependencies:
+    "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
     json-stringify-safe "^5.0.1"
     loglevelnext "^1.0.2"
+    merge-options "^1.0.1"
     strip-ansi "^4.0.0"
     uuid "^3.1.0"
     webpack-log "^1.1.1"
@@ -8933,7 +8995,7 @@ webpack-log@^1.0.1:
     loglevelnext "^1.0.1"
     uuid "^3.1.0"
 
-webpack-log@^1.1.1, webpack-log@^1.1.2:
+webpack-log@^1.1.1, webpack-log@^1.1.2, webpack-log@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/webpack-log/-/webpack-log-1.2.0.tgz#a4b34cda6b22b518dbb0ab32e567962d5c72a43d"
   dependencies:
@@ -8942,33 +9004,40 @@ webpack-log@^1.1.1, webpack-log@^1.1.2:
     loglevelnext "^1.0.1"
     uuid "^3.1.0"
 
-webpack-serve@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/webpack-serve/-/webpack-serve-1.0.4.tgz#d1c83955926969ba195e5032f978da92ef07829c"
+webpack-serve@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/webpack-serve/-/webpack-serve-2.0.0.tgz#1449996e92505d889784ffb7b427159ac28d6e14"
   dependencies:
     "@shellscape/koa-static" "^4.0.4"
+    "@webpack-contrib/cli-utils" "^1.0.1"
     "@webpack-contrib/config-loader" "^1.1.1"
+    "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
     chalk "^2.3.0"
     clipboardy "^1.2.2"
     cosmiconfig "^5.0.2"
     debug "^3.1.0"
-    find-up "^2.1.0"
+    decamelize "^2.0.0"
     get-port "^3.2.0"
     import-local "^1.0.0"
+    is-plain-obj "^1.1.0"
     killable "^1.0.0"
     koa "^2.4.1"
-    koa-webpack "^4.0.0"
-    lodash "^4.17.5"
+    koa-webpack "^5.1.0"
     loud-rejection "^1.6.0"
+    mem "^3.0.0"
     meow "^5.0.0"
+    merge-options "^1.0.1"
     nanobus "^4.3.1"
+    node-version "^1.1.3"
     opn "^5.1.0"
+    p-defer "^1.0.0"
+    p-series "^1.1.0"
     resolve "^1.6.0"
+    strip-ansi "^4.0.0"
     time-fix-plugin "^2.0.0"
     update-notifier "^2.3.0"
-    url-join "3.0.0"
+    url-join "^4.0.0"
     v8-compile-cache "^2.0.0"
-    webpack-hot-client "^3.0.0"
     webpack-log "^1.1.2"
 
 webpack-sources@^1.0.1, webpack-sources@^1.1.0:
@@ -9117,6 +9186,10 @@ xmlhttprequest-ssl@~1.5.4:
 xregexp@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-2.0.0.tgz#52a63e56ca0b84a7f3a5f3d61872f126ad7a5943"
+
+xregexp@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-4.0.0.tgz#e698189de49dd2a18cc5687b05e17c8e43943020"
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
