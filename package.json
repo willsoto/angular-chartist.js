@@ -36,7 +36,7 @@
   "homepage": "https://github.com/willsoto/angular-chartist.js",
   "devDependencies": {
     "@babel/cli": "7.0.0-rc.1",
-    "@babel/core": "7.0.0-beta.54",
+    "@babel/core": "7.0.0-rc.1",
     "@babel/preset-env": "7.0.0-beta.54",
     "@babel/preset-stage-2": "7.0.0-beta.54",
     "@babel/register": "7.0.0-beta.54",
