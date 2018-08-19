@@ -1,6 +1,6 @@
 {
   "name": "angular-chartist.js",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.2",
   "description": "Angular directive for Chartist.js",
   "main": "dist/angular-chartist.js",
   "scripts": {
