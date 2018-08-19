@@ -21,9 +21,8 @@ export default {
     babel({
       babelrc: false,
       presets: [
-        '@babel/stage-2',
         [
-          '@babel/env',
+          '@babel/preset-env',
           {
             targets: {
               browsers: ['last 2 versions']
@@ -38,7 +37,21 @@ export default {
           {
             explicitOnly: true
           }
-        ]
+        ],
+        '@babel/plugin-syntax-dynamic-import',
+        '@babel/plugin-syntax-import-meta',
+        '@babel/plugin-proposal-class-properties',
+        '@babel/plugin-proposal-json-strings',
+        [
+          '@babel/plugin-proposal-decorators',
+          {
+            legacy: true
+          }
+        ],
+        '@babel/plugin-proposal-function-sent',
+        '@babel/plugin-proposal-export-namespace-from',
+        '@babel/plugin-proposal-numeric-separator',
+        '@babel/plugin-proposal-throw-expressions'
       ]
     }),
     uglify(),
