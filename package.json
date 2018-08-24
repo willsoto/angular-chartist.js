@@ -45,7 +45,7 @@
     "@babel/plugin-proposal-numeric-separator": "7.0.0-rc.3",
     "@babel/plugin-proposal-throw-expressions": "7.0.0-rc.1",
     "@babel/plugin-syntax-dynamic-import": "7.0.0-rc.3",
-    "@babel/plugin-syntax-import-meta": "7.0.0-beta.54",
+    "@babel/plugin-syntax-import-meta": "7.0.0-rc.3",
     "@babel/preset-env": "7.0.0-rc.1",
     "@babel/register": "7.0.0-rc.1",
     "angular": "^1.7.3",
