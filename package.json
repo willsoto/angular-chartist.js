@@ -83,7 +83,7 @@
     "rollup-plugin-filesize": "^4.0.1",
     "rollup-plugin-uglify": "^4.0.0",
     "standard-version": "^4.4.0",
-    "style-loader": "^0.22.1",
+    "style-loader": "^0.23.0",
     "validate-commit": "^3.4.0",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
