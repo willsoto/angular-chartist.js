@@ -80,7 +80,7 @@
     "rollup": "^0.65.2",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-eslint": "^5.0.0",
-    "rollup-plugin-filesize": "^4.0.1",
+    "rollup-plugin-filesize": "^6.1.0",
     "rollup-plugin-uglify": "^5.0.2",
     "standard-version": "^4.4.0",
     "style-loader": "^0.23.0",
