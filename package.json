@@ -79,7 +79,7 @@
     "rimraf": "^2.6.2",
     "rollup": "^0.68.2",
     "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-eslint": "^6.0.0",
     "rollup-plugin-filesize": "^6.1.0",
     "rollup-plugin-uglify": "^5.0.2",
     "standard-version": "^4.4.0",
