@@ -82,7 +82,7 @@
     "rollup-plugin-eslint": "^5.0.0",
     "rollup-plugin-filesize": "^6.1.0",
     "rollup-plugin-uglify": "^5.0.2",
-    "standard-version": "^4.4.0",
+    "standard-version": "^6.0.1",
     "style-loader": "^0.23.0",
     "validate-commit": "^3.4.0",
     "webpack": "^4.17.2",
