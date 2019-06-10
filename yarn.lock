@@ -1004,8 +1004,8 @@ angular-mocks@^1.7.4:
   resolved "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.7.4.tgz#106d9c96eae0117ad9962ee688da5e514edae645"
 
 angular@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.npmjs.org/angular/-/angular-1.7.4.tgz#c1bf4884c2d470c06907737a1bf0835a9f646f31"
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.8.tgz#b77ede272ce1b261e3be30c1451a0b346905a3c9"
 
 ansi-align@^2.0.0:
   version "2.0.0"
