@@ -56,7 +56,7 @@
     "chartist": "^0.11.0",
     "conventional-changelog": "^2.0.3",
     "conventional-changelog-cli": "^2.0.5",
-    "css-loader": "^1.0.0",
+    "css-loader": "^3.0.0",
     "eslint": "^5.5.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^2.6.2",
