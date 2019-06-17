@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:9-browsers
+      - image: circleci/node:lts-browsers
 
     working_directory: ~/repo
 
@@ -17,9 +17,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
       - run: yarn install
 
@@ -29,10 +29,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn lint
-        # https://github.com/greenkeeperio/greenkeeper-lockfile#setup
-      - run: npx greenkeeper-lockfile-update
 
       # run tests!
       - run: yarn test
-
-      - run: npx greenkeeper-lockfile-upload
