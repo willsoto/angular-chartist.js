@@ -14,10 +14,7 @@
     "start": "webpack-serve",
     "prerelease": "npm test",
     "release": "standard-version --sign",
-    "postrelease": "git push --follow-tags origin master && npm publish",
-    "precommit": "lint-staged",
-    "prepush": "npm test",
-    "commitmsg": "validate-commit-msg"
+    "postrelease": "git push --follow-tags origin master && npm publish"
   },
   "repository": {
     "type": "git",
@@ -102,5 +99,12 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
   }
 }
