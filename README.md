@@ -1,6 +1,6 @@
 # angular-chartist.js
 
-[![CircleCI](https://circleci.com/gh/willsoto/angular-chartist.js.svg?style=svg)](https://circleci.com/gh/willsoto/angular-chartist.js)
+[![pipeline status](https://gitlab.com/willsoto/angular-chartist-js/badges/master/pipeline.svg)](https://gitlab.com/willsoto/angular-chartist-js/commits/master)
 
 Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
@@ -38,7 +38,11 @@ angular.module('app', [angularChartist]);
 In your HTML, add the `chartist` directive to any `div` or make it a custom element:
 
 ```html
-<chartist class="ct-chart" chartist-data="chartist.barData" chartist-chart-type="Bar"></chartist>
+<chartist
+  class="ct-chart"
+  chartist-data="chartist.barData"
+  chartist-chart-type="Bar"
+></chartist>
 ```
 
 | Attribute                     | Type   | Required |
