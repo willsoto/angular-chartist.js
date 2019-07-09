@@ -1,0 +1,17 @@
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm
+    - node_modules
+
+.scripts:
+  before_script:
+    - yarn install
+  script:
+    - yarn lint
+    - yarn test
+    - yarn build
+
+node-lts:
+  image: circleci/node:lts-browsers
+  extends: .scripts
