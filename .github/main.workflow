@@ -1,10 +1,10 @@
 workflow "CI" {
-  on = "push"
   resolves = [
     "Lint",
     "Build",
     "Test",
   ]
+  on = "pull_request"
 }
 
 action "Install" {
