@@ -1,6 +1,10 @@
 workflow "CI" {
   on = "push"
-  resolves = ["Lint", "Build", "Install"]
+  resolves = [
+    "Lint",
+    "Build",
+    "Test",
+  ]
 }
 
 action "Install" {
@@ -21,4 +25,11 @@ action "Build" {
   needs = ["Install"]
   runs = "yarn"
   args = "build"
+}
+
+action "Test" {
+  uses = "aquariuslt/node-browsers-github-actions@master"
+  needs = ["Install"]
+  runs = "yarn"
+  args = "test"
 }
