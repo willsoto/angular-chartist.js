@@ -28,7 +28,7 @@ action "Build" {
 }
 
 action "Test" {
-  uses = "aquariuslt/node-browsers-github-actions@master"
+  uses = "willsoto/node-lts-browsers@master"
   needs = ["Install"]
   runs = "yarn"
   args = "test"
