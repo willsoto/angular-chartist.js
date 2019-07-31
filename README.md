@@ -1,7 +1,5 @@
 # angular-chartist.js
 
-[![pipeline status](https://gitlab.com/willsoto/angular-chartist-js/badges/master/pipeline.svg)](https://gitlab.com/willsoto/angular-chartist-js/commits/master)
-
 Angular 1.x directive for [Chartist.js](http://gionkunz.github.io/chartist-js/)
 
 [Looking for the Angular version?](https://github.com/willsoto/ng-chartist)
