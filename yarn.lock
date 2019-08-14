@@ -2200,13 +2200,13 @@ conventional-changelog-atom@^2.0.1:
     q "^1.5.1"
 
 conventional-changelog-cli@^2.0.21:
-  version "2.0.21"
-  resolved "https://registry.npmjs.org/conventional-changelog-cli/-/conventional-changelog-cli-2.0.21.tgz#7469ddd663a8e68967b6d8c9c2cf207d1d7462f7"
-  integrity sha512-gMT1XvSVmo9Np1WUXz8Mvt3K+OtzR+Xu13z0jq/3qsXBbLuYc2/oaUXVr68r3fYOL8E9dN2uvX7Hc7RkeWvRVA==
+  version "2.0.23"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-cli/-/conventional-changelog-cli-2.0.23.tgz#3f6b2bb3e1e6a6f520f7fa514fe8fba2d92faab0"
+  integrity sha512-a/jDZHEUpSHQMAqeDrmrFhz9CKHBKhBGpJyc38BCfNjFA1RKchpq/Qqbo1BZwRLWrW/PX7IGsUicTyhniqUH9g==
   dependencies:
     add-stream "^1.0.0"
-    conventional-changelog "^3.1.8"
-    lodash "^4.2.1"
+    conventional-changelog "^3.1.10"
+    lodash "^4.14.14"
     meow "^4.0.0"
     tempfile "^1.1.1"
 
@@ -2336,7 +2336,7 @@ conventional-changelog@3.1.9:
     conventional-changelog-jshint "^2.0.1"
     conventional-changelog-preset-loader "^2.1.1"
 
-conventional-changelog@^3.1.8:
+conventional-changelog@^3.1.10, conventional-changelog@^3.1.8:
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/conventional-changelog/-/conventional-changelog-3.1.10.tgz#889a8daa4b7673a1dc1605746f9ae66546b373c1"
   integrity sha512-6RDj31hL39HUkpqvPjRlOxAwJRwur8O2qu9m6R0FBNDGwCJyy4SYH9NfyshozxYSeklrauKRf3oSbyoEZVzu9Q==
@@ -5151,7 +5151,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
-lodash@^4.17.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.1:
+lodash@^4.14.14, lodash@^4.17.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.1:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
