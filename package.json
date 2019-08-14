@@ -44,7 +44,7 @@
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-syntax-import-meta": "7.2.0",
     "@babel/preset-env": "7.5.5",
-    "@babel/register": "7.4.4",
+    "@babel/register": "7.5.5",
     "angular": "^1.7.4",
     "angular-mocks": "^1.7.8",
     "babel-loader": "^8.0.6",
