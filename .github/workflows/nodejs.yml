@@ -30,9 +30,3 @@ jobs:
         yarn install
         yarn lint
         yarn build
-    
-    - name: test
-      uses: willsoto/node-lts-browsers@master
-      run: |
-        yarn install
-        yarn test
