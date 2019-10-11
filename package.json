@@ -1,36 +1,35 @@
 {
   "name": "angular-chartist.js",
-  "version": "5.0.0-beta.2",
   "description": "Angular directive for Chartist.js",
-  "main": "dist/angular-chartist.js",
-  "scripts": {
-    "prebuild": "rimraf dist/",
-    "build": "rollup -c",
-    "pretest": "npm run build",
-    "test": "karma start",
-    "test:watch": "npm run test -- --no-single-run --auto-watch",
-    "lint": "eslint src/ test/",
-    "prepare": "npm run build",
-    "start": "webpack-serve",
-    "prerelease": "npm test",
-    "release": "standard-version --sign",
-    "postrelease": "git push --follow-tags origin master && npm publish"
-  },
+  "license": "MIT",
+  "author": "Will <will.soto9+github@gmail.com>",
+  "homepage": "https://github.com/willsoto/angular-chartist.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/willsoto/angular-chartist.js"
   },
-  "keywords": [
-    "angular",
-    "chartist.js",
-    "directive"
-  ],
-  "author": "Will <will.soto9+github@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/willsoto/angular-chartist.js/issues"
   },
-  "homepage": "https://github.com/willsoto/angular-chartist.js",
+  "version": "5.0.0-beta.2",
+  "main": "dist/angular-chartist.js",
+  "scripts": {
+    "prebuild": "rimraf dist/",
+    "build": "rollup -c",
+    "lint": "eslint src/ test/",
+    "prepare": "npm run build",
+    "prerelease": "npm test",
+    "release": "standard-version --sign",
+    "postrelease": "git push --follow-tags origin master && npm publish",
+    "start": "webpack-serve",
+    "pretest": "npm run build",
+    "test": "karma start",
+    "test:watch": "npm run test -- --no-single-run --auto-watch"
+  },
+  "peerDependencies": {
+    "angular": ">=1.2.28",
+    "chartist": ">=0.9.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.6.4",
     "@babel/core": "7.6.4",
@@ -71,6 +70,7 @@
     "lint-staged": "^9.0.0",
     "mocha": "^6.1.4",
     "prettier": "^1.18.2",
+    "prettier-package-json": "~2.1.0",
     "puppeteer": "^1.17.0",
     "rimraf": "^3.0.0",
     "rollup": "^1.15.6",
@@ -85,9 +85,17 @@
     "webpack-cli": "^3.3.4",
     "webpack-serve": "^3.1.0"
   },
-  "peerDependencies": {
-    "angular": ">=1.2.28",
-    "chartist": ">=0.9.0"
+  "keywords": [
+    "angular",
+    "chartist.js",
+    "directive"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
   },
   "lint-staged": {
     "*.js": [
@@ -98,13 +106,10 @@
     "*.json": [
       "prettier --write",
       "git add"
+    ],
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "validate-commit-msg",
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
-    }
   }
 }
