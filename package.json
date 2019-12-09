@@ -42,7 +42,7 @@
     "@babel/plugin-proposal-throw-expressions": "7.7.4",
     "@babel/plugin-syntax-dynamic-import": "7.7.4",
     "@babel/plugin-syntax-import-meta": "7.7.4",
-    "@babel/preset-env": "7.7.4",
+    "@babel/preset-env": "7.7.6",
     "@babel/register": "7.7.4",
     "angular": "^1.7.4",
     "angular-mocks": "^1.7.8",
